@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace orderTest
     public partial class Form1 : Form
     {
         private static List<string> ppList = new List<string>();
+        static private string path = @"e:\work\dev\orderUST\order.txt";
         private string addEPS;
 
         public Form1()
@@ -22,7 +24,7 @@ namespace orderTest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            showList();
+            //showList();
         }
 
         private void showList()
@@ -48,6 +50,12 @@ namespace orderTest
             amountPPtext.Text = "";
             packAmountPPtext.Text = "";
         }
+        private void downToFile_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(downToFile.Text);
+
+            File.AppendAllText(path, "123\n");
+        }
 
         private void markPPcb_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -58,5 +66,6 @@ namespace orderTest
         {
             addEPS += (',' + thinkPPcb.SelectedItem.ToString());
         }
+
     }
 }

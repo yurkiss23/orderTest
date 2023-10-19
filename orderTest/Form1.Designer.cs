@@ -46,6 +46,7 @@
             this.markPPcb = new System.Windows.Forms.ComboBox();
             this.amountPPtext = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.downToFile = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -74,6 +75,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.downToFile);
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(3, 6);
@@ -311,6 +313,17 @@
             this.label1.Text = "марка";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // downToFile
+            // 
+            this.downToFile.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.downToFile.Location = new System.Drawing.Point(526, 32);
+            this.downToFile.Name = "downToFile";
+            this.downToFile.Size = new System.Drawing.Size(219, 63);
+            this.downToFile.TabIndex = 4;
+            this.downToFile.Text = "вивантажити";
+            this.downToFile.UseVisualStyleBackColor = true;
+            this.downToFile.Click += new System.EventHandler(this.downToFile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,6 +370,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addToOrderButton;
+        private System.Windows.Forms.Button downToFile;
     }
 }
 
