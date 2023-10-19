@@ -322,6 +322,7 @@
             this.downToFile.TabIndex = 4;
             this.downToFile.Text = "вивантажити";
             this.downToFile.UseVisualStyleBackColor = true;
+            this.downToFile.Click += new System.EventHandler(this.downToFile_Click);
             // 
             // Form1
             // 
