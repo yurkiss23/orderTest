@@ -1,4 +1,5 @@
-﻿using orderTest.viewmodels;
+﻿using orderTest.models;
+using orderTest.viewmodels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,11 +25,11 @@ namespace orderTest
             InitializeComponent();
 
             epsViewModel DataContext = new epsViewModel();
+
             markEPS.DataBindings.Add(new Binding("Text", DataContext, "Mark", true));
             thikEPS.DataBindings.Add(new Binding("Text", DataContext, "Thikness", true));
             amountEPS.DataBindings.Add(new Binding("Text", DataContext, "Amount", true));
             packEPS.DataBindings.Add(new Binding("Text", DataContext, "Pack", true));
-            //addB.DataBindings.Add(new Binding("Command", DataContext, "AddEPS", true));
         }
 
         private void showList()
@@ -44,13 +45,21 @@ namespace orderTest
             MessageBox.Show("додано!",listTXT);
         }
 
+        private void fillEPSlist(BindingList<epsModel> eps)
+        {
+            ListViewItem epsListItem = new ListViewItem(markEPS.Text);
+            epsList.Items.Add(epsListItem);
+        }
+
         private void addToOrderButton_Click(object sender, EventArgs e)
         {
-            //TableLayoutPanel epsTable = new TableLayoutPanel();
-            addEPS += (',' + amountEPS.Text + ',' + packEPS.Text);
-            epsList.Items.Add(addEPS);
+            epsList.Visible = true;
+            ListViewItem epsListItem = new ListViewItem(markEPS.Text);
+            epsList.Items.Add(epsListItem);
 
+            addEPS += (',' + amountEPS.Text + ',' + packEPS.Text);
             ppList.Add(addEPS);
+
             //showList();
             markEPS.SelectedIndex = 0;
             thikEPS.SelectedIndex = 0;

@@ -330,13 +330,15 @@
             // 
             // epsList
             // 
+            this.epsList.GridLines = true;
             this.epsList.HideSelection = false;
-            this.epsList.Location = new System.Drawing.Point(6, 166);
+            this.epsList.Location = new System.Drawing.Point(6, 300);
             this.epsList.Name = "epsList";
             this.epsList.Size = new System.Drawing.Size(742, 60);
             this.epsList.TabIndex = 3;
             this.epsList.UseCompatibleStateImageBehavior = false;
-            this.epsList.View = System.Windows.Forms.View.Details;
+            this.epsList.View = System.Windows.Forms.View.SmallIcon;
+            this.epsList.Visible = false;
             // 
             // Form1
             // 
