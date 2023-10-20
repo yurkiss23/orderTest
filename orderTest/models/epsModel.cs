@@ -13,8 +13,5 @@ namespace orderTest.models
         public double Amount { get; set; }
         public int Pack { get; set; }
         public override string ToString() => Mark;
-        //{
-        //    return base.ToString();
-        //}
     }
 }

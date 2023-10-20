@@ -16,28 +16,28 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private static List<string> ppList = new List<string>();
+        private static List<epsModel> EpsList = new List<epsModel>();
         static private string path = @"e:\work\dev\orderUST\order.txt";
-        private string addEPS;
+        //private object? addEPS;
 
         public Form1()
         {
             InitializeComponent();
 
-            epsViewModel DataContext = new epsViewModel();
+            //epsViewModel DataContext = new epsViewModel();
 
-            markEPS.DataBindings.Add(new Binding("Text", DataContext, "Mark", true));
-            thikEPS.DataBindings.Add(new Binding("Text", DataContext, "Thikness", true));
-            amountEPS.DataBindings.Add(new Binding("Text", DataContext, "Amount", true));
-            packEPS.DataBindings.Add(new Binding("Text", DataContext, "Pack", true));
+            //markEPS.DataBindings.Add(new Binding("Text", DataContext, "Mark", true));
+            //thikEPS.DataBindings.Add(new Binding("Text", DataContext, "Thikness", true));
+            //amountEPS.DataBindings.Add(new Binding("Text", DataContext, "Amount", true));
+            //packEPS.DataBindings.Add(new Binding("Text", DataContext, "Pack", true));
         }
 
         private void showList()
         {
             string listTXT = "";
-            if (ppList.Count > 0)
+            if (EpsList.Count > 0)
             {
-                foreach (var item in ppList)
+                foreach (var item in EpsList)
                 {
                     listTXT += (item.ToString() + ';');
                 }
@@ -45,20 +45,26 @@ namespace orderTest
             MessageBox.Show("додано!",listTXT);
         }
 
-        private void fillEPSlist(BindingList<epsModel> eps)
-        {
-            ListViewItem epsListItem = new ListViewItem(markEPS.Text);
-            epsList.Items.Add(epsListItem);
-        }
-
         private void addToOrderButton_Click(object sender, EventArgs e)
         {
+            if (EpsList.Count > 0)
+            {
+                foreach (var item in EpsList)
+                {
+                    //MessageBox.Show(item.Mark);
+
+                }
+            }
+            epsModel addEPS = new epsModel();
+            //addEPS += (',' + amountEPS.Text + ',' + packEPS.Text);
+            EpsList.Add(new epsModel { Mark = markEPS.Text, Thikness = int.Parse(thikEPS.Text), Amount = double.Parse(amountEPS.Text), Pack = int.Parse(packEPS.Text) });
+
             epsList.Visible = true;
             ListViewItem epsListItem = new ListViewItem(markEPS.Text);
+            ListViewItem epsListVeiwSubItem = new ListViewItem(thikEPS.Text);
+            epsListItem.SubItems.Add(epsListVeiwSubItem.Text);
             epsList.Items.Add(epsListItem);
 
-            addEPS += (',' + amountEPS.Text + ',' + packEPS.Text);
-            ppList.Add(addEPS);
 
             //showList();
             markEPS.SelectedIndex = 0;
@@ -70,17 +76,17 @@ namespace orderTest
         {
             MessageBox.Show(downToFile.Text);
 
-            File.AppendAllText(path, "123\n");
+            //File.AppendAllText(path, addEPS + "\n");
         }
 
         private void markEPS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            addEPS = markEPS.SelectedItem.ToString();
+            //addEPS = markEPS.SelectedItem.ToString();
         }
 
         private void thikEPS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            addEPS += (',' + thikEPS.SelectedItem.ToString());
+            //addEPS += (',' + thikEPS.SelectedItem.ToString());
         }
     }
 }

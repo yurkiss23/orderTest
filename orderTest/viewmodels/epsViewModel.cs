@@ -30,7 +30,7 @@ namespace orderTest.viewmodels
         {
             Eps = new()
             {
-                new epsModel{Mark = "test", Thikness = 0, Amount = 0.0, Pack = 0}
+                new epsModel {Mark = "test", Thikness = 0, Amount = 0.0, Pack = 0}
             };
             AddEPS = new MainCommand(_ =>
             {

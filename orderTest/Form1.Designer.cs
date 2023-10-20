@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "mark",
+            "1",
+            "2",
+            "3",
+            "4"}, -1);
             this.orderLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.downToFile = new System.Windows.Forms.Button();
@@ -37,6 +43,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.epsList = new System.Windows.Forms.ListView();
             this.addToOrderButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,7 +54,11 @@
             this.markEPS = new System.Windows.Forms.ComboBox();
             this.amountEPS = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.epsList = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -186,6 +197,26 @@
             this.splitContainer2.Size = new System.Drawing.Size(754, 520);
             this.splitContainer2.SplitterDistance = 115;
             this.splitContainer2.TabIndex = 3;
+            // 
+            // epsList
+            // 
+            this.epsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.epsList.GridLines = true;
+            this.epsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.epsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.epsList.Location = new System.Drawing.Point(6, 200);
+            this.epsList.Name = "epsList";
+            this.epsList.Size = new System.Drawing.Size(742, 145);
+            this.epsList.TabIndex = 3;
+            this.epsList.UseCompatibleStateImageBehavior = false;
+            this.epsList.View = System.Windows.Forms.View.Details;
+            this.epsList.Visible = false;
             // 
             // addToOrderButton
             // 
@@ -328,17 +359,25 @@
             this.label1.Text = "марка";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // epsList
+            // columnHeader1
             // 
-            this.epsList.GridLines = true;
-            this.epsList.HideSelection = false;
-            this.epsList.Location = new System.Drawing.Point(6, 300);
-            this.epsList.Name = "epsList";
-            this.epsList.Size = new System.Drawing.Size(742, 60);
-            this.epsList.TabIndex = 3;
-            this.epsList.UseCompatibleStateImageBehavior = false;
-            this.epsList.View = System.Windows.Forms.View.SmallIcon;
-            this.epsList.Visible = false;
+            this.columnHeader1.Text = "";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "";
             // 
             // Form1
             // 
@@ -387,6 +426,11 @@
         private System.Windows.Forms.Button addToOrderButton;
         private System.Windows.Forms.Button downToFile;
         private System.Windows.Forms.ListView epsList;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
 
