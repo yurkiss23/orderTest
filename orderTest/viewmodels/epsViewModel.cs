@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Linq;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace orderTest.viewmodels
 {
-    internal class epsViewModel
+    internal class epsViewModel:INotifyPropertyChanged
     {
         string mark = "";
         int thikness;
@@ -20,16 +21,16 @@ namespace orderTest.viewmodels
 
         public ICommand AddEPS { get; set; }
         public BindingList<epsModel> Eps { get; }
-        public string Mark { get => mark; set => mark = value; }
-        public int Thikness { get => thikness; set => thikness = value; }
-        public double Amount { get => amount; set => amount = value; }
-        public int Pack { get => pack; set => pack = value; }
+        public string Mark { get => mark; set { if (mark != value) { mark = value; OnPropertyChanged(); } } }
+        public int Thikness { get => thikness; set { if (thikness != value) { thikness = value; OnPropertyChanged(); } } }
+        public double Amount { get => amount; set { if (amount != value) { amount = value; OnPropertyChanged(); } } }
+        public int Pack { get => pack; set { if (pack != value) { pack = value; OnPropertyChanged(); } } }
         //public List<epsModel> EPSList { get; }
         public epsViewModel()
         {
-            Eps = new BindingList<epsModel>()
+            Eps = new()
             {
-                new epsModel{Mark = "eps 30", Thikness = 2, Amount = 12.2, Pack = 45}
+                new epsModel{Mark = "test", Thikness = 0, Amount = 0.0, Pack = 0}
             };
             AddEPS = new MainCommand(_ =>
             {
@@ -38,7 +39,10 @@ namespace orderTest.viewmodels
             });
         }
 
-        //public event PropertyChangedEventHandler PropertyChanged;
-        //public void OnPropertyChanged()
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
     }
 }

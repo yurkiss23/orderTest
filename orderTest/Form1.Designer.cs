@@ -30,6 +30,7 @@
         {
             this.orderLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.downToFile = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -41,12 +42,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.packAmountPPtext = new System.Windows.Forms.TextBox();
-            this.thinkPPcb = new System.Windows.Forms.ComboBox();
-            this.markPPcb = new System.Windows.Forms.ComboBox();
-            this.amountPPtext = new System.Windows.Forms.TextBox();
+            this.packEPS = new System.Windows.Forms.TextBox();
+            this.thikEPS = new System.Windows.Forms.ComboBox();
+            this.markEPS = new System.Windows.Forms.ComboBox();
+            this.amountEPS = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.downToFile = new System.Windows.Forms.Button();
+            this.epsList = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -68,7 +69,7 @@
             this.orderLabel.Location = new System.Drawing.Point(0, 0);
             this.orderLabel.Name = "orderLabel";
             this.orderLabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.orderLabel.Size = new System.Drawing.Size(760, 67);
+            this.orderLabel.Size = new System.Drawing.Size(760, 60);
             this.orderLabel.TabIndex = 1;
             this.orderLabel.Text = "замовлення";
             this.orderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -78,12 +79,24 @@
             this.groupBox1.Controls.Add(this.downToFile);
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 6);
+            this.groupBox1.Location = new System.Drawing.Point(3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(754, 103);
+            this.groupBox1.Size = new System.Drawing.Size(751, 100);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "заповнення";
+            // 
+            // downToFile
+            // 
+            this.downToFile.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.downToFile.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.downToFile.Location = new System.Drawing.Point(526, 32);
+            this.downToFile.Name = "downToFile";
+            this.downToFile.Size = new System.Drawing.Size(219, 63);
+            this.downToFile.TabIndex = 4;
+            this.downToFile.Text = "вивантажити";
+            this.downToFile.UseVisualStyleBackColor = true;
+            this.downToFile.Click += new System.EventHandler(this.downToFile_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -151,8 +164,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(760, 537);
-            this.splitContainer1.SplitterDistance = 67;
+            this.splitContainer1.Size = new System.Drawing.Size(760, 620);
+            this.splitContainer1.SplitterDistance = 60;
             this.splitContainer1.TabIndex = 3;
             // 
             // splitContainer2
@@ -167,19 +180,20 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.epsList);
             this.splitContainer2.Panel2.Controls.Add(this.addToOrderButton);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer2.Size = new System.Drawing.Size(754, 460);
-            this.splitContainer2.SplitterDistance = 108;
+            this.splitContainer2.Size = new System.Drawing.Size(754, 520);
+            this.splitContainer2.SplitterDistance = 115;
             this.splitContainer2.TabIndex = 3;
             // 
             // addToOrderButton
             // 
             this.addToOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.addToOrderButton.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addToOrderButton.Location = new System.Drawing.Point(181, 97);
+            this.addToOrderButton.Location = new System.Drawing.Point(181, 90);
             this.addToOrderButton.Name = "addToOrderButton";
-            this.addToOrderButton.Size = new System.Drawing.Size(406, 82);
+            this.addToOrderButton.Size = new System.Drawing.Size(406, 70);
             this.addToOrderButton.TabIndex = 2;
             this.addToOrderButton.Text = "додати в замовлення";
             this.addToOrderButton.UseVisualStyleBackColor = true;
@@ -195,17 +209,17 @@
             this.tableLayoutPanel2.Controls.Add(this.label4, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.packAmountPPtext, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.thinkPPcb, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.markPPcb, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.amountPPtext, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.packEPS, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.thikEPS, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.markEPS, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.amountEPS, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(748, 88);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(748, 76);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label4
@@ -215,7 +229,7 @@
             this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(638, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 35);
+            this.label4.Size = new System.Drawing.Size(107, 30);
             this.label4.TabIndex = 7;
             this.label4.Text = "упаковок";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -227,7 +241,7 @@
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(526, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 35);
+            this.label3.Size = new System.Drawing.Size(106, 30);
             this.label3.TabIndex = 6;
             this.label3.Text = "кількість";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -239,27 +253,27 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(377, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 35);
+            this.label2.Size = new System.Drawing.Size(143, 30);
             this.label2.TabIndex = 5;
             this.label2.Text = "товщина";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // packAmountPPtext
+            // packEPS
             // 
-            this.packAmountPPtext.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.packAmountPPtext.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.packAmountPPtext.Location = new System.Drawing.Point(638, 38);
-            this.packAmountPPtext.Name = "packAmountPPtext";
-            this.packAmountPPtext.Size = new System.Drawing.Size(107, 31);
-            this.packAmountPPtext.TabIndex = 3;
+            this.packEPS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.packEPS.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.packEPS.Location = new System.Drawing.Point(638, 33);
+            this.packEPS.Name = "packEPS";
+            this.packEPS.Size = new System.Drawing.Size(107, 31);
+            this.packEPS.TabIndex = 3;
             // 
-            // thinkPPcb
+            // thikEPS
             // 
-            this.thinkPPcb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thinkPPcb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.thinkPPcb.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.thinkPPcb.FormattingEnabled = true;
-            this.thinkPPcb.Items.AddRange(new object[] {
+            this.thikEPS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thikEPS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.thikEPS.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.thikEPS.FormattingEnabled = true;
+            this.thikEPS.Items.AddRange(new object[] {
             "",
             "1",
             "2",
@@ -269,38 +283,38 @@
             "8",
             "10",
             "12"});
-            this.thinkPPcb.Location = new System.Drawing.Point(377, 38);
-            this.thinkPPcb.Name = "thinkPPcb";
-            this.thinkPPcb.Size = new System.Drawing.Size(143, 31);
-            this.thinkPPcb.TabIndex = 1;
-            this.thinkPPcb.SelectedIndexChanged += new System.EventHandler(this.thinkPPcb_SelectedIndexChanged);
+            this.thikEPS.Location = new System.Drawing.Point(377, 33);
+            this.thikEPS.Name = "thikEPS";
+            this.thikEPS.Size = new System.Drawing.Size(143, 31);
+            this.thikEPS.TabIndex = 1;
+            this.thikEPS.SelectedIndexChanged += new System.EventHandler(this.thikEPS_SelectedIndexChanged);
             // 
-            // markPPcb
+            // markEPS
             // 
-            this.markPPcb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.markPPcb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.markPPcb.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.markPPcb.FormattingEnabled = true;
-            this.markPPcb.Items.AddRange(new object[] {
+            this.markEPS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.markEPS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.markEPS.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.markEPS.FormattingEnabled = true;
+            this.markEPS.Items.AddRange(new object[] {
             "",
             "eps s",
             "eps 30",
             "eps 50",
             "eps 60"});
-            this.markPPcb.Location = new System.Drawing.Point(3, 38);
-            this.markPPcb.Name = "markPPcb";
-            this.markPPcb.Size = new System.Drawing.Size(368, 31);
-            this.markPPcb.TabIndex = 0;
-            this.markPPcb.SelectedIndexChanged += new System.EventHandler(this.markPPcb_SelectedIndexChanged);
+            this.markEPS.Location = new System.Drawing.Point(3, 33);
+            this.markEPS.Name = "markEPS";
+            this.markEPS.Size = new System.Drawing.Size(368, 31);
+            this.markEPS.TabIndex = 0;
+            this.markEPS.SelectedIndexChanged += new System.EventHandler(this.markEPS_SelectedIndexChanged);
             // 
-            // amountPPtext
+            // amountEPS
             // 
-            this.amountPPtext.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.amountPPtext.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.amountPPtext.Location = new System.Drawing.Point(526, 38);
-            this.amountPPtext.Name = "amountPPtext";
-            this.amountPPtext.Size = new System.Drawing.Size(106, 31);
-            this.amountPPtext.TabIndex = 2;
+            this.amountEPS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.amountEPS.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.amountEPS.Location = new System.Drawing.Point(526, 33);
+            this.amountEPS.Name = "amountEPS";
+            this.amountEPS.Size = new System.Drawing.Size(106, 31);
+            this.amountEPS.TabIndex = 2;
             // 
             // label1
             // 
@@ -309,33 +323,30 @@
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(368, 35);
+            this.label1.Size = new System.Drawing.Size(368, 30);
             this.label1.TabIndex = 4;
             this.label1.Text = "марка";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // downToFile
+            // epsList
             // 
-            this.downToFile.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.downToFile.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.downToFile.Location = new System.Drawing.Point(526, 32);
-            this.downToFile.Name = "downToFile";
-            this.downToFile.Size = new System.Drawing.Size(219, 63);
-            this.downToFile.TabIndex = 4;
-            this.downToFile.Text = "вивантажити";
-            this.downToFile.UseVisualStyleBackColor = true;
-            this.downToFile.Click += new System.EventHandler(this.downToFile_Click);
+            this.epsList.HideSelection = false;
+            this.epsList.Location = new System.Drawing.Point(6, 166);
+            this.epsList.Name = "epsList";
+            this.epsList.Size = new System.Drawing.Size(742, 60);
+            this.epsList.TabIndex = 3;
+            this.epsList.UseCompatibleStateImageBehavior = false;
+            this.epsList.View = System.Windows.Forms.View.Details;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(784, 661);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "test";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -363,16 +374,17 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.ComboBox markPPcb;
-        private System.Windows.Forms.TextBox packAmountPPtext;
-        private System.Windows.Forms.ComboBox thinkPPcb;
-        private System.Windows.Forms.TextBox amountPPtext;
+        private System.Windows.Forms.ComboBox markEPS;
+        private System.Windows.Forms.TextBox packEPS;
+        private System.Windows.Forms.ComboBox thikEPS;
+        private System.Windows.Forms.TextBox amountEPS;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addToOrderButton;
         private System.Windows.Forms.Button downToFile;
+        private System.Windows.Forms.ListView epsList;
     }
 }
 
