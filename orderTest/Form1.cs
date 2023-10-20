@@ -1,4 +1,5 @@
-﻿using System;
+﻿using orderTest.viewmodels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,13 @@ namespace orderTest
         public Form1()
         {
             InitializeComponent();
+
+            epsViewModel DataContext = new epsViewModel();
+            markPPcb.DataBindings.Add(new Binding("Text", DataContext, "Mark", true));
+            thinkPPcb.DataBindings.Add(new Binding("Text", DataContext, "Thikness", true));
+            amountPPtext.DataBindings.Add(new Binding("Text", DataContext, "Amount", true));
+            packAmountPPtext.DataBindings.Add(new Binding("Text", DataContext, "Pack", true));
+            addToOrderButton.DataBindings.Add(new Binding("Command", DataContext, "AddEPS", true));
         }
 
         private void Form1_Load(object sender, EventArgs e)
