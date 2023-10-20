@@ -175,6 +175,7 @@
             // 
             // addToOrderButton
             // 
+            this.addToOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.addToOrderButton.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.addToOrderButton.Location = new System.Drawing.Point(181, 97);
             this.addToOrderButton.Name = "addToOrderButton";
@@ -315,6 +316,7 @@
             // 
             // downToFile
             // 
+            this.downToFile.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.downToFile.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.downToFile.Location = new System.Drawing.Point(526, 32);
             this.downToFile.Name = "downToFile";
