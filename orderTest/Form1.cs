@@ -24,16 +24,11 @@ namespace orderTest
             InitializeComponent();
 
             epsViewModel DataContext = new epsViewModel();
-            markPPcb.DataBindings.Add(new Binding("Text", DataContext, "Mark", true));
-            thinkPPcb.DataBindings.Add(new Binding("Text", DataContext, "Thikness", true));
-            amountPPtext.DataBindings.Add(new Binding("Text", DataContext, "Amount", true));
-            packAmountPPtext.DataBindings.Add(new Binding("Text", DataContext, "Pack", true));
-            addToOrderButton.DataBindings.Add(new Binding("Command", DataContext, "AddEPS", true));
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //showList();
+            markEPS.DataBindings.Add(new Binding("Text", DataContext, "Mark", true));
+            thikEPS.DataBindings.Add(new Binding("Text", DataContext, "Thikness", true));
+            amountEPS.DataBindings.Add(new Binding("Text", DataContext, "Amount", true));
+            packEPS.DataBindings.Add(new Binding("Text", DataContext, "Pack", true));
+            //addB.DataBindings.Add(new Binding("Command", DataContext, "AddEPS", true));
         }
 
         private void showList()
@@ -51,13 +46,16 @@ namespace orderTest
 
         private void addToOrderButton_Click(object sender, EventArgs e)
         {
-            addEPS += (',' + amountPPtext.Text + ',' + packAmountPPtext.Text);
+            //TableLayoutPanel epsTable = new TableLayoutPanel();
+            addEPS += (',' + amountEPS.Text + ',' + packEPS.Text);
+            epsList.Items.Add(addEPS);
+
             ppList.Add(addEPS);
-            showList();
-            markPPcb.SelectedIndex = 0;
-            thinkPPcb.SelectedIndex = 0;
-            amountPPtext.Text = "";
-            packAmountPPtext.Text = "";
+            //showList();
+            markEPS.SelectedIndex = 0;
+            thikEPS.SelectedIndex = 0;
+            amountEPS.Text = "";
+            packEPS.Text = "";
         }
         private void downToFile_Click(object sender, EventArgs e)
         {
@@ -66,15 +64,14 @@ namespace orderTest
             File.AppendAllText(path, "123\n");
         }
 
-        private void markPPcb_SelectedIndexChanged(object sender, EventArgs e)
+        private void markEPS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            addEPS = markPPcb.SelectedItem.ToString();
+            addEPS = markEPS.SelectedItem.ToString();
         }
 
-        private void thinkPPcb_SelectedIndexChanged(object sender, EventArgs e)
+        private void thikEPS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            addEPS += (',' + thinkPPcb.SelectedItem.ToString());
+            addEPS += (',' + thikEPS.SelectedItem.ToString());
         }
-
     }
 }
