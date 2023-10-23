@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "mark",
-            "1",
-            "2",
-            "3",
-            "4"}, -1);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.orderLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.downToFile = new System.Windows.Forms.Button();
@@ -43,7 +38,6 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.epsList = new System.Windows.Forms.ListView();
             this.addToOrderButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,11 +48,11 @@
             this.markEPS = new System.Windows.Forms.ComboBox();
             this.amountEPS = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.epsData = new System.Windows.Forms.DataGridView();
+            this.mark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thikness = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pack = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -70,6 +64,7 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epsData)).BeginInit();
             this.SuspendLayout();
             // 
             // orderLabel
@@ -191,32 +186,12 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.epsList);
+            this.splitContainer2.Panel2.Controls.Add(this.epsData);
             this.splitContainer2.Panel2.Controls.Add(this.addToOrderButton);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer2.Size = new System.Drawing.Size(754, 520);
             this.splitContainer2.SplitterDistance = 115;
             this.splitContainer2.TabIndex = 3;
-            // 
-            // epsList
-            // 
-            this.epsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.epsList.GridLines = true;
-            this.epsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.epsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.epsList.Location = new System.Drawing.Point(6, 200);
-            this.epsList.Name = "epsList";
-            this.epsList.Size = new System.Drawing.Size(742, 145);
-            this.epsList.TabIndex = 3;
-            this.epsList.UseCompatibleStateImageBehavior = false;
-            this.epsList.View = System.Windows.Forms.View.Details;
-            this.epsList.Visible = false;
             // 
             // addToOrderButton
             // 
@@ -359,25 +334,56 @@
             this.label1.Text = "марка";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // columnHeader1
+            // epsData
             // 
-            this.columnHeader1.Text = "";
+            this.epsData.AllowUserToAddRows = false;
+            this.epsData.AllowUserToDeleteRows = false;
+            this.epsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.epsData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mark,
+            this.thikness,
+            this.amount,
+            this.pack});
+            this.epsData.Location = new System.Drawing.Point(6, 170);
+            this.epsData.Name = "epsData";
+            this.epsData.RowHeadersVisible = false;
+            this.epsData.RowHeadersWidth = 60;
+            this.epsData.Size = new System.Drawing.Size(742, 100);
+            this.epsData.TabIndex = 4;
             // 
-            // columnHeader2
+            // mark
             // 
-            this.columnHeader2.Text = "";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.mark.DefaultCellStyle = dataGridViewCellStyle1;
+            this.mark.FillWeight = 60F;
+            this.mark.HeaderText = "марка";
+            this.mark.MinimumWidth = 50;
+            this.mark.Name = "mark";
+            this.mark.Width = 60;
             // 
-            // columnHeader3
+            // thikness
             // 
-            this.columnHeader3.Text = "";
+            this.thikness.FillWeight = 60F;
+            this.thikness.HeaderText = "товщина";
+            this.thikness.MinimumWidth = 50;
+            this.thikness.Name = "thikness";
+            this.thikness.Width = 60;
             // 
-            // columnHeader4
+            // amount
             // 
-            this.columnHeader4.Text = "";
+            this.amount.FillWeight = 60F;
+            this.amount.HeaderText = "кількість";
+            this.amount.MinimumWidth = 50;
+            this.amount.Name = "amount";
+            this.amount.Width = 60;
             // 
-            // columnHeader5
+            // pack
             // 
-            this.columnHeader5.Text = "";
+            this.pack.FillWeight = 60F;
+            this.pack.HeaderText = "упаковок";
+            this.pack.MinimumWidth = 50;
+            this.pack.Name = "pack";
+            this.pack.Width = 60;
             // 
             // Form1
             // 
@@ -401,6 +407,7 @@
             this.splitContainer2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epsData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -425,12 +432,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addToOrderButton;
         private System.Windows.Forms.Button downToFile;
-        private System.Windows.Forms.ListView epsList;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.DataGridView epsData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thikness;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pack;
     }
 }
 
