@@ -12,6 +12,6 @@ namespace orderTest.models
         public int Thikness { get; set; }
         public double Amount { get; set; }
         public int Pack { get; set; }
-        public override string ToString() => Mark;
+        public override string ToString() => Mark + Thikness + Amount + Pack;
     }
 }

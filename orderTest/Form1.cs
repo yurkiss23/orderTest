@@ -18,18 +18,11 @@ namespace orderTest
     {
         private static List<epsModel> EpsList = new List<epsModel>();
         static private string path = @"e:\work\dev\orderUST\order.txt";
-        //private object? addEPS;
 
         public Form1()
         {
             InitializeComponent();
 
-            //epsViewModel DataContext = new epsViewModel();
-
-            //markEPS.DataBindings.Add(new Binding("Text", DataContext, "Mark", true));
-            //thikEPS.DataBindings.Add(new Binding("Text", DataContext, "Thikness", true));
-            //amountEPS.DataBindings.Add(new Binding("Text", DataContext, "Amount", true));
-            //packEPS.DataBindings.Add(new Binding("Text", DataContext, "Pack", true));
         }
 
         private void showList()
@@ -55,22 +48,19 @@ namespace orderTest
 
                 }
             }
-            epsModel addEPS = new epsModel();
-            //addEPS += (',' + amountEPS.Text + ',' + packEPS.Text);
+            
+            //додаємо eps в замовлення
             EpsList.Add(new epsModel { Mark = markEPS.Text, Thikness = int.Parse(thikEPS.Text), Amount = double.Parse(amountEPS.Text), Pack = int.Parse(packEPS.Text) });
 
-            epsList.Visible = true;
-            ListViewItem epsListItem = new ListViewItem(markEPS.Text);
-            ListViewItem epsListVeiwSubItem = new ListViewItem(thikEPS.Text);
-            epsListItem.SubItems.Add(epsListVeiwSubItem.Text);
-            epsList.Items.Add(epsListItem);
+            //додаємо рядок в таблицю на формі
+            string[] addEPS = { markEPS.Text, thikEPS.Text, amountEPS.Text, packEPS.Text };
+            epsData.Rows.Add(addEPS);
 
-
-            //showList();
+            //очищаэмо поля вибору і введення
             markEPS.SelectedIndex = 0;
             thikEPS.SelectedIndex = 0;
-            amountEPS.Text = "";
-            packEPS.Text = "";
+            amountEPS.Clear();
+            packEPS.Clear();
         }
         private void downToFile_Click(object sender, EventArgs e)
         {
