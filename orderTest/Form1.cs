@@ -57,11 +57,25 @@ namespace orderTest
             epsData.Rows.Add(addEPS);
 
             //очищаэмо поля вибору і введення
+            epsClear();
+        }
+
+        private void isMark(epsModel epsModel, string mark)
+        {
+            if (epsModel.Mark == mark)
+            {
+                
+            }
+        }
+
+        private void epsClear()
+        {
             markEPS.SelectedIndex = 0;
             thikEPS.SelectedIndex = 0;
             amountEPS.Clear();
             packEPS.Clear();
         }
+
         private void downToFile_Click(object sender, EventArgs e)
         {
             MessageBox.Show(downToFile.Text);
