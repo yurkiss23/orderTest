@@ -38,30 +38,71 @@ namespace orderTest
             MessageBox.Show("додано!",listTXT);
         }
 
-        private void addToOrderButton_Click(object sender, EventArgs e)
+        private bool isLast()
         {
             if (EpsList.Count > 0)
             {
-                foreach (var item in EpsList)
-                {
-                    //MessageBox.Show(item.Mark);
-
-                }
+                //MessageBox.Show(EpsList.Count.ToString());
+                return true;
             }
-            
+            return false;
+        }
+
+        private void addToOrderButton_Click(object sender, EventArgs e)
+        {
+            //новий рядок
+            //if (amountEPS.Text.Count() == 0)
+            //{
+            //    amountEPS.AppendText((int.Parse(packEPS.Text) * .3).ToString());
+            //}
+            string[] addEPS = { markEPS.Text, thikEPS.Text, amountEPS.Text, packEPS.Text };
+
+            //перевірка: заповненість, чи є вже дані в списку, чи збігається марку
+            //isFill(), isLast(), iaMark()
+            if (isLast())
+            {
+                if (EpsList.Last().Mark.Equals(markEPS.Text))
+                {
+                    addEPS[0] = "";
+                }
+                
+            }
+
+            //додаємо рядок в таблицю на формі
+            epsData.Rows.Add(addEPS);
+            epsData.Visible = true;
+
             //додаємо eps в замовлення
             EpsList.Add(new epsModel { Mark = markEPS.Text, Thikness = int.Parse(thikEPS.Text), Amount = double.Parse(amountEPS.Text), Pack = int.Parse(packEPS.Text) });
 
-            //додаємо рядок в таблицю на формі
-            string[] addEPS = { markEPS.Text, thikEPS.Text, amountEPS.Text, packEPS.Text };
-            epsData.Rows.Add(addEPS);
-
             //очищаэмо поля вибору і введення
+            epsClear();
+        }
+
+        private void isMark(epsModel epsModel, string mark)
+        {
+            if (epsModel.Mark == mark)
+            {
+                
+            }
+        }
+
+        private void epsClear()
+        {
             markEPS.SelectedIndex = 0;
             thikEPS.SelectedIndex = 0;
             amountEPS.Clear();
             packEPS.Clear();
         }
+
+        private void calcAmount()
+        {
+            if (amountEPS.Text.Count() == 0)
+            {
+                amountEPS.AppendText((int.Parse(packEPS.Text) * .3).ToString());
+            }
+        }
+
         private void downToFile_Click(object sender, EventArgs e)
         {
             MessageBox.Show(downToFile.Text);
@@ -77,6 +118,21 @@ namespace orderTest
         private void thikEPS_SelectedIndexChanged(object sender, EventArgs e)
         {
             //addEPS += (',' + thikEPS.SelectedItem.ToString());
+        }
+
+        private void packEPS_Click(object sender, EventArgs e)
+        {
+            calcAmount();
+        }
+
+        //private void packEPS_Enter(object sender, EventArgs e)
+        //{
+            
+        //}
+
+        private void amountEPS_MouseClick(object sender, MouseEventArgs e)
+        {
+            calcAmount();
         }
     }
 }
