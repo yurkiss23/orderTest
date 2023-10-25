@@ -23,8 +23,24 @@ namespace orderTest
         {
             InitializeComponent();
 
+            //реквізити
+
+            //eps
             markEPS.SelectedIndex = 0;
             thikEPS.SelectedIndex = 0;
+
+            //додаткові
+        }
+
+        private void panelEnVis(Panel[] panels)
+        {
+            int i = 0;
+            do {
+                panels[i].Visible = false;
+                panels[i].Enabled = false; i++;
+            } while (i < panels.Length - 1);
+            panels[i].Enabled = true;
+            panels[i].Visible = true;
         }
 
         private bool isLast()
@@ -115,6 +131,24 @@ namespace orderTest
             amountEPS.Enabled = true;
             amountEPS.AppendText((int.Parse(packEPS.Text) * .3).ToString());
             addToOrderButton.Enabled = true;
+        }
+
+        private void radioButton1_Enter(object sender, EventArgs e)
+        {
+            Panel[] panels = { epsPanel, addPanel, headerPanel };
+            panelEnVis(panels);
+        }
+
+        private void radioButton2_Enter(object sender, EventArgs e)
+        {
+            Panel[] panels = { headerPanel, addPanel, epsPanel };
+            panelEnVis(panels);
+        }
+
+        private void radioButton3_Enter(object sender, EventArgs e)
+        {
+            Panel[] panels = { headerPanel, epsPanel, addPanel };
+            panelEnVis(panels);
         }
     }
 }
