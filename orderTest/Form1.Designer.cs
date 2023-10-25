@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.orderLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.downToFile = new System.Windows.Forms.Button();
@@ -226,8 +226,8 @@
             // 
             // mark
             // 
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.mark.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.mark.DefaultCellStyle = dataGridViewCellStyle17;
             this.mark.DividerWidth = 1;
             this.mark.FillWeight = 50F;
             this.mark.HeaderText = "марка";
@@ -239,8 +239,8 @@
             // 
             // thikness
             // 
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.thikness.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.thikness.DefaultCellStyle = dataGridViewCellStyle18;
             this.thikness.DividerWidth = 1;
             this.thikness.FillWeight = 50F;
             this.thikness.HeaderText = "товщина";
@@ -252,8 +252,8 @@
             // 
             // amount
             // 
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.amount.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.amount.DefaultCellStyle = dataGridViewCellStyle19;
             this.amount.DividerWidth = 1;
             this.amount.FillWeight = 50F;
             this.amount.HeaderText = "кількість";
@@ -265,8 +265,8 @@
             // 
             // pack
             // 
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.pack.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.pack.DefaultCellStyle = dataGridViewCellStyle20;
             this.pack.DividerWidth = 1;
             this.pack.FillWeight = 50F;
             this.pack.HeaderText = "упаковок";
@@ -278,6 +278,7 @@
             // 
             // addToOrderButton
             // 
+            this.addToOrderButton.Enabled = false;
             this.addToOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.addToOrderButton.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.addToOrderButton.Location = new System.Drawing.Point(47, 85);
@@ -353,6 +354,7 @@
             // 
             this.packEPS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.packEPS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.packEPS.Enabled = false;
             this.packEPS.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.packEPS.Location = new System.Drawing.Point(638, 33);
             this.packEPS.Name = "packEPS";
@@ -364,6 +366,7 @@
             // 
             this.thikEPS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.thikEPS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.thikEPS.Enabled = false;
             this.thikEPS.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.thikEPS.FormattingEnabled = true;
             this.thikEPS.Items.AddRange(new object[] {
@@ -406,6 +409,7 @@
             this.amountEPS.BackColor = System.Drawing.SystemColors.ControlLight;
             this.amountEPS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.amountEPS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.amountEPS.Enabled = false;
             this.amountEPS.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.amountEPS.HideSelection = false;
             this.amountEPS.Location = new System.Drawing.Point(526, 33);
