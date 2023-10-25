@@ -51,6 +51,7 @@ namespace orderTest
         private void addToOrderButton_Click(object sender, EventArgs e)
         {
             //новий рядок
+            calcAmount();
             //if (amountEPS.Text.Count() == 0)
             //{
             //    amountEPS.AppendText((int.Parse(packEPS.Text) * .3).ToString());
@@ -120,17 +121,7 @@ namespace orderTest
             //addEPS += (',' + thikEPS.SelectedItem.ToString());
         }
 
-        private void packEPS_Click(object sender, EventArgs e)
-        {
-            calcAmount();
-        }
-
-        //private void packEPS_Enter(object sender, EventArgs e)
-        //{
-            
-        //}
-
-        private void amountEPS_MouseClick(object sender, MouseEventArgs e)
+        private void packEPS_Leave(object sender, EventArgs e)
         {
             calcAmount();
         }
