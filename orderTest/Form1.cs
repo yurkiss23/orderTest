@@ -1,5 +1,6 @@
 ﻿using orderTest.models;
-using orderTest.viewmodels;
+using orderTest.panels;
+//using orderTest.viewmodels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -137,18 +138,24 @@ namespace orderTest
         {
             Panel[] panels = { epsPanel, addPanel, headerPanel };
             panelEnVis(panels);
+
+            HeaderPanel.Header();
         }
 
         private void radioButton2_Enter(object sender, EventArgs e)
         {
             Panel[] panels = { headerPanel, addPanel, epsPanel };
             panelEnVis(panels);
+
+            EpsPanel.EPS();
         }
 
         private void radioButton3_Enter(object sender, EventArgs e)
         {
             Panel[] panels = { headerPanel, epsPanel, addPanel };
             panelEnVis(panels);
+
+            AddictPanel.Addict();
         }
     }
 }
