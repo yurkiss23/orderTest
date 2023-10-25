@@ -23,19 +23,8 @@ namespace orderTest
         {
             InitializeComponent();
 
-        }
-
-        private void showList()
-        {
-            string listTXT = "";
-            if (EpsList.Count > 0)
-            {
-                foreach (var item in EpsList)
-                {
-                    listTXT += (item.ToString() + ';');
-                }
-            }
-            MessageBox.Show("додано!",listTXT);
+            markEPS.SelectedIndex = 0;
+            thikEPS.SelectedIndex = 0;
         }
 
         private bool isLast()
@@ -52,10 +41,6 @@ namespace orderTest
         {
             //новий рядок
             calcAmount();
-            //if (amountEPS.Text.Count() == 0)
-            //{
-            //    amountEPS.AppendText((int.Parse(packEPS.Text) * .3).ToString());
-            //}
             string[] addEPS = { markEPS.Text, thikEPS.Text, amountEPS.Text, packEPS.Text };
 
             //перевірка: заповненість, чи є вже дані в списку, чи збігається марку

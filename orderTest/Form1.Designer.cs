@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
             this.orderLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.downToFile = new System.Windows.Forms.Button();
@@ -192,8 +192,8 @@
             this.splitContainer2.Panel2.Controls.Add(this.epsData);
             this.splitContainer2.Panel2.Controls.Add(this.addToOrderButton);
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer2.Size = new System.Drawing.Size(754, 520);
-            this.splitContainer2.SplitterDistance = 115;
+            this.splitContainer2.Size = new System.Drawing.Size(754, 540);
+            this.splitContainer2.SplitterDistance = 119;
             this.splitContainer2.TabIndex = 3;
             // 
             // epsData
@@ -202,6 +202,7 @@
             this.epsData.AllowUserToDeleteRows = false;
             this.epsData.AllowUserToResizeColumns = false;
             this.epsData.AllowUserToResizeRows = false;
+            this.epsData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.epsData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.epsData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.epsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -219,14 +220,14 @@
             this.epsData.RowTemplate.ReadOnly = true;
             this.epsData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.epsData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.epsData.Size = new System.Drawing.Size(242, 300);
+            this.epsData.Size = new System.Drawing.Size(242, 320);
             this.epsData.TabIndex = 4;
             this.epsData.Visible = false;
             // 
             // mark
             // 
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.mark.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.mark.DefaultCellStyle = dataGridViewCellStyle49;
             this.mark.DividerWidth = 1;
             this.mark.FillWeight = 50F;
             this.mark.HeaderText = "марка";
@@ -238,8 +239,8 @@
             // 
             // thikness
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.thikness.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.thikness.DefaultCellStyle = dataGridViewCellStyle50;
             this.thikness.DividerWidth = 1;
             this.thikness.FillWeight = 50F;
             this.thikness.HeaderText = "товщина";
@@ -251,8 +252,8 @@
             // 
             // amount
             // 
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.amount.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.amount.DefaultCellStyle = dataGridViewCellStyle51;
             this.amount.DividerWidth = 1;
             this.amount.FillWeight = 50F;
             this.amount.HeaderText = "кількість";
@@ -264,8 +265,8 @@
             // 
             // pack
             // 
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.pack.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.pack.DefaultCellStyle = dataGridViewCellStyle52;
             this.pack.DividerWidth = 1;
             this.pack.FillWeight = 50F;
             this.pack.HeaderText = "упаковок";
@@ -338,6 +339,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(377, 0);
             this.label2.Name = "label2";
@@ -345,6 +347,7 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "товщина";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Visible = false;
             // 
             // packEPS
             // 
@@ -364,7 +367,7 @@
             this.thikEPS.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.thikEPS.FormattingEnabled = true;
             this.thikEPS.Items.AddRange(new object[] {
-            "",
+            "---товщина---",
             "1",
             "2",
             "3",
@@ -386,7 +389,7 @@
             this.markEPS.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.markEPS.FormattingEnabled = true;
             this.markEPS.Items.AddRange(new object[] {
-            "",
+            "---марка---",
             "eps s",
             "eps 30",
             "eps 50",
@@ -395,6 +398,7 @@
             this.markEPS.Name = "markEPS";
             this.markEPS.Size = new System.Drawing.Size(368, 31);
             this.markEPS.TabIndex = 0;
+            this.markEPS.Tag = "";
             this.markEPS.SelectedIndexChanged += new System.EventHandler(this.markEPS_SelectedIndexChanged);
             // 
             // amountEPS
@@ -414,6 +418,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
@@ -421,6 +426,7 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "марка";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Visible = false;
             // 
             // Form1
             // 
