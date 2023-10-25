@@ -23,50 +23,36 @@ namespace orderTest
         {
             InitializeComponent();
 
-        }
-
-        private void showList()
-        {
-            string listTXT = "";
-            if (EpsList.Count > 0)
-            {
-                foreach (var item in EpsList)
-                {
-                    listTXT += (item.ToString() + ';');
-                }
-            }
-            MessageBox.Show("додано!",listTXT);
+            markEPS.SelectedIndex = 0;
+            thikEPS.SelectedIndex = 0;
         }
 
         private bool isLast()
         {
             if (EpsList.Count > 0)
             {
-                //MessageBox.Show(EpsList.Count.ToString());
                 return true;
             }
             return false;
         }
 
+        private void isMark(string[] row)
+        {
+            if (EpsList.Last().Mark.Equals(markEPS.Text))
+            {
+                row[0] = "";
+            }
+        }
+
         private void addToOrderButton_Click(object sender, EventArgs e)
         {
             //новий рядок
-            calcAmount();
-            //if (amountEPS.Text.Count() == 0)
-            //{
-            //    amountEPS.AppendText((int.Parse(packEPS.Text) * .3).ToString());
-            //}
             string[] addEPS = { markEPS.Text, thikEPS.Text, amountEPS.Text, packEPS.Text };
 
-            //перевірка: заповненість, чи є вже дані в списку, чи збігається марку
-            //isFill(), isLast(), iaMark()
+            //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
             if (isLast())
             {
-                if (EpsList.Last().Mark.Equals(markEPS.Text))
-                {
-                    addEPS[0] = "";
-                }
-                
+                isMark(addEPS);
             }
 
             //додаємо рядок в таблицю на формі
@@ -80,28 +66,17 @@ namespace orderTest
             epsClear();
         }
 
-        private void isMark(epsModel epsModel, string mark)
-        {
-            if (epsModel.Mark == mark)
-            {
-                
-            }
-        }
-
         private void epsClear()
         {
             markEPS.SelectedIndex = 0;
             thikEPS.SelectedIndex = 0;
+            thikEPS.Enabled = false;
             amountEPS.Clear();
+            amountEPS.Enabled = false;
             packEPS.Clear();
-        }
+            packEPS.Enabled = false;
 
-        private void calcAmount()
-        {
-            if (amountEPS.Text.Count() == 0)
-            {
-                amountEPS.AppendText((int.Parse(packEPS.Text) * .3).ToString());
-            }
+            addToOrderButton.Enabled = false;
         }
 
         private void downToFile_Click(object sender, EventArgs e)
@@ -113,17 +88,33 @@ namespace orderTest
 
         private void markEPS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //addEPS = markEPS.SelectedItem.ToString();
+            if (markEPS.SelectedIndex != 0)
+            {
+                thikEPS.Enabled = true;
+            }
+            else
+            {
+                thikEPS.Enabled=false;
+            }
         }
 
         private void thikEPS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //addEPS += (',' + thikEPS.SelectedItem.ToString());
+            if (thikEPS.SelectedIndex != 0)
+            {
+                packEPS.Enabled = true;
+            }
+            else
+            {
+                packEPS.Enabled=false;
+            }
         }
 
         private void packEPS_Leave(object sender, EventArgs e)
         {
-            calcAmount();
+            amountEPS.Enabled = true;
+            amountEPS.AppendText((int.Parse(packEPS.Text) * .3).ToString());
+            addToOrderButton.Enabled = true;
         }
     }
 }
