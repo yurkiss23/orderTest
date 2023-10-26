@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace orderTest.panels
+namespace orderTest
 {
-    internal class AddictPanel
+    public partial class Form1 : Form
     {
-        public static void Addict()
+        private void Addict()
         {
-            MessageBox.Show("789");
+            //MessageBox.Show("789");
         }
     }
 }

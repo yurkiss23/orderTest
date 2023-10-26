@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace orderTest.panels
+namespace orderTest
 {
-    internal class HeaderPanel
+    public partial class Form1 : Form
     {
-        public static void Header()
+        private void Header()
         {
-            MessageBox.Show("123");
+            //MessageBox.Show("123");
         }
     }
 }
