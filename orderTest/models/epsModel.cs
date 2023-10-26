@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace orderTest.models
 {
@@ -12,6 +13,6 @@ namespace orderTest.models
         public int Thikness { get; set; }
         public double Amount { get; set; }
         public int Pack { get; set; }
-        public override string ToString() => Mark + Thikness + Amount + Pack;
+        public override string ToString() { return Mark + ", " + Thikness + ", " + Amount + ", " + Pack; }
     }
 }

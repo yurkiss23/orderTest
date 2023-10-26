@@ -26,8 +26,6 @@ namespace orderTest
         {
             Panel[] panels = { epsPanel, addPanel, headerPanel };
             panelEnVis(panels);
-
-            Header();
         }
 
         private void radioButton2_Enter(object sender, EventArgs e)
@@ -40,8 +38,6 @@ namespace orderTest
         {
             Panel[] panels = { headerPanel, epsPanel, addPanel };
             panelEnVis(panels);
-
-            Addict();
         }
     }
 }

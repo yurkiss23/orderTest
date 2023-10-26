@@ -40,6 +40,11 @@ namespace orderTest
             addToOrderButton.Enabled = false;
         }
 
+        private double div(string s)
+        {
+            if (s.Equals("8")) { return 0.32; }; return 0.3;
+        }
+
         private void markEPS_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (markEPS.SelectedIndex != 0)
@@ -56,18 +61,20 @@ namespace orderTest
         {
             if (thikEPS.SelectedIndex != 0)
             {
-                packEPS.Enabled = true;
+                //packEPS.Enabled = true;
+                amountEPS.Enabled = true;
             }
             else
             {
-                packEPS.Enabled = false;
+                //packEPS.Enabled = false;
+                amountEPS.Enabled = false;
             }
         }
 
-        private void packEPS_Leave(object sender, EventArgs e)
+        private void amountEPS_Leave(object sender, EventArgs e)
         {
-            amountEPS.Enabled = true;
-            amountEPS.AppendText((int.Parse(packEPS.Text) * .3).ToString());
+            packEPS.Enabled = true;
+            packEPS.Text = ((double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString());
             addToOrderButton.Enabled = true;
         }
 
