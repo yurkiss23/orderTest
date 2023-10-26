@@ -37,7 +37,7 @@ namespace orderTest
             packEPS.Clear();
             packEPS.Enabled = false;
 
-            addToOrderButton.Enabled = false;
+            addEpsToOrderButton.Enabled = false;
         }
 
         private double div(string s)
@@ -75,10 +75,10 @@ namespace orderTest
         {
             packEPS.Enabled = true;
             packEPS.Text = ((double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString());
-            addToOrderButton.Enabled = true;
+            addEpsToOrderButton.Enabled = true;
         }
 
-        private void addToOrderButton_Click(object sender, EventArgs e)
+        private void addEpsToOrderButton_Click(object sender, EventArgs e)
         {
             //новий рядок
             string[] addEPS = { markEPS.Text, thikEPS.Text, amountEPS.Text, packEPS.Text };

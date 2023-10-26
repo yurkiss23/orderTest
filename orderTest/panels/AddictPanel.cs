@@ -9,9 +9,9 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private void Addict()
+        private void addAddToOrderButton_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("789");
+            MessageBox.Show("addition");
         }
     }
 }
