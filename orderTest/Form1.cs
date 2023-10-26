@@ -16,6 +16,7 @@ namespace orderTest
     public partial class Form1 : Form
     {
         private static List<epsModel> EpsList = new List<epsModel>();
+
         static private string path = @"e:\work\dev\orderUST\order.txt";
 
         public Form1()
