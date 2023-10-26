@@ -9,9 +9,9 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private void Header()
+        private void addHeadData_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("123");
+            MessageBox.Show("header");
         }
     }
 }
