@@ -45,12 +45,20 @@ namespace orderTest
             meterADD.SelectedIndex = 0;
         }
 
+        private bool isLast(int count)
+        {
+            if (count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void downToFile_Click(object sender, EventArgs e)
         {
             MessageBox.Show(downToFile.Text);
 
             //File.AppendAllText(path, addEPS + "\n");
         }
-
     }
 }

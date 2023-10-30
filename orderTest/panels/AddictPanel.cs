@@ -10,16 +10,51 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
+        private void addClear()
+        {
+            nameADD.SelectedIndex = 0;
+            meterADD.SelectedIndex = 0;
+            meterADD.Enabled = false;
+            amountADD.Clear();
+            amountADD.Enabled = false;
+
+            addAddToOrderButton.Enabled = false;
+        }
+
+        //private void selectMeter(string name)
+        //{
+        //    foreach (var item in nameADD.Items)
+        //    {
+        //        if (item.ToString().Equals(name))
+        //        {
+        //            meterADD.SelectedItem = item;
+        //            break;
+        //        }
+        //    }
+
+        //    //return meterADD.SelectedItem;
+        //}
+
         private void nameADD_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (nameADD.SelectedIndex != 0)
             {
                 meterADD.Enabled = true;
-                amountADD.Enabled = true;
             }
             else
             {
                 meterADD.Enabled = false;
+            }
+        }
+
+        private void meterADD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (meterADD.SelectedIndex != 0)
+            {
+                amountADD.Enabled = true;
+            }
+            else
+            {
                 amountADD.Enabled = false;
             }
         }
@@ -35,10 +70,10 @@ namespace orderTest
             string[] addADD = { nameADD.Text, meterADD.Text, amountADD.Text };
 
             //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
-            if (isLast())
-            {
-                isMark(addADD);
-            }
+            //if (isLast(AddList.Count))
+            //{
+            //    isMark(addADD);
+            //}
 
             //додаємо рядок в таблицю на формі
             addData.Rows.Add(addADD);
