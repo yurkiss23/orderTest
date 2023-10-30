@@ -10,15 +10,6 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private bool isLast()
-        {
-            if (EpsList.Count > 0)
-            {
-                return true;
-            }
-            return false;
-        }
-
         private void isMark(string[] row)
         {
             if (EpsList.Last().Mark.Equals(markEPS.Text))
@@ -82,7 +73,7 @@ namespace orderTest
             string[] addEPS = { markEPS.Text, thikEPS.Text, amountEPS.Text, packEPS.Text };
 
             //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
-            if (isLast())
+            if (isLast(EpsList.Count))
             {
                 isMark(addEPS);
             }
