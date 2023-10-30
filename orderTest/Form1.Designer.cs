@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.orderLabel = new System.Windows.Forms.Label();
             this.dataSelectionBox = new System.Windows.Forms.GroupBox();
             this.downToFile = new System.Windows.Forms.Button();
@@ -47,20 +48,14 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.addPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.nameADD = new System.Windows.Forms.ComboBox();
+            this.meterADD = new System.Windows.Forms.ComboBox();
+            this.amountADD = new System.Windows.Forms.TextBox();
             this.addAddToOrderButton = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addData = new System.Windows.Forms.DataGridView();
+            this.nmADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtrADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epsPanel = new System.Windows.Forms.Panel();
             this.selectEpsTable = new System.Windows.Forms.TableLayoutPanel();
             this.markEPS = new System.Windows.Forms.ComboBox();
@@ -98,7 +93,7 @@
             this.splitContainer2.SuspendLayout();
             this.addPanel.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addData)).BeginInit();
             this.epsPanel.SuspendLayout();
             this.selectEpsTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epsData)).BeginInit();
@@ -242,7 +237,7 @@
             // 
             this.addPanel.Controls.Add(this.tableLayoutPanel3);
             this.addPanel.Controls.Add(this.addAddToOrderButton);
-            this.addPanel.Controls.Add(this.dataGridView2);
+            this.addPanel.Controls.Add(this.addData);
             this.addPanel.Enabled = false;
             this.addPanel.Location = new System.Drawing.Point(0, 320);
             this.addPanel.Name = "addPanel";
@@ -252,153 +247,80 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel3.Controls.Add(this.label9, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label10, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label11, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox3, 3, 1);
-            this.tableLayoutPanel3.Controls.Add(this.comboBox3, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.comboBox4, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.textBox4, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.nameADD, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.meterADD, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.amountADD, 2, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(748, 76);
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(750, 50);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // label9
+            // nameADD
             // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(638, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 30);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "упаковок";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nameADD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameADD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.nameADD.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameADD.FormattingEnabled = true;
+            this.nameADD.Items.AddRange(new object[] {
+            "---назва---",
+            "клей Століт М",
+            "склосітка Століт 90 зелена",
+            "грунт  маскувальний  Століт 15кг",
+            "грунт глибокопроникний 10 л",
+            "кутник з сіткою пластиковий 3м"});
+            this.nameADD.Location = new System.Drawing.Point(3, 3);
+            this.nameADD.Name = "nameADD";
+            this.nameADD.Size = new System.Drawing.Size(444, 31);
+            this.nameADD.TabIndex = 0;
+            this.nameADD.Tag = "";
+            this.nameADD.SelectedIndexChanged += new System.EventHandler(this.nameADD_SelectedIndexChanged);
             // 
-            // label10
+            // meterADD
             // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(526, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 30);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "кількість";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.meterADD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.meterADD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.meterADD.Enabled = false;
+            this.meterADD.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.meterADD.FormattingEnabled = true;
+            this.meterADD.Items.AddRange(new object[] {
+            "---од.вим.---",
+            "шт",
+            "мішок",
+            "відро",
+            "каністра",
+            "рулон",
+            "м2"});
+            this.meterADD.Location = new System.Drawing.Point(453, 3);
+            this.meterADD.Name = "meterADD";
+            this.meterADD.Size = new System.Drawing.Size(144, 31);
+            this.meterADD.TabIndex = 1;
             // 
-            // label11
+            // amountADD
             // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Enabled = false;
-            this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(377, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(143, 30);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "товщина";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label11.Visible = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.HideSelection = false;
-            this.textBox3.Location = new System.Drawing.Point(638, 33);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(107, 31);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.TabStop = false;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Enabled = false;
-            this.comboBox3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "---товщина---",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "8",
-            "10",
-            "12"});
-            this.comboBox3.Location = new System.Drawing.Point(377, 33);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(143, 31);
-            this.comboBox3.TabIndex = 1;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "---марка---",
-            "eps s",
-            "eps 30",
-            "eps 50",
-            "eps 60"});
-            this.comboBox4.Location = new System.Drawing.Point(3, 33);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(368, 31);
-            this.comboBox4.TabIndex = 0;
-            this.comboBox4.Tag = "";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(526, 33);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(106, 31);
-            this.textBox4.TabIndex = 2;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Enabled = false;
-            this.label12.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(3, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(368, 30);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "марка";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label12.Visible = false;
+            this.amountADD.BackColor = System.Drawing.SystemColors.Window;
+            this.amountADD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.amountADD.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.amountADD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.amountADD.Enabled = false;
+            this.amountADD.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.amountADD.Location = new System.Drawing.Point(603, 3);
+            this.amountADD.Name = "amountADD";
+            this.amountADD.Size = new System.Drawing.Size(144, 31);
+            this.amountADD.TabIndex = 2;
+            this.amountADD.Leave += new System.EventHandler(this.amountADD_Leave);
             // 
             // addAddToOrderButton
             // 
             this.addAddToOrderButton.Enabled = false;
             this.addAddToOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.addAddToOrderButton.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addAddToOrderButton.Location = new System.Drawing.Point(46, 85);
+            this.addAddToOrderButton.Location = new System.Drawing.Point(40, 65);
             this.addAddToOrderButton.Name = "addAddToOrderButton";
             this.addAddToOrderButton.Size = new System.Drawing.Size(406, 70);
             this.addAddToOrderButton.TabIndex = 2;
@@ -406,85 +328,79 @@
             this.addAddToOrderButton.UseVisualStyleBackColor = true;
             this.addAddToOrderButton.Click += new System.EventHandler(this.addAddToOrderButton_Click);
             // 
-            // dataGridView2
+            // addData
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.dataGridView2.Location = new System.Drawing.Point(506, 85);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 60;
-            this.dataGridView2.RowTemplate.ReadOnly = true;
-            this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.Size = new System.Drawing.Size(242, 320);
-            this.dataGridView2.TabIndex = 4;
-            this.dataGridView2.Visible = false;
+            this.addData.AllowUserToAddRows = false;
+            this.addData.AllowUserToDeleteRows = false;
+            this.addData.AllowUserToResizeColumns = false;
+            this.addData.AllowUserToResizeRows = false;
+            this.addData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.addData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.addData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.addData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.addData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nmADD,
+            this.mtrADD,
+            this.amADD});
+            this.addData.Location = new System.Drawing.Point(510, 65);
+            this.addData.MultiSelect = false;
+            this.addData.Name = "addData";
+            this.addData.ReadOnly = true;
+            this.addData.RowHeadersVisible = false;
+            this.addData.RowHeadersWidth = 60;
+            this.addData.RowTemplate.ReadOnly = true;
+            this.addData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.addData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.addData.Size = new System.Drawing.Size(242, 320);
+            this.addData.TabIndex = 4;
+            this.addData.Visible = false;
             // 
-            // dataGridViewTextBoxColumn5
+            // nmADD
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridViewTextBoxColumn5.DividerWidth = 1;
-            this.dataGridViewTextBoxColumn5.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "марка";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 50;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn5.Width = 60;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.nmADD.DefaultCellStyle = dataGridViewCellStyle2;
+            this.nmADD.DividerWidth = 1;
+            this.nmADD.FillWeight = 110F;
+            this.nmADD.HeaderText = "назва";
+            this.nmADD.MinimumWidth = 110;
+            this.nmADD.Name = "nmADD";
+            this.nmADD.ReadOnly = true;
+            this.nmADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nmADD.Width = 120;
             // 
-            // dataGridViewTextBoxColumn6
+            // mtrADD
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridViewTextBoxColumn6.DividerWidth = 1;
-            this.dataGridViewTextBoxColumn6.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "товщина";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 50;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn6.Width = 60;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mtrADD.DefaultCellStyle = dataGridViewCellStyle3;
+            this.mtrADD.DividerWidth = 1;
+            this.mtrADD.FillWeight = 50F;
+            this.mtrADD.HeaderText = "од.вим.";
+            this.mtrADD.MinimumWidth = 50;
+            this.mtrADD.Name = "mtrADD";
+            this.mtrADD.ReadOnly = true;
+            this.mtrADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.mtrADD.Width = 60;
             // 
-            // dataGridViewTextBoxColumn7
+            // amADD
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle19;
-            this.dataGridViewTextBoxColumn7.DividerWidth = 1;
-            this.dataGridViewTextBoxColumn7.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "кількість";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 50;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn7.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridViewTextBoxColumn8.DividerWidth = 1;
-            this.dataGridViewTextBoxColumn8.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn8.HeaderText = "упаковок";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 50;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn8.Width = 60;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.amADD.DefaultCellStyle = dataGridViewCellStyle4;
+            this.amADD.DividerWidth = 1;
+            this.amADD.FillWeight = 50F;
+            this.amADD.HeaderText = "кількість";
+            this.amADD.MinimumWidth = 50;
+            this.amADD.Name = "amADD";
+            this.amADD.ReadOnly = true;
+            this.amADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.amADD.Width = 60;
             // 
             // epsPanel
             // 
@@ -619,7 +535,7 @@
             this.addEpsToOrderButton.Enabled = false;
             this.addEpsToOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.addEpsToOrderButton.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addEpsToOrderButton.Location = new System.Drawing.Point(46, 110);
+            this.addEpsToOrderButton.Location = new System.Drawing.Point(40, 110);
             this.addEpsToOrderButton.Name = "addEpsToOrderButton";
             this.addEpsToOrderButton.Size = new System.Drawing.Size(406, 70);
             this.addEpsToOrderButton.TabIndex = 2;
@@ -636,6 +552,14 @@
             this.epsData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.epsData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.epsData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.epsData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.epsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.epsData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mark,
@@ -657,8 +581,8 @@
             // 
             // mark
             // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.mark.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.mark.DefaultCellStyle = dataGridViewCellStyle6;
             this.mark.DividerWidth = 1;
             this.mark.FillWeight = 50F;
             this.mark.HeaderText = "марка";
@@ -670,8 +594,8 @@
             // 
             // thikness
             // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.thikness.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.thikness.DefaultCellStyle = dataGridViewCellStyle7;
             this.thikness.DividerWidth = 1;
             this.thikness.FillWeight = 50F;
             this.thikness.HeaderText = "товщина";
@@ -683,8 +607,8 @@
             // 
             // amount
             // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.amount.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.amount.DefaultCellStyle = dataGridViewCellStyle8;
             this.amount.DividerWidth = 1;
             this.amount.FillWeight = 50F;
             this.amount.HeaderText = "кількість";
@@ -696,8 +620,8 @@
             // 
             // pack
             // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.pack.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.pack.DefaultCellStyle = dataGridViewCellStyle9;
             this.pack.DividerWidth = 1;
             this.pack.FillWeight = 50F;
             this.pack.HeaderText = "упаковок";
@@ -894,7 +818,7 @@
             this.addPanel.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addData)).EndInit();
             this.epsPanel.ResumeLayout(false);
             this.selectEpsTable.ResumeLayout(false);
             this.selectEpsTable.PerformLayout();
@@ -943,20 +867,14 @@
         private System.Windows.Forms.Button addHeadData;
         private System.Windows.Forms.Panel addPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox meterADD;
+        private System.Windows.Forms.ComboBox nameADD;
+        private System.Windows.Forms.TextBox amountADD;
         private System.Windows.Forms.Button addAddToOrderButton;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridView addData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nmADD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mtrADD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amADD;
     }
 }
 

@@ -61,12 +61,10 @@ namespace orderTest
         {
             if (thikEPS.SelectedIndex != 0)
             {
-                //packEPS.Enabled = true;
                 amountEPS.Enabled = true;
             }
             else
             {
-                //packEPS.Enabled = false;
                 amountEPS.Enabled = false;
             }
         }
