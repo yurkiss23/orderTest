@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.orderLabel = new System.Windows.Forms.Label();
             this.dataSelectionBox = new System.Windows.Forms.GroupBox();
             this.downToFile = new System.Windows.Forms.Button();
@@ -53,9 +53,6 @@
             this.amountADD = new System.Windows.Forms.TextBox();
             this.addAddToOrderButton = new System.Windows.Forms.Button();
             this.addData = new System.Windows.Forms.DataGridView();
-            this.nmADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mtrADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epsPanel = new System.Windows.Forms.Panel();
             this.selectEpsTable = new System.Windows.Forms.TableLayoutPanel();
             this.markEPS = new System.Windows.Forms.ComboBox();
@@ -81,6 +78,9 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.addHeadData = new System.Windows.Forms.Button();
+            this.nmADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtrADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSelectionBox.SuspendLayout();
             this.radioTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -300,6 +300,7 @@
             this.meterADD.Name = "meterADD";
             this.meterADD.Size = new System.Drawing.Size(144, 31);
             this.meterADD.TabIndex = 1;
+            this.meterADD.SelectedIndexChanged += new System.EventHandler(this.meterADD_SelectedIndexChanged);
             // 
             // amountADD
             // 
@@ -362,45 +363,6 @@
             this.addData.Size = new System.Drawing.Size(242, 320);
             this.addData.TabIndex = 4;
             this.addData.Visible = false;
-            // 
-            // nmADD
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.nmADD.DefaultCellStyle = dataGridViewCellStyle2;
-            this.nmADD.DividerWidth = 1;
-            this.nmADD.FillWeight = 110F;
-            this.nmADD.HeaderText = "назва";
-            this.nmADD.MinimumWidth = 110;
-            this.nmADD.Name = "nmADD";
-            this.nmADD.ReadOnly = true;
-            this.nmADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nmADD.Width = 120;
-            // 
-            // mtrADD
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mtrADD.DefaultCellStyle = dataGridViewCellStyle3;
-            this.mtrADD.DividerWidth = 1;
-            this.mtrADD.FillWeight = 50F;
-            this.mtrADD.HeaderText = "од.вим.";
-            this.mtrADD.MinimumWidth = 50;
-            this.mtrADD.Name = "mtrADD";
-            this.mtrADD.ReadOnly = true;
-            this.mtrADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.mtrADD.Width = 60;
-            // 
-            // amADD
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.amADD.DefaultCellStyle = dataGridViewCellStyle4;
-            this.amADD.DividerWidth = 1;
-            this.amADD.FillWeight = 50F;
-            this.amADD.HeaderText = "кількість";
-            this.amADD.MinimumWidth = 50;
-            this.amADD.Name = "amADD";
-            this.amADD.ReadOnly = true;
-            this.amADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.amADD.Width = 60;
             // 
             // epsPanel
             // 
@@ -794,6 +756,45 @@
             this.addHeadData.Text = "зберегти реквізити";
             this.addHeadData.UseVisualStyleBackColor = true;
             this.addHeadData.Click += new System.EventHandler(this.addHeadData_Click);
+            // 
+            // nmADD
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.nmADD.DefaultCellStyle = dataGridViewCellStyle2;
+            this.nmADD.DividerWidth = 1;
+            this.nmADD.FillWeight = 130F;
+            this.nmADD.HeaderText = "назва";
+            this.nmADD.MinimumWidth = 130;
+            this.nmADD.Name = "nmADD";
+            this.nmADD.ReadOnly = true;
+            this.nmADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nmADD.Width = 140;
+            // 
+            // mtrADD
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mtrADD.DefaultCellStyle = dataGridViewCellStyle3;
+            this.mtrADD.DividerWidth = 1;
+            this.mtrADD.FillWeight = 40F;
+            this.mtrADD.HeaderText = "од.вим.";
+            this.mtrADD.MinimumWidth = 40;
+            this.mtrADD.Name = "mtrADD";
+            this.mtrADD.ReadOnly = true;
+            this.mtrADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.mtrADD.Width = 50;
+            // 
+            // amADD
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.amADD.DefaultCellStyle = dataGridViewCellStyle4;
+            this.amADD.DividerWidth = 1;
+            this.amADD.FillWeight = 40F;
+            this.amADD.HeaderText = "кіл-ть";
+            this.amADD.MinimumWidth = 40;
+            this.amADD.Name = "amADD";
+            this.amADD.ReadOnly = true;
+            this.amADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.amADD.Width = 50;
             // 
             // Form1
             // 
