@@ -38,10 +38,11 @@ namespace orderTest
             thikEPS.SelectedIndex = 0;
 
             //додаткові
-            addAddToOrderButton.Enabled = true;
-
             addPanel.Location = new Point(0, 0);
             addPanel.Size = new Size(753, 300);
+
+            nameADD.SelectedIndex = 0;
+            meterADD.SelectedIndex = 0;
         }
 
         private void downToFile_Click(object sender, EventArgs e)
@@ -50,5 +51,6 @@ namespace orderTest
 
             //File.AppendAllText(path, addEPS + "\n");
         }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using orderTest.models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,45 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
+        private void nameADD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (nameADD.SelectedIndex != 0)
+            {
+                meterADD.Enabled = true;
+                amountADD.Enabled = true;
+            }
+            else
+            {
+                meterADD.Enabled = false;
+                amountADD.Enabled = false;
+            }
+        }
+
+        private void amountADD_Leave(object sender, EventArgs e)
+        {
+            addAddToOrderButton.Enabled = true;
+        }
+
         private void addAddToOrderButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("addition");
+            //новий рядок
+            string[] addADD = { nameADD.Text, meterADD.Text, amountADD.Text };
+
+            //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
+            if (isLast())
+            {
+                isMark(addADD);
+            }
+
+            //додаємо рядок в таблицю на формі
+            addData.Rows.Add(addADD);
+            addData.Visible = true;
+
+            //додаємо eps в замовлення
+            AddList.Add(new addModel { Name = nameADD.Text, Meter = meterADD.Text, Amount = int.Parse(amountADD.Text) });
+
+            //очищаэмо поля вибору і введення
+            addClear();
         }
     }
 }
