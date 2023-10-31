@@ -15,6 +15,7 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
+        private static Panel[] panels;
         private static string[] HeaderData;
         private static List<epsModel> EpsList = new List<epsModel>();
         private static List<addModel> AddList = new List<addModel>();
@@ -25,10 +26,10 @@ namespace orderTest
             InitializeComponent();
 
             //реквізити
-            addHeadData.Enabled = true;
-
             headerPanel.Location = new Point(0, 0);
             headerPanel.Size = new Size(753, 200);
+
+            headDate.Enabled = true;
 
             //eps
             epsPanel.Location = new Point(0, 0);
@@ -59,6 +60,11 @@ namespace orderTest
             MessageBox.Show(downToFile.Text);
 
             //File.AppendAllText(path, addEPS + "\n");
+        }
+
+        private void clientData_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
