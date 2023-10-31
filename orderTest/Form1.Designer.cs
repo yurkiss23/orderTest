@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             this.orderLabel = new System.Windows.Forms.Label();
             this.dataSelectionBox = new System.Windows.Forms.GroupBox();
             this.radioTable = new System.Windows.Forms.TableLayoutPanel();
@@ -78,7 +78,7 @@
             this.trailerHead = new System.Windows.Forms.CheckBox();
             this.vehicleHead = new System.Windows.Forms.TextBox();
             this.driverHead = new System.Windows.Forms.TextBox();
-            this.adressHead = new System.Windows.Forms.TextBox();
+            this.addressHead = new System.Windows.Forms.TextBox();
             this.headTable1 = new System.Windows.Forms.TableLayoutPanel();
             this.dateHead = new System.Windows.Forms.DateTimePicker();
             this.clientHead = new System.Windows.Forms.TextBox();
@@ -114,9 +114,9 @@
             this.orderLabel.Name = "orderLabel";
             this.orderLabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
             this.orderLabel.Size = new System.Drawing.Size(760, 55);
-            this.orderLabel.TabIndex = 1;
+            this.orderLabel.TabIndex = 43;
             this.orderLabel.Text = "замовлення";
-            this.orderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.orderLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dataSelectionBox
             // 
@@ -125,7 +125,7 @@
             this.dataSelectionBox.Location = new System.Drawing.Point(0, 0);
             this.dataSelectionBox.Name = "dataSelectionBox";
             this.dataSelectionBox.Size = new System.Drawing.Size(751, 90);
-            this.dataSelectionBox.TabIndex = 2;
+            this.dataSelectionBox.TabIndex = 41;
             this.dataSelectionBox.TabStop = false;
             this.dataSelectionBox.Text = "заповнення";
             // 
@@ -143,7 +143,7 @@
             this.radioTable.RowCount = 1;
             this.radioTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.radioTable.Size = new System.Drawing.Size(469, 63);
-            this.radioTable.TabIndex = 3;
+            this.radioTable.TabIndex = 40;
             // 
             // radioHead
             // 
@@ -153,7 +153,7 @@
             this.radioHead.Name = "radioHead";
             this.radioHead.Padding = new System.Windows.Forms.Padding(15, 0, 5, 0);
             this.radioHead.Size = new System.Drawing.Size(150, 57);
-            this.radioHead.TabIndex = 0;
+            this.radioHead.TabIndex = 35;
             this.radioHead.Text = "реквізити";
             this.radioHead.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioHead.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@
             this.radioAdd.Name = "radioAdd";
             this.radioAdd.Padding = new System.Windows.Forms.Padding(15, 0, 5, 0);
             this.radioAdd.Size = new System.Drawing.Size(151, 57);
-            this.radioAdd.TabIndex = 2;
+            this.radioAdd.TabIndex = 37;
             this.radioAdd.Text = "додаткові";
             this.radioAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioAdd.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@
             this.radioEPS.Name = "radioEPS";
             this.radioEPS.Padding = new System.Windows.Forms.Padding(15, 0, 5, 0);
             this.radioEPS.Size = new System.Drawing.Size(150, 57);
-            this.radioEPS.TabIndex = 1;
+            this.radioEPS.TabIndex = 36;
             this.radioEPS.Text = "пінопласт";
             this.radioEPS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioEPS.UseVisualStyleBackColor = true;
@@ -343,14 +343,14 @@
             this.addData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.addData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.addData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.addData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.addData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nmADD,
@@ -371,8 +371,8 @@
             // 
             // nmADD
             // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.nmADD.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.nmADD.DefaultCellStyle = dataGridViewCellStyle38;
             this.nmADD.DividerWidth = 1;
             this.nmADD.FillWeight = 130F;
             this.nmADD.HeaderText = "назва";
@@ -384,8 +384,8 @@
             // 
             // mtrADD
             // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mtrADD.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mtrADD.DefaultCellStyle = dataGridViewCellStyle39;
             this.mtrADD.DividerWidth = 1;
             this.mtrADD.FillWeight = 40F;
             this.mtrADD.HeaderText = "од.вим.";
@@ -397,8 +397,8 @@
             // 
             // amADD
             // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.amADD.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.amADD.DefaultCellStyle = dataGridViewCellStyle40;
             this.amADD.DividerWidth = 1;
             this.amADD.FillWeight = 40F;
             this.amADD.HeaderText = "кіл-ть";
@@ -558,14 +558,14 @@
             this.epsData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.epsData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.epsData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.epsData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.epsData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
             this.epsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.epsData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mark,
@@ -587,8 +587,8 @@
             // 
             // mark
             // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.mark.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.mark.DefaultCellStyle = dataGridViewCellStyle42;
             this.mark.DividerWidth = 1;
             this.mark.FillWeight = 50F;
             this.mark.HeaderText = "марка";
@@ -600,8 +600,8 @@
             // 
             // thikness
             // 
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.thikness.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.thikness.DefaultCellStyle = dataGridViewCellStyle43;
             this.thikness.DividerWidth = 1;
             this.thikness.FillWeight = 50F;
             this.thikness.HeaderText = "товщина";
@@ -613,8 +613,8 @@
             // 
             // amount
             // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.amount.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.amount.DefaultCellStyle = dataGridViewCellStyle44;
             this.amount.DividerWidth = 1;
             this.amount.FillWeight = 50F;
             this.amount.HeaderText = "кількість";
@@ -626,8 +626,8 @@
             // 
             // pack
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.pack.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.pack.DefaultCellStyle = dataGridViewCellStyle45;
             this.pack.DividerWidth = 1;
             this.pack.FillWeight = 50F;
             this.pack.HeaderText = "упаковок";
@@ -655,11 +655,12 @@
             this.commentHead.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.commentHead.Enabled = false;
             this.commentHead.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.commentHead.Location = new System.Drawing.Point(489, 117);
+            this.commentHead.Location = new System.Drawing.Point(485, 116);
             this.commentHead.Multiline = true;
             this.commentHead.Name = "commentHead";
             this.commentHead.Size = new System.Drawing.Size(265, 120);
-            this.commentHead.TabIndex = 13;
+            this.commentHead.TabIndex = 50;
+            this.commentHead.TabStop = false;
             // 
             // headTable2
             // 
@@ -672,7 +673,7 @@
             this.headTable2.Controls.Add(this.trailerHead, 0, 1);
             this.headTable2.Controls.Add(this.vehicleHead, 1, 1);
             this.headTable2.Controls.Add(this.driverHead, 2, 1);
-            this.headTable2.Controls.Add(this.adressHead, 2, 0);
+            this.headTable2.Controls.Add(this.addressHead, 2, 0);
             this.headTable2.Location = new System.Drawing.Point(0, 36);
             this.headTable2.Name = "headTable2";
             this.headTable2.RowCount = 2;
@@ -709,6 +710,8 @@
             this.markHead.TabIndex = 3;
             this.markHead.Text = "---марка---";
             this.markHead.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.markHead.Enter += new System.EventHandler(this.markHead_Enter);
+            this.markHead.Leave += new System.EventHandler(this.markHead_Leave);
             // 
             // trailerHead
             // 
@@ -737,6 +740,8 @@
             this.vehicleHead.TabIndex = 4;
             this.vehicleHead.Text = "---машина---";
             this.vehicleHead.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.vehicleHead.Enter += new System.EventHandler(this.vehicleHead_Enter);
+            this.vehicleHead.Leave += new System.EventHandler(this.vehicleHead_Leave);
             // 
             // driverHead
             // 
@@ -750,19 +755,23 @@
             this.driverHead.TabIndex = 6;
             this.driverHead.Text = "---водій---";
             this.driverHead.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.driverHead.Enter += new System.EventHandler(this.driverHead_Enter);
+            this.driverHead.Leave += new System.EventHandler(this.driverHead_Leave);
             // 
-            // adressHead
+            // addressHead
             // 
-            this.adressHead.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.adressHead.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adressHead.Enabled = false;
-            this.adressHead.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.adressHead.Location = new System.Drawing.Point(339, 3);
-            this.adressHead.Name = "adressHead";
-            this.adressHead.Size = new System.Drawing.Size(406, 31);
-            this.adressHead.TabIndex = 5;
-            this.adressHead.Text = "---адреса---";
-            this.adressHead.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.addressHead.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addressHead.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addressHead.Enabled = false;
+            this.addressHead.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addressHead.Location = new System.Drawing.Point(339, 3);
+            this.addressHead.Name = "addressHead";
+            this.addressHead.Size = new System.Drawing.Size(406, 31);
+            this.addressHead.TabIndex = 5;
+            this.addressHead.Text = "---адреса---";
+            this.addressHead.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.addressHead.Enter += new System.EventHandler(this.addressHead_Enter);
+            this.addressHead.Leave += new System.EventHandler(this.addressHead_Leave);
             // 
             // headTable1
             // 
@@ -911,7 +920,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mtrADD;
         private System.Windows.Forms.DataGridViewTextBoxColumn amADD;
         private System.Windows.Forms.DateTimePicker dateHead;
-        private System.Windows.Forms.TextBox adressHead;
+        private System.Windows.Forms.TextBox addressHead;
         private System.Windows.Forms.TableLayoutPanel headTable2;
         private System.Windows.Forms.TextBox markHead;
         private System.Windows.Forms.TextBox vehicleHead;
