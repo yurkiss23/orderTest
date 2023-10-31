@@ -10,34 +10,30 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private void panelEnVis(Panel[] panels)
+        private void panelEnVis(Panel panel)
         {
-            int i = 0;
-            do
+            Panel[] panels = { headerPanel, epsPanel, addPanel };
+
+            foreach (var item in panels)
             {
-                panels[i].Visible = false;
-                panels[i].Enabled = false; i++;
-            } while (i < panels.Length - 1);
-            panels[i].Enabled = true;
-            panels[i].Visible = true;
+                item.Visible = false; item.Enabled = false;
+            }
+            panel.Enabled = true; panel.Visible = true;
         }
 
         private void radioButton1_Enter(object sender, EventArgs e)
         {
-            Panel[] panels = { epsPanel, addPanel, headerPanel };
-            panelEnVis(panels);
+            panelEnVis(headerPanel);
         }
 
         private void radioButton2_Enter(object sender, EventArgs e)
         {
-            Panel[] panels = { headerPanel, addPanel, epsPanel };
-            panelEnVis(panels);
+            panelEnVis(epsPanel);
         }
 
         private void radioButton3_Enter(object sender, EventArgs e)
         {
-            Panel[] panels = { headerPanel, epsPanel, addPanel };
-            panelEnVis(panels);
+            panelEnVis(addPanel);
         }
     }
 }
