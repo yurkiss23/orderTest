@@ -27,9 +27,9 @@ namespace orderTest
 
             //реквізити
             headerPanel.Location = new Point(0, 0);
-            headerPanel.Size = new Size(753, 200);
+            headerPanel.Size = new Size(753, 400);
 
-            headDate.Enabled = true;
+            dateHead.Enabled = true;
 
             //eps
             epsPanel.Location = new Point(0, 0);
@@ -60,11 +60,6 @@ namespace orderTest
             MessageBox.Show(downToFile.Text);
 
             //File.AppendAllText(path, addEPS + "\n");
-        }
-
-        private void clientData_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
