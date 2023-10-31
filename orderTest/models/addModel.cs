@@ -11,6 +11,6 @@ namespace orderTest.models
         public string Name {  get; set; }
         public int Amount {  get; set; }
         public string Meter {  get; set; }
-        public override string ToString() { return Name + ", " + Amount + ", " + Meter; }
+        public override string ToString() { return Name + ", " + Amount.ToString() + ", " + Meter; }
     }
 }

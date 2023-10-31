@@ -13,6 +13,6 @@ namespace orderTest.models
         public int Thikness { get; set; }
         public double Amount { get; set; }
         public int Pack { get; set; }
-        public override string ToString() { return Mark + ", " + Thikness + ", " + Amount + ", " + Pack; }
+        public override string ToString() { return Mark + ", " + Thikness.ToString() + ", " + Amount.ToString() + ", " + Pack.ToString(); }
     }
 }

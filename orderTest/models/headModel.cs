@@ -9,6 +9,7 @@ namespace orderTest.models
     internal class headModel
     {
         public DateTime Date { get; set; }
+        public int Number { get; set; }
         public string Client { get; set; }
         public string Mark { get; set; }
         public string Vehicle { get; set; }
@@ -18,7 +19,9 @@ namespace orderTest.models
         public string Comment { get; set; }
         public override string ToString()
         {
-            return Date + ", " + Client + ", " + Mark + ", " + Vehicle + ", " + Trailer + ", " + Driver + ", " + Adress + ", " + Comment;
+            return Date.ToString() + ", " + Number.ToString() 
+                + ", " + Client + ", " + Mark + ", " + Vehicle + ", " + Trailer.ToString() 
+                + ", " + Driver + ", " + Adress + ", " + Comment;
         }
     }
 }
