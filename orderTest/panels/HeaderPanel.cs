@@ -9,16 +9,11 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private bool isPH(string ph)
-        {
-            if (ph.Contains("---")) { return true; }
-            return false;
-        }
-
         private void dateHead_ValueChanged(object sender, EventArgs e)
         {
             numberHead.Enabled = true;
             commentHead.Enabled = true;
+            clearHead.Enabled = true;
         }
 
         private void numberHead_Enter(object sender, EventArgs e)
@@ -78,22 +73,27 @@ namespace orderTest
 
         private void addressHead_Enter(object sender, EventArgs e)
         {
-
+            if(isPH(addressHead.Text)) { addressHead.Clear(); }
         }
 
         private void addressHead_Leave(object sender, EventArgs e)
         {
-
+            if (!addressHead.Text.Any()) { addressHead.Text = "---адреса---"; }
         }
 
         private void driverHead_Enter(object sender, EventArgs e)
         {
-
+            if (isPH(driverHead.Text)) { driverHead.Clear(); }
         }
 
         private void driverHead_Leave(object sender, EventArgs e)
         {
+            if(!driverHead.Text.Any()) { driverHead.Text = "---водій---"; }
+        }
 
+        private void clearHead_Click(object sender, EventArgs e)
+        {
+            numberHead_Enter(sender, e); clientHead_Enter(sender, e);
         }
 
         private void addHeadData_Click(object sender, EventArgs e)

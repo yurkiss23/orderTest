@@ -10,31 +10,6 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private void addClear()
-        {
-            nameADD.SelectedIndex = 0;
-            meterADD.SelectedIndex = 0;
-            meterADD.Enabled = false;
-            amountADD.Clear();
-            amountADD.Enabled = false;
-
-            addAddToOrderButton.Enabled = false;
-        }
-
-        //private void selectMeter(string name)
-        //{
-        //    foreach (var item in nameADD.Items)
-        //    {
-        //        if (item.ToString().Equals(name))
-        //        {
-        //            meterADD.SelectedItem = item;
-        //            break;
-        //        }
-        //    }
-
-        //    //return meterADD.SelectedItem;
-        //}
-
         private void nameADD_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (nameADD.SelectedIndex != 0)
