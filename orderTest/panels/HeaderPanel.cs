@@ -9,87 +9,35 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private void dateHead_ValueChanged(object sender, EventArgs e)
-        {
-            numberHead.Enabled = true;
-            commentHead.Enabled = true;
-            clearHead.Enabled = true;
-        }
+        private void dateHead_ValueChanged(object sender, EventArgs e) { numberHead.Enabled = true; commentHead.Enabled = true; clearHead.Enabled = true; }
 
-        private void numberHead_Enter(object sender, EventArgs e)
-        {
-            if (isPH(numberHead.Text)) { numberHead.Clear(); }
-        }
+        private void numberHead_Enter(object sender, EventArgs e) { clearText(numberHead); }
 
-        private void numberHead_TextChanged(object sender, EventArgs e)
-        {
-            clientHead.Enabled = true;
-        }
+        private void numberHead_TextChanged(object sender, EventArgs e) { clientHead.Enabled = true; }
 
-        private void numberHead_Leave(object sender, EventArgs e)
-        {
-            orderLabel.Text = "замовлення №" + numberHead.Text;
-            if (!numberHead.Text.Any()) { numberHead.Text = "---#---"; clientHead.Enabled = false; }
-        }
+        private void numberHead_Leave(object sender, EventArgs e) { orderLabel.Text = "замовлення №" + numberHead.Text; isFill((TextBox)sender, "#", fillArray(clientHead, new(), new(), new()) ); }
 
-        private void clientHead_Enter(object sender, EventArgs e)
-        {
-            if (isPH(clientHead.Text)) { clientHead.Clear(); }
-        }
+        private void clientHead_Enter(object sender, EventArgs e) { clearText(clientHead); }
 
-        private void clientHead_TextChanged(object sender, EventArgs e)
-        {
-            markHead.Enabled = true; vehicleHead.Enabled = true; addressHead.Enabled = true; driverHead.Enabled = true;
-        }
+        private void clientHead_TextChanged(object sender, EventArgs e) { markHead.Enabled = true; vehicleHead.Enabled = true; addressHead.Enabled = true; driverHead.Enabled = true; }
 
-        private void clientHead_Leave(object sender, EventArgs e)
-        {
-            if (!clientHead.Text.Any())
-            {
-                clientHead.Text = "---замовник---"; markHead.Enabled = false; vehicleHead.Enabled = false;
-                addressHead.Enabled = false; driverHead.Enabled = false;
-            }
-        }
+        private void clientHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "замовник", fillArray(markHead, vehicleHead, addressHead, driverHead)); }
 
-        private void markHead_Enter(object sender, EventArgs e)
-        {
-            if(isPH(markHead.Text)) { markHead.Clear(); }
-        }
+        private void markHead_Enter(object sender, EventArgs e) { clearText(markHead); }
 
-        private void markHead_Leave(object sender, EventArgs e)
-        {
-            if(!markHead.Text.Any()) { markHead.Text = "---марка---"; }
-        }
+        private void markHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "марка"); }
 
-        private void vehicleHead_Enter(object sender, EventArgs e)
-        {
-            if (isPH(vehicleHead.Text)) { vehicleHead.Clear(); }
-        }
+        private void vehicleHead_Enter(object sender, EventArgs e) { clearText(vehicleHead); }
 
-        private void vehicleHead_Leave(object sender, EventArgs e)
-        {
-            if(!vehicleHead.Text.Any()) { vehicleHead.Text = "---машина---"; }
-        }
+        private void vehicleHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "машина"); }
 
-        private void addressHead_Enter(object sender, EventArgs e)
-        {
-            if(isPH(addressHead.Text)) { addressHead.Clear(); }
-        }
+        private void addressHead_Enter(object sender, EventArgs e) { clearText(addressHead); }
 
-        private void addressHead_Leave(object sender, EventArgs e)
-        {
-            if (!addressHead.Text.Any()) { addressHead.Text = "---адреса---"; }
-        }
+        private void addressHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "адреса"); }
 
-        private void driverHead_Enter(object sender, EventArgs e)
-        {
-            if (isPH(driverHead.Text)) { driverHead.Clear(); }
-        }
+        private void driverHead_Enter(object sender, EventArgs e) { clearText(driverHead); }
 
-        private void driverHead_Leave(object sender, EventArgs e)
-        {
-            if(!driverHead.Text.Any()) { driverHead.Text = "---водій---"; }
-        }
+        private void driverHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "водій"); }
 
         private void clearHead_Click(object sender, EventArgs e)
         {
