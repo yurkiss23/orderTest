@@ -10,32 +10,6 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private void isMark(string[] row)
-        {
-            if (EpsList.Last().Mark.Equals(markEPS.Text))
-            {
-                row[0] = "";
-            }
-        }
-
-        private void epsClear()
-        {
-            markEPS.SelectedIndex = 0;
-            thikEPS.SelectedIndex = 0;
-            thikEPS.Enabled = false;
-            amountEPS.Clear();
-            amountEPS.Enabled = false;
-            packEPS.Clear();
-            packEPS.Enabled = false;
-
-            addEpsToOrderButton.Enabled = false;
-        }
-
-        private double div(string s)
-        {
-            if (s.Equals("8")) { return 0.32; }; return 0.3;
-        }
-
         private void markEPS_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (markEPS.SelectedIndex != 0)
