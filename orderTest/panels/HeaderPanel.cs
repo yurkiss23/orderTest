@@ -73,7 +73,7 @@ namespace orderTest
 
         private void vehicleHead_Leave(object sender, EventArgs e)
         {
-
+            if(!vehicleHead.Text.Any()) { vehicleHead.Text = "---машина---"; }
         }
 
         private void addressHead_Enter(object sender, EventArgs e)
