@@ -819,7 +819,7 @@
             // 
             // clearHead
             // 
-            this.clearHead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.clearHead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.clearHead.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clearHead.Enabled = false;
             this.clearHead.Location = new System.Drawing.Point(683, 3);
@@ -829,6 +829,7 @@
             this.clearHead.TabStop = false;
             this.clearHead.UseVisualStyleBackColor = false;
             this.clearHead.Click += new System.EventHandler(this.clearHead_Click);
+            this.clearHead.MouseHover += new System.EventHandler(this.clearHead_MouseHover);
             // 
             // addHeadData
             // 

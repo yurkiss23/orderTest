@@ -25,9 +25,6 @@ namespace orderTest
         {
             InitializeComponent();
 
-            //TextBox[] tArray = { clientHead };
-
-
             //реквізити
             headerPanel.Location = new Point(0, 0);
             headerPanel.Size = new Size(753, 400);
