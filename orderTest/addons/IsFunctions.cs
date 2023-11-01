@@ -20,11 +20,17 @@ namespace orderTest
         }
 
         //реквізити
-        private bool isPH(string ph)
-        {
-            if (ph.Contains("---")) { return true; }
-            return false;
-        }
+        private void txt(TextBox tb, string ph) { tb.Text = "---" + ph + "---"; }
+
+        private TextBox[] fillArray(TextBox a, TextBox b = null, TextBox c = null, TextBox d = null) { TextBox[] tArray = { a, b, c, d }; return tArray; }
+
+        private bool isPH(string ph) { if (ph.Contains("---")) { return true; } return false; }
+
+        private void clearText(TextBox tb) { if(isPH(tb.Text)) { tb.Clear(); } }
+
+        private void isFill(TextBox tb, string ph) { if (!tb.Text.Any()) { txt(tb, ph); } }
+
+        private void isFill(TextBox tb, string ph, TextBox[] asDis) { if (!tb.Text.Any()) { txt(tb, ph); foreach (TextBox b in asDis) { b.Enabled = false; } } }
 
         //пінопласт
         private void isMark(string[] row)
