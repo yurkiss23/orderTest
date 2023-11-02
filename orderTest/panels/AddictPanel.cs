@@ -10,6 +10,8 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
+        private static List<addModel> AddList = new List<addModel>();
+
         private void nameADD_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (nameADD.SelectedIndex != 0)
@@ -45,17 +47,14 @@ namespace orderTest
             string[] addADD = { nameADD.Text, meterADD.Text, amountADD.Text };
 
             //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
-            //if (isLast(AddList.Count))
-            //{
-            //    isMark(addADD);
-            //}
+            //if (isLast(AddList.Count)) { isMark(addADD); }
 
             //додаємо рядок в таблицю на формі
             addData.Rows.Add(addADD);
             addData.Visible = true;
 
             //додаємо позицію в замовлення
-            AddList.Add(new addModel { Name = nameADD.Text, Meter = meterADD.Text, Amount = int.Parse(amountADD.Text) });
+            AddList.Add(new(addADD));
 
             //очищаэмо поля вибору і введення
             addClear();

@@ -8,9 +8,13 @@ namespace orderTest.models
 {
     internal class addModel
     {
+        public addModel() { }
+        public addModel(string[] add) { Name = add[0]; Amount = int.Parse(add[1]); Meter = add[2]; }
+
         public string Name {  get; set; }
         public int Amount {  get; set; }
         public string Meter {  get; set; }
+
         public override string ToString() { return Name + ", " + Amount.ToString() + ", " + Meter; }
     }
 }

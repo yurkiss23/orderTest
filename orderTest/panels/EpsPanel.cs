@@ -29,17 +29,14 @@ namespace orderTest
             string[] addEPS = { markEPS.SelectedItem.ToString(), thikEPS.SelectedItem.ToString(), amountEPS.Text, packEPS.Text };
 
             //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
-            if (isLast(EpsList.Count))
-            {
-                isMark(addEPS);
-            }
+            if (isLast(EpsList.Count)) { isMark(addEPS); }
 
             //додаємо рядок в таблицю на формі
             epsData.Rows.Add(addEPS);
             epsData.Visible = true;
 
             //додаємо eps в замовлення
-            EpsList.Add(new(addEPS[0], addEPS[1], addEPS[2], addEPS[3]));
+            EpsList.Add(new(addEPS));
 
             //очищаэмо поля вибору і введення
             epsClear();

@@ -11,6 +11,8 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
+        //private static string[] HeaderData;
+
         private void dateHead_ValueChanged(object sender, EventArgs e) { numberHead.Enabled = true; commentHead.Enabled = true; clearHead.Enabled = true; }
 
         private void numberHead_Enter(object sender, EventArgs e) { clearText(numberHead); }
@@ -58,19 +60,17 @@ namespace orderTest
 
         private void addHeadData_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("header");
             //рядок з реквізитами
-            //HeaderData ={ }
-            //string[] addADD = { nameADD.Text, meterADD.Text, amountADD.Text };
-
-            //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
-
-            //виводимо реквізити на форму
-            //addData.Rows.Add(addADD);
-            //addData.Visible = true;
+            string[] addHead = { dateHead.Value.ToString(), numberHead.Text, clientHead.Text,
+                markHead.Text, vehicleHead.Text,// trailerHead.CheckState.ToString(),
+                addressHead.Text, driverHead.Text, commentHead.Text };
 
             //додаємо реквізити до замовлення
-            //AddList.Add(new addModel { Name = nameADD.Text, Meter = meterADD.Text, Amount = int.Parse(amountADD.Text) });
+            headModel header = new headModel(addHead);
+
+            //виводимо реквізити на форму
+            Label headLabel = new Label(); headLabel.Text = header.ToString(); headLabel.Font = new Font("Calibri", 14); headLabel.Location = new Point(0, 300); headLabel.AutoSize = true;
+            headerPanel.Controls.Add(headLabel);
 
             //очищаэмо поля вибору і введення
             headClear();
