@@ -1,4 +1,5 @@
-﻿using System;
+﻿using orderTest.models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -68,6 +69,12 @@ namespace orderTest
         private double div(string s)
         {
             if (s.Equals("8")) { return 0.32; }; return 0.3;
+        }
+
+        private epsModel fillModel(ComboBox mark, ComboBox thikness, TextBox amount, TextBox pack)
+        {
+            epsModel model = new epsModel() { Mark = mark.SelectedItem.ToString(), Thikness = int.Parse(thikness.SelectedItem.ToString()), Amount = double.Parse(amount.Text), Pack = int.Parse(pack.Text) };
+            return model;
         }
 
         //додаткові
