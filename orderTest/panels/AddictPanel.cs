@@ -54,7 +54,7 @@ namespace orderTest
             addData.Rows.Add(addADD);
             addData.Visible = true;
 
-            //додаємо eps в замовлення
+            //додаємо позицію в замовлення
             AddList.Add(new addModel { Name = nameADD.Text, Meter = meterADD.Text, Amount = int.Parse(amountADD.Text) });
 
             //очищаэмо поля вибору і введення

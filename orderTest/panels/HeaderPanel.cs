@@ -1,4 +1,5 @@
-﻿using System;
+﻿using orderTest.models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -26,19 +27,19 @@ namespace orderTest
 
         private void markHead_Enter(object sender, EventArgs e) { clearText(markHead); }
 
-        private void markHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "марка"); }
+        private void markHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "марка"); addHeadData.Enabled = true; }
 
         private void vehicleHead_Enter(object sender, EventArgs e) { clearText(vehicleHead); }
 
-        private void vehicleHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "машина"); }
+        private void vehicleHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "машина"); addHeadData.Enabled = true; }
 
         private void addressHead_Enter(object sender, EventArgs e) { clearText(addressHead); }
 
-        private void addressHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "адреса"); }
+        private void addressHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "адреса"); addHeadData.Enabled = true; }
 
         private void driverHead_Enter(object sender, EventArgs e) { clearText(driverHead); }
 
-        private void driverHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "водій"); }
+        private void driverHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "водій"); addHeadData.Enabled = true; }
 
         private void clearHead_MouseHover(object sender, EventArgs e)
         {
@@ -52,12 +53,26 @@ namespace orderTest
 
         private void clearHead_Click(object sender, EventArgs e)
         {
-            numberHead_Enter(sender, e); clientHead_Enter(sender, e);
+            headClear();
         }
 
         private void addHeadData_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("header");
+            MessageBox.Show("header");
+            //рядок з реквізитами
+            //string[] addADD = { nameADD.Text, meterADD.Text, amountADD.Text };
+
+            //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
+
+            //виводимо реквізити на форму
+            //addData.Rows.Add(addADD);
+            //addData.Visible = true;
+
+            //додаємо реквізити до замовлення
+            //AddList.Add(new addModel { Name = nameADD.Text, Meter = meterADD.Text, Amount = int.Parse(amountADD.Text) });
+
+            //очищаэмо поля вибору і введення
+            headClear();
         }
     }
 }
