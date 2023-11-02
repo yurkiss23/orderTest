@@ -10,7 +10,7 @@ namespace orderTest.models
     internal class epsModel
     {
         public epsModel() { }
-        public epsModel(string mark, string thikness, string amount, string pack) { Mark = mark; Thikness = int.Parse(thikness); Amount = double.Parse(amount); Pack =int.Parse(pack); }
+        public epsModel(string[] eps) { Mark = eps[0]; Thikness = int.Parse(eps[1]); Amount = double.Parse(eps[2]); Pack = int.Parse(eps[3]); }
 
         public string Mark { get; set; }
         public int Thikness { get; set; }

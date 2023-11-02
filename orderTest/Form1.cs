@@ -16,8 +16,6 @@ namespace orderTest
     public partial class Form1 : Form
     {
         private static Panel[] panels;
-        private static string[] HeaderData;
-        private static List<addModel> AddList = new List<addModel>();
         static private string path = @"e:\work\dev\orderUST\order.txt";
 
         public Form1()
