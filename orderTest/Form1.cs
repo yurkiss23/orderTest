@@ -17,7 +17,6 @@ namespace orderTest
     {
         private static Panel[] panels;
         private static string[] HeaderData;
-        private static List<epsModel> EpsList = new List<epsModel>();
         private static List<addModel> AddList = new List<addModel>();
         static private string path = @"e:\work\dev\orderUST\order.txt";
 

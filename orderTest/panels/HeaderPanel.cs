@@ -60,6 +60,7 @@ namespace orderTest
         {
             MessageBox.Show("header");
             //рядок з реквізитами
+            //HeaderData ={ }
             //string[] addADD = { nameADD.Text, meterADD.Text, amountADD.Text };
 
             //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
