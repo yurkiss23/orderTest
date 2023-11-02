@@ -32,6 +32,20 @@ namespace orderTest
 
         private void isFill(TextBox tb, string ph, TextBox[] asDis) { if (!tb.Text.Any()) { txt(tb, ph); foreach (TextBox b in asDis) { b.Enabled = false; } } }
 
+        private void headClear()
+        {
+            dateHead.ResetText();
+            txt(numberHead, "#"); numberHead.Enabled = false;
+            txt(clientHead, "замовник"); clientHead.Enabled = false;
+            txt(markHead, "марка"); markHead.Enabled = false;
+            txt(vehicleHead, "машина"); vehicleHead.Enabled = false;
+            txt(addressHead, "адреса"); addressHead.Enabled = false;
+            txt(driverHead, "водій");driverHead.Enabled = false;
+            commentHead.Enabled = false; clearHead.Enabled = false;
+
+            addHeadData.Enabled = false;
+        }
+
         //пінопласт
         private void isMark(string[] row)
         {
@@ -44,12 +58,9 @@ namespace orderTest
         private void epsClear()
         {
             markEPS.SelectedIndex = 0;
-            thikEPS.SelectedIndex = 0;
-            thikEPS.Enabled = false;
-            amountEPS.Clear();
-            amountEPS.Enabled = false;
-            packEPS.Clear();
-            packEPS.Enabled = false;
+            thikEPS.SelectedIndex = 0; thikEPS.Enabled = false;
+            amountEPS.Clear(); amountEPS.Enabled = false;
+            packEPS.Clear(); packEPS.Enabled = false;
 
             addEpsToOrderButton.Enabled = false;
         }
@@ -63,10 +74,8 @@ namespace orderTest
         private void addClear()
         {
             nameADD.SelectedIndex = 0;
-            meterADD.SelectedIndex = 0;
-            meterADD.Enabled = false;
-            amountADD.Clear();
-            amountADD.Enabled = false;
+            meterADD.SelectedIndex = 0; meterADD.Enabled = false;
+            amountADD.Clear(); amountADD.Enabled = false;
 
             addAddToOrderButton.Enabled = false;
         }
