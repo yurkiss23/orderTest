@@ -12,15 +12,13 @@ namespace orderTest
     {
         private static List<epsModel> EpsList = new List<epsModel>();
 
-        private void markEPS_SelectedIndexChanged(object sender, EventArgs e) { if (markEPS.SelectedIndex != 0) { thikEPS.Enabled = true; } else { thikEPS.Enabled = false; } }
+        private void markEPS_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(markEPS, thikEPS);
 
-        private void thikEPS_SelectedIndexChanged(object sender, EventArgs e) { if (thikEPS.SelectedIndex != 0) { amountEPS.Enabled = true; } else { amountEPS.Enabled = false; } }
+        private void thikEPS_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(thikEPS, amountEPS);
 
         private void amountEPS_Leave(object sender, EventArgs e)
         {
-            packEPS.Enabled = true;
-            packEPS.Text = ((double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString());
-            addEpsToOrderButton.Enabled = true;
+            packEPS.Enabled = true; packEPS.Text = ((double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString()); addEpsToOrderButton.Enabled = true;
         }
 
         private void addEpsToOrderButton_Click(object sender, EventArgs e)

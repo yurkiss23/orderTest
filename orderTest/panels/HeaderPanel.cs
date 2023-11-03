@@ -11,52 +11,41 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        //private static string[] HeaderData;
+        private void dateHead_ValueChanged(object sender, EventArgs e) { fillEnable(new[] { numberHead, commentHead }, true); clearHead.Enabled = true; }
 
-        private void dateHead_ValueChanged(object sender, EventArgs e) { numberHead.Enabled = true; commentHead.Enabled = true; clearHead.Enabled = true; }
+        private void numberHead_Enter(object sender, EventArgs e) => clearText(numberHead);
 
-        private void numberHead_Enter(object sender, EventArgs e) { clearText(numberHead); }
+        private void numberHead_TextChanged(object sender, EventArgs e) => clientHead.Enabled = true;
 
-        private void numberHead_TextChanged(object sender, EventArgs e) { clientHead.Enabled = true; }
+        private void numberHead_Leave(object sender, EventArgs e) { orderLabel.Text = "замовлення №" + numberHead.Text; isFill((TextBox)sender, new[] { clientHead }, false, "#"); }
 
-        private void numberHead_Leave(object sender, EventArgs e) { orderLabel.Text = "замовлення №" + numberHead.Text; isFill((TextBox)sender, "#", fillArray(clientHead, new(), new(), new()) ); }
+        private void clientHead_Enter(object sender, EventArgs e) => clearText(clientHead);
 
-        private void clientHead_Enter(object sender, EventArgs e) { clearText(clientHead); }
+        private void clientHead_TextChanged(object sender, EventArgs e) => fillEnable(new[] { markHead, vehicleHead, addressHead, driverHead }, true);
 
-        private void clientHead_TextChanged(object sender, EventArgs e) { markHead.Enabled = true; vehicleHead.Enabled = true; addressHead.Enabled = true; driverHead.Enabled = true; }
+        private void clientHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { markHead, vehicleHead, addressHead, driverHead }, false, "замовник");
 
-        private void clientHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "замовник", fillArray(markHead, vehicleHead, addressHead, driverHead)); }
+        private void markHead_Enter(object sender, EventArgs e) => clearText(markHead);
 
-        private void markHead_Enter(object sender, EventArgs e) { clearText(markHead); }
+        private void markHead_Leave(object sender, EventArgs e) => isFill(sender, addHeadData, "марка");
 
-        private void markHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "марка"); addHeadData.Enabled = true; }
+        private void vehicleHead_Enter(object sender, EventArgs e) => clearText(vehicleHead);
 
-        private void vehicleHead_Enter(object sender, EventArgs e) { clearText(vehicleHead); }
+        private void vehicleHead_Leave(object sender, EventArgs e) => isFill(sender, addHeadData, "машина");
 
-        private void vehicleHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "машина"); addHeadData.Enabled = true; }
+        private void addressHead_Enter(object sender, EventArgs e) => clearText(addressHead);
 
-        private void addressHead_Enter(object sender, EventArgs e) { clearText(addressHead); }
+        private void addressHead_Leave(object sender, EventArgs e) => isFill(sender, addHeadData, "адреса");
 
-        private void addressHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "адреса"); addHeadData.Enabled = true; }
+        private void driverHead_Enter(object sender, EventArgs e) => clearText(driverHead);
 
-        private void driverHead_Enter(object sender, EventArgs e) { clearText(driverHead); }
+        private void driverHead_Leave(object sender, EventArgs e) => isFill(sender, addHeadData, "водій");
 
-        private void driverHead_Leave(object sender, EventArgs e) { isFill((TextBox)sender, "водій"); addHeadData.Enabled = true; }
+        private void clearHead_MouseHover(object sender, EventArgs e) => clearHead.BackColor = Color.LightCoral;
 
-        private void clearHead_MouseHover(object sender, EventArgs e)
-        {
-            clearHead.BackColor = Color.LightCoral;
-        }
+        private void clearHead_MouseLeave(object sender, EventArgs e) => clearHead.BackColor = Color.MistyRose;
 
-        private void clearHead_MouseLeave(object sender, EventArgs e)
-        {
-            clearHead.BackColor = Color.MistyRose;
-        }
-
-        private void clearHead_Click(object sender, EventArgs e)
-        {
-            headClear();
-        }
+        private void clearHead_Click(object sender, EventArgs e) => headClear();
 
         private void addHeadData_Click(object sender, EventArgs e)
         {
@@ -68,7 +57,7 @@ namespace orderTest
             headModel header = new headModel(addHead);
 
             //виводимо реквізити на форму
-            Label headLabel = new Label(); headLabel.Text = header.ToString(); headLabel.Font = new Font("Calibri", 14); headLabel.Location = new Point(0, 300); headLabel.AutoSize = true;
+            Label headLabel = new Label(); headLabel.Text = header.ToString(); headLabel.Font = new Font("Calibri", 12); headLabel.Location = new Point(0, 300); headLabel.AutoSize = true;
             headerPanel.Controls.Add(headLabel);
 
             //очищаэмо поля вибору і введення
