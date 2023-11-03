@@ -12,34 +12,11 @@ namespace orderTest
     {
         private static List<addModel> AddList = new List<addModel>();
 
-        private void nameADD_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (nameADD.SelectedIndex != 0)
-            {
-                meterADD.Enabled = true;
-            }
-            else
-            {
-                meterADD.Enabled = false;
-            }
-        }
+        private void nameADD_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(nameADD, meterADD);
 
-        private void meterADD_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (meterADD.SelectedIndex != 0)
-            {
-                amountADD.Enabled = true;
-            }
-            else
-            {
-                amountADD.Enabled = false;
-            }
-        }
+        private void meterADD_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(meterADD, amountEPS);
 
-        private void amountADD_Leave(object sender, EventArgs e)
-        {
-            addAddToOrderButton.Enabled = true;
-        }
+        private void amountADD_Leave(object sender, EventArgs e) => addAddToOrderButton.Enabled = true;
 
         private void addAddToOrderButton_Click(object sender, EventArgs e)
         {

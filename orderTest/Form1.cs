@@ -15,7 +15,6 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private static Panel[] panels;
         static private string path = @"e:\work\dev\orderUST\order.txt";
 
         public Form1()
@@ -23,24 +22,13 @@ namespace orderTest
             InitializeComponent();
 
             //реквізити
-            headerPanel.Location = new Point(0, 0);
-            headerPanel.Size = new Size(753, 400);
-
-            dateHead.Enabled = true;
+            headerPanel.Location = new Point(0, 0); headerPanel.Size = new Size(753, 400);
 
             //eps
-            epsPanel.Location = new Point(0, 0);
-            epsPanel.Size = new Size(753, 400);
-
-            markEPS.SelectedIndex = 0;
-            thikEPS.SelectedIndex = 0;
+            epsPanel.Location = new Point(0, 0); epsPanel.Size = new Size(753, 400); selectDefaultItem(new[] { markEPS, thikEPS });
 
             //додаткові
-            addPanel.Location = new Point(0, 0);
-            addPanel.Size = new Size(753, 300);
-
-            nameADD.SelectedIndex = 0;
-            meterADD.SelectedIndex = 0;
+            addPanel.Location = new Point(0, 0); addPanel.Size = new Size(753, 300); selectDefaultItem(new[] { nameADD, meterADD });
         }
 
         private void downToFile_Click(object sender, EventArgs e)
