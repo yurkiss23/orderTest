@@ -61,8 +61,7 @@ namespace orderTest
         private void addHeadData_Click(object sender, EventArgs e)
         {
             //рядок з реквізитами
-            string[] addHead = { dateHead.Value.ToString(), numberHead.Text, clientHead.Text,
-                markHead.Text, vehicleHead.Text,// trailerHead.CheckState.ToString(),
+            string[] addHead = { dateHead.Value.ToString(), numberHead.Text, clientHead.Text, markHead.Text, vehicleHead.Text,// trailerHead.CheckState.ToString(),
                 addressHead.Text, driverHead.Text, commentHead.Text };
 
             //додаємо реквізити до замовлення

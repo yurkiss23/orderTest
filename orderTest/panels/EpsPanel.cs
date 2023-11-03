@@ -31,12 +31,11 @@ namespace orderTest
             //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
             if (isLast(EpsList.Count)) { isMark(addEPS); }
 
-            //додаємо рядок в таблицю на формі
-            epsData.Rows.Add(addEPS);
-            epsData.Visible = true;
-
             //додаємо eps в замовлення
             EpsList.Add(new(addEPS));
+
+            //додаємо рядок в таблицю на формі
+            epsData.Rows.Add(addEPS); epsData.Visible = true;
 
             //очищаэмо поля вибору і введення
             epsClear();

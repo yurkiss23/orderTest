@@ -49,12 +49,11 @@ namespace orderTest
             //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
             //if (isLast(AddList.Count)) { isMark(addADD); }
 
-            //додаємо рядок в таблицю на формі
-            addData.Rows.Add(addADD);
-            addData.Visible = true;
-
             //додаємо позицію в замовлення
             AddList.Add(new(addADD));
+
+            //додаємо рядок в таблицю на формі
+            addData.Rows.Add(addADD); addData.Visible = true;
 
             //очищаэмо поля вибору і введення
             addClear();
