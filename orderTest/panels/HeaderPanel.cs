@@ -11,7 +11,9 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private void dateHead_ValueChanged(object sender, EventArgs e) { fillEnable(new[] { numberHead, commentHead }, true); clearHead.Enabled = true; }
+        static private Control[] tbArray = new Control[] { };
+
+        private void dateHead_ValueChanged(object sender, EventArgs e) => fillEnable(new Control[] { numberHead, commentHead, clearHead }, true);
 
         private void numberHead_Enter(object sender, EventArgs e) => clearText(numberHead);
 
@@ -21,9 +23,9 @@ namespace orderTest
 
         private void clientHead_Enter(object sender, EventArgs e) => clearText(clientHead);
 
-        private void clientHead_TextChanged(object sender, EventArgs e) => fillEnable(new[] { markHead, vehicleHead, addressHead, driverHead }, true);
+        private void clientHead_TextChanged(object sender, EventArgs e) => fillEnable(tbArray, true);
 
-        private void clientHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { markHead, vehicleHead, addressHead, driverHead }, false, "замовник");
+        private void clientHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, tbArray, false, "замовник");
 
         private void markHead_Enter(object sender, EventArgs e) => clearText(markHead);
 

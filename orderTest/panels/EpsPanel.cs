@@ -10,7 +10,7 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private static List<epsModel> EpsList = new List<epsModel>();
+        static private List<epsModel> EpsList = new List<epsModel>();
 
         private void markEPS_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(markEPS, thikEPS);
 
