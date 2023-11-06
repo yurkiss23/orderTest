@@ -10,7 +10,7 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private static List<addModel> AddList = new List<addModel>();
+        static private List<addModel> AddList = new List<addModel>();
 
         private void nameADD_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(nameADD, meterADD);
 

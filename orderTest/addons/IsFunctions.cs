@@ -19,6 +19,8 @@ namespace orderTest
 
         private void fillEnable(Control[] ctrs, bool state, string type = "t") { foreach (Control c in ctrs) { c.Enabled = state; } }
 
+        private void fillEnable(List<Control> ctrs, bool state, string type = "t") { foreach (Control c in ctrs) { c.Enabled = state; } }
+
         //реквізити
         private void txt(List<TextBox> list, string[] ph) { foreach (TextBox t in list) { t.Text = "---" + ph[list.IndexOf(t)] + "---"; } }
 
@@ -30,10 +32,16 @@ namespace orderTest
 
         private void headClear()
         {
+            List<Control> controls = tbArray.ToList();
+            controls.Append<Control>(numberHead);
+            //Control[] ctrs = (Control[])tbArray.Concat<Control[]>(new Control[] { numberHead });
+            //tbArray = new Control[] { markHead, vehicleHead, addressHead, driverHead };
+            //Control[] ctrs2 = (Control[])ctrs1.Concat(tbArray);
             dateHead.ResetText();
             txt(new List<TextBox> { numberHead, clientHead, markHead, vehicleHead, addressHead, driverHead }, new[] { "#", "замовник", "марка", "машина", "адреса", "водій" });
-            fillEnable(new[] { numberHead, clientHead, markHead, vehicleHead, addressHead, driverHead, commentHead }, false);
-            fillEnable(new[] { clearHead, addHeadData }, false, "b");
+            fillEnable(controls, false);
+            MessageBox.Show(controls.Count.ToString());
+            //fillEnable(new[] { clearHead, addHeadData }, false, "b");
         }
 
         //пінопласт
