@@ -27,19 +27,19 @@ namespace orderTest
 
         private void markHead_Enter(object sender, EventArgs e) => clearText(markHead);
 
-        private void markHead_Leave(object sender, EventArgs e) => isFill(sender, addHeadData, "марка");
+        private void markHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, true, "марка");
 
         private void vehicleHead_Enter(object sender, EventArgs e) => clearText(vehicleHead);
 
-        private void vehicleHead_Leave(object sender, EventArgs e) => isFill(sender, addHeadData, "машина");
+        private void vehicleHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, true, "машина");
 
         private void addressHead_Enter(object sender, EventArgs e) => clearText(addressHead);
 
-        private void addressHead_Leave(object sender, EventArgs e) => isFill(sender, addHeadData, "адреса");
+        private void addressHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, true, "адреса");
 
         private void driverHead_Enter(object sender, EventArgs e) => clearText(driverHead);
 
-        private void driverHead_Leave(object sender, EventArgs e) => isFill(sender, addHeadData, "водій");
+        private void driverHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, true, "водій");
 
         private void clearHead_MouseHover(object sender, EventArgs e) => clearHead.BackColor = Color.LightCoral;
 

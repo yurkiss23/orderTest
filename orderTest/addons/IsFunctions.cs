@@ -13,13 +13,11 @@ namespace orderTest
         //all
         private bool isLast(int count) { if (count > 0) { return true; } return false; }
 
-        private void isNullPosition(ComboBox a, ComboBox b) { if (a.SelectedIndex != 0) { b.Enabled = true; } else { b.Enabled = false; } }
-
-        private void isNullPosition(ComboBox a, TextBox b) { if (a.SelectedIndex != 0) { b.Enabled = true; } else { b.Enabled = false; } }
+        private void isNullPosition(ComboBox a, Control b) { if (a.SelectedIndex != 0) { b.Enabled = true; } else { b.Enabled = false; } }
 
         private void selectDefaultItem(ComboBox[] cb) { foreach (ComboBox cbItem in cb) { cbItem.SelectedIndex = 0; } }
 
-        private void fillEnable(TextBox[] tb, bool state) { foreach (TextBox t in tb) { t.Enabled = state; } }
+        private void fillEnable(Control[] ctrs, bool state, string type = "t") { foreach (Control c in ctrs) { c.Enabled = state; } }
 
         //реквізити
         private void txt(List<TextBox> list, string[] ph) { foreach (TextBox t in list) { t.Text = "---" + ph[list.IndexOf(t)] + "---"; } }
@@ -28,16 +26,14 @@ namespace orderTest
 
         private void clearText(TextBox tb) { if(isPH(tb.Text)) { tb.Clear(); } }
 
-        private void isFill(TextBox t, TextBox[] tb, bool state, string ph) { if (!t.Text.Any()) { txt(new List<TextBox> { t }, new[] { ph }); fillEnable(tb, state); } }
-
-        private void isFill(object obj, Button b, string ph) { TextBox t = (TextBox)obj; if (!t.Text.Any()) { txt(new List<TextBox> { t }, new[] { ph }); b.Enabled = true; } }
+        private void isFill(TextBox t, Control[] ctrs, bool state, string ph) { if (!t.Text.Any()) { txt(new List<TextBox> { t }, new[] { ph }); fillEnable(ctrs, state); } }
 
         private void headClear()
         {
             dateHead.ResetText();
             txt(new List<TextBox> { numberHead, clientHead, markHead, vehicleHead, addressHead, driverHead }, new[] { "#", "замовник", "марка", "машина", "адреса", "водій" });
             fillEnable(new[] { numberHead, clientHead, markHead, vehicleHead, addressHead, driverHead, commentHead }, false);
-            clearHead.Enabled = false; addHeadData.Enabled = false;
+            fillEnable(new[] { clearHead, addHeadData }, false, "b");
         }
 
         //пінопласт
