@@ -22,7 +22,7 @@ namespace orderTest
             InitializeComponent();
 
             //реквізити
-            tbArray = new[] { markHead, vehicleHead, addressHead, driverHead };
+            controlArray = new Control[] { markHead, vehicleHead, addressHead, driverHead };
             headerPanel.Location = new Point(0, 0); headerPanel.Size = new Size(753, 400);
 
             //eps

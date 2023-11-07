@@ -11,7 +11,7 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        static private Control[] tbArray = new Control[] { };
+        static private Control[] controlArray;// = new Control[] { };
 
         private void dateHead_ValueChanged(object sender, EventArgs e) => fillEnable(new Control[] { numberHead, commentHead, clearHead }, true);
 
@@ -23,9 +23,9 @@ namespace orderTest
 
         private void clientHead_Enter(object sender, EventArgs e) => clearText(clientHead);
 
-        private void clientHead_TextChanged(object sender, EventArgs e) => fillEnable(tbArray, true);
+        private void clientHead_TextChanged(object sender, EventArgs e) => fillEnable(controlArray, true);
 
-        private void clientHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, tbArray, false, "замовник");
+        private void clientHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, controlArray, false, "замовник");
 
         private void markHead_Enter(object sender, EventArgs e) => clearText(markHead);
 
@@ -47,7 +47,7 @@ namespace orderTest
 
         private void clearHead_MouseLeave(object sender, EventArgs e) => clearHead.BackColor = Color.MistyRose;
 
-        private void clearHead_Click(object sender, EventArgs e) => headClear();
+        private void clearHead_Click(object sender, EventArgs e) => headClear(controlArray);
 
         private void addHeadData_Click(object sender, EventArgs e)
         {
@@ -63,7 +63,7 @@ namespace orderTest
             headerPanel.Controls.Add(headLabel);
 
             //очищаэмо поля вибору і введення
-            headClear();
+            headClear(controlArray);
         }
     }
 }
