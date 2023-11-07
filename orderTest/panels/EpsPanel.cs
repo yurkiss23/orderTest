@@ -16,6 +16,8 @@ namespace orderTest
 
         private void thikEPS_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(thikEPS, amountEPS);
 
+        private void amountEPS_TextChanged(object sender, EventArgs e) => isNum(amountEPS);
+
         private void amountEPS_Leave(object sender, EventArgs e)
         {
             packEPS.Enabled = true; packEPS.Text = ((double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString()); addEpsToOrderButton.Enabled = true;
