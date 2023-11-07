@@ -30,17 +30,25 @@ namespace orderTest
 
         private void isFill(TextBox t, Control[] ctrs, bool state, string ph) { if (!t.Text.Any()) { txt(new List<TextBox> { t }, new[] { ph }); fillEnable(ctrs, state); } }
 
-        private void headClear()
+        private void headClear(Control[] ca)
         {
-            List<Control> controls = tbArray.ToList();
-            controls.Append<Control>(numberHead);
+            int count = 0;
+            MessageBox.Show(count.ToString());
+            List<Control> controls = ca.ToList();
+            
+            count = controls.Count();
+            MessageBox.Show(count.ToString());
+            _ = controls.Append(numberHead);//.Append<Control>(clearHead);
+            count = controls.Count();
+            MessageBox.Show(count.ToString());
             //Control[] ctrs = (Control[])tbArray.Concat<Control[]>(new Control[] { numberHead });
             //tbArray = new Control[] { markHead, vehicleHead, addressHead, driverHead };
             //Control[] ctrs2 = (Control[])ctrs1.Concat(tbArray);
             dateHead.ResetText();
             txt(new List<TextBox> { numberHead, clientHead, markHead, vehicleHead, addressHead, driverHead }, new[] { "#", "замовник", "марка", "машина", "адреса", "водій" });
             fillEnable(controls, false);
-            MessageBox.Show(controls.Count.ToString());
+            count = controls.Count();
+            MessageBox.Show(count.ToString());
             //fillEnable(new[] { clearHead, addHeadData }, false, "b");
         }
 
