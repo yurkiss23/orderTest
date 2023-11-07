@@ -9,7 +9,7 @@ namespace orderTest.models
     internal class addModel
     {
         public addModel() { }
-        public addModel(string[] add) { Name = add[0]; Amount = int.Parse(add[1]); Meter = add[2]; }
+        public addModel(string[] add) { Name = add[0]; Amount = int.Parse(add[2]); Meter = add[1]; }
 
         public string Name {  get; set; }
         public int Amount {  get; set; }

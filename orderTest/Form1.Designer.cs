@@ -319,6 +319,7 @@
             this.amountADD.Name = "amountADD";
             this.amountADD.Size = new System.Drawing.Size(144, 31);
             this.amountADD.TabIndex = 2;
+            this.amountADD.TextChanged += new System.EventHandler(this.amountADD_TextChanged);
             this.amountADD.Leave += new System.EventHandler(this.amountADD_Leave);
             // 
             // addAddToOrderButton
@@ -508,6 +509,7 @@
             this.amountEPS.Name = "amountEPS";
             this.amountEPS.Size = new System.Drawing.Size(234, 31);
             this.amountEPS.TabIndex = 2;
+            this.amountEPS.TextChanged += new System.EventHandler(this.amountEPS_TextChanged);
             this.amountEPS.Leave += new System.EventHandler(this.amountEPS_Leave);
             // 
             // packEPSlabel
