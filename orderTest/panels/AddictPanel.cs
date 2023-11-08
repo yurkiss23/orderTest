@@ -12,6 +12,7 @@ namespace orderTest
     public partial class Form1 : Form
     {
         static private List<addModel> AddList = new List<addModel>();
+        private string[] addADD;
 
         private void nameADD_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(nameADD, meterADD);
 
@@ -26,7 +27,7 @@ namespace orderTest
         private void addAddToOrderButton_Click(object sender, EventArgs e)
         {
             //новий рядок
-            string[] addADD = { nameADD.Text, meterADD.Text, amountADD.Text };
+            addADD = new[] { nameADD.Text, meterADD.Text, amountADD.Text };
 
             //додаємо позицію в замовлення
             AddList.Add(new(addADD));
