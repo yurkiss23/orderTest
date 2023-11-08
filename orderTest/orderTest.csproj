@@ -54,6 +54,9 @@
     <Compile Include="addons\EpsFunction.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="addons\FormFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="addons\GenFunction.cs">
       <SubType>Form</SubType>
     </Compile>

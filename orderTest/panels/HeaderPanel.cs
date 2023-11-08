@@ -11,6 +11,7 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
+        static private headModel hd;
         static private Control[] diffControlArray;
         static private Control[] txtControlArray;
         private string[] addHead;
@@ -60,14 +61,16 @@ namespace orderTest
                 addressHead.Text, driverHead.Text, commentHead.Text };
 
             //додаємо реквізити до замовлення
-            headModel header = new headModel(addHead);
+            hd = new headModel(addHead);
 
             //виводимо реквізити на форму
-            Label headLabel = new Label(); headLabel.Text = header.ToString(); headLabel.Font = new Font("Calibri", 12); headLabel.Location = new Point(0, 300); headLabel.AutoSize = true;
+            Label headLabel = new Label(); headLabel.Text = hd.ToString(); headLabel.Font = new Font("Calibri", 12); headLabel.Location = new Point(0, 300); headLabel.AutoSize = true;
             headerPanel.Controls.Add(headLabel);
 
             //очищаэмо поля вибору і введення
             headClear(txtControlArray.ToList());
+
+            enableButton();
         }
     }
 }

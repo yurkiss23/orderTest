@@ -42,6 +42,8 @@ namespace orderTest
 
             //очищаэмо поля вибору і введення
             epsClear();
+
+            enableButton();
         }
     }
 }
