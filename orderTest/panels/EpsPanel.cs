@@ -20,7 +20,7 @@ namespace orderTest
 
         private void amountEPS_Leave(object sender, EventArgs e)
         {
-            packEPS.Enabled = true; packEPS.Text = ((double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString()); addEpsToOrderButton.Enabled = true;
+            fillEnable(new Control[] { packEPS, addEpsToOrderButton }, true); packEPS.Text = ((double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString());
         }
 
         private void addEpsToOrderButton_Click(object sender, EventArgs e)
