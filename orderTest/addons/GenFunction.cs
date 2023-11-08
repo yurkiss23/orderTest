@@ -9,15 +9,19 @@ namespace orderTest
 {
     public partial class Form1: Form
     {
-        private void isNum(TextBox tb)
+        private void isNum(TextBox tb, Control[] ctrl, TextBox tCtrl = null)
         {
             if (tb.Text != "")
             {
-                try { int.Parse(tb.Text); addAddToOrderButton.Enabled = true; }
+                try { int.Parse(tb.Text); if (tCtrl != null) { calcPack(tCtrl); } fillEnable(ctrl, true); }
                 catch (Exception)
                 {
-                    try { double.Parse(tb.Text); addAddToOrderButton.Enabled = true; }
-                    catch (Exception ex) { MessageBox.Show("потрібно ввести число!", ex.Message.ToString()); tb.SelectAll(); }
+                    try { double.Parse(tb.Text); if (tCtrl != null) { calcPack(tCtrl); } fillEnable(ctrl, true); }
+                    catch (Exception ex)
+                    {
+                        if (tCtrl != null) { tCtrl.Clear(); } fillEnable(ctrl, false);
+                        MessageBox.Show("потрібно ввести число!", ex.Message.ToString()); tb.SelectAll();
+                    }
                 }
             }
         }
@@ -27,6 +31,8 @@ namespace orderTest
         private void isNullPosition(ComboBox a, Control b) { if (a.SelectedIndex != 0) { b.Enabled = true; } else { b.Enabled = false; } }
 
         private void selectDefaultItem(ComboBox[] cb) { foreach (ComboBox cbItem in cb) { cbItem.SelectedIndex = 0; } }
+
+        private void isFill(TextBox t, Control[] ctrs, bool state, string ph) { if (!t.Text.Any()) { txt(new List<Control> { t }, new[] { ph }); fillEnable(ctrs, state); } }
 
         private void fillEnable(Control[] ctrs, bool state) { foreach (Control c in ctrs) { c.Enabled = state; } }
     }

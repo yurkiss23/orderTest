@@ -9,6 +9,8 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
+        private void calcPack(TextBox t) => packEPS.Text = (double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString();
+
         private void isMark(string[] row) { if (EpsList.Last().Mark.Equals(markEPS.Text)) { row[0] = ""; } }
 
         private void epsClear()

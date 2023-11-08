@@ -16,11 +16,11 @@ namespace orderTest
 
         private void thikEPS_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(thikEPS, amountEPS);
 
-        private void amountEPS_TextChanged(object sender, EventArgs e) => isNum(amountEPS);
+        private void amountEPS_TextChanged(object sender, EventArgs e) => isNum((TextBox)sender, new[] { addEpsToOrderButton }, packEPS);
 
         private void amountEPS_Leave(object sender, EventArgs e)
         {
-            fillEnable(new Control[] { packEPS, addEpsToOrderButton }, true); packEPS.Text = ((double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString());
+            fillEnable(new Control[] { packEPS, addEpsToOrderButton }, true); packEPS.Text = (double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString();
         }
 
         private void addEpsToOrderButton_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace orderTest
             //новий рядок
             string[] addEPS = { markEPS.SelectedItem.ToString(), thikEPS.SelectedItem.ToString(), amountEPS.Text, packEPS.Text };
 
-            //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
+            //перевірка: чи є вже дані в списку, чи збігається марка
             if (isLast(EpsList.Count)) { isMark(addEPS); }
 
             //додаємо eps в замовлення

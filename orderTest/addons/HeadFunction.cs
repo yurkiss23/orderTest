@@ -15,8 +15,6 @@ namespace orderTest
 
         private void clearText(TextBox tb) { if (isPH(tb.Text)) { tb.Clear(); } }
 
-        private void isFill(TextBox t, Control[] ctrs, bool state, string ph) { if (!t.Text.Any()) { txt(new List<Control> { t }, new[] { ph }); fillEnable(ctrs, state); } }
-
         private void headClear(List<Control> cl)
         {
             List<Control> tmpCtrTxt = new List<Control> { numberHead, clientHead }.Concat(cl).ToList();
