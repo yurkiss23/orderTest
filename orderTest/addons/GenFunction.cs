@@ -18,7 +18,10 @@ namespace orderTest
             diffControlArray = new Control[] { numberHead, commentHead, clearHead };
             txtControlArray = new[] { markHead, vehicleHead, addressHead, driverHead };
             ph = new[] { "#", "замовник", "марка", "машина", "адреса", "водій" };
+            epsControl = new Control[] { thikEPS, amountEPS, packEPS, addEpsToOrderButton };
         }
+
+        private void enableButton() { if (hd != null && EpsList.Any()) { fillEnable(new[] { downToFile }, true); } }
 
         //is...
         private void isNum(TextBox tb, Control[] ctrl, TextBox tCtrl = null)
@@ -50,5 +53,7 @@ namespace orderTest
         private void fillEnable(Control[] ctrs, bool state) { foreach (Control c in ctrs) { c.Enabled = state; } }
 
         private void fillPanelProps(Point p, Size s, ComboBox[] cb) { foreach (Panel pn in panels) { pn.Location = p; pn.Size = s; } selectDefaultItem(cb); }
+
+        private void resetAll() { headClear(txtControlArray.ToList()); epsClear(); addClear(); EpsList.Clear(); AddList.Clear(); downToFile.Text = "вийти"; }
     }
 }

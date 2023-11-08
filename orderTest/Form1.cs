@@ -33,6 +33,8 @@ namespace orderTest
             MessageBox.Show(downToFile.Text);
 
             //File.AppendAllText(path, addEPS + "\n");
+
+            resetAll();
         }
     }
 }
