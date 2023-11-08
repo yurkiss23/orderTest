@@ -23,6 +23,8 @@ namespace orderTest
             fillEnable(new Control[] { packEPS, addEpsToOrderButton }, true); packEPS.Text = (double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString();
         }
 
+        private void addEpsToOrderButton_EnabledChanged(object sender, EventArgs e) => isButtonStateChanged((Button)sender);
+
         private void addEpsToOrderButton_Click(object sender, EventArgs e)
         {
             //новий рядок

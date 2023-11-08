@@ -49,6 +49,8 @@ namespace orderTest
 
         private void clearHead_Click(object sender, EventArgs e) => headClear(controlArray.ToList());
 
+        private void addHeadData_EnabledChanged(object sender, EventArgs e) => isButtonStateChanged((Button)sender);
+
         private void addHeadData_Click(object sender, EventArgs e)
         {
             //рядок з реквізитами

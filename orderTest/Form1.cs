@@ -32,6 +32,8 @@ namespace orderTest
             addPanel.Location = new Point(0, 0); addPanel.Size = new Size(753, 300); selectDefaultItem(new[] { nameADD, meterADD });
         }
 
+        private void downToFile_EnabledChanged(object sender, EventArgs e) => isButtonStateChanged((Button)sender);
+
         private void downToFile_Click(object sender, EventArgs e)
         {
             MessageBox.Show(downToFile.Text);
