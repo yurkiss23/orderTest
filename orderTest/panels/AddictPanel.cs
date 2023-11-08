@@ -16,16 +16,9 @@ namespace orderTest
 
         private void meterADD_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(meterADD, amountADD);
 
-        private void amountADD_TextChanged(object sender, EventArgs e)
-        {
-            isNum(amountADD);
-        }
+        private void amountADD_TextChanged(object sender, EventArgs e) => isNum(amountADD);
 
-        private void amountADD_Leave(object sender, EventArgs e)
-        {
-            //addAddToOrderButton.Enabled = isNum(amountADD);
-            addAddToOrderButton.Enabled = true;
-        }
+        private void amountADD_Leave(object sender, EventArgs e) => addAddToOrderButton.Enabled = true;
 
         private void addAddToOrderButton_Click(object sender, EventArgs e)
         {
