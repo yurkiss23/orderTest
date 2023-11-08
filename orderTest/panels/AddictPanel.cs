@@ -16,7 +16,7 @@ namespace orderTest
 
         private void meterADD_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(meterADD, amountADD);
 
-        private void amountADD_TextChanged(object sender, EventArgs e) => isNum(amountADD);
+        private void amountADD_TextChanged(object sender, EventArgs e) => isNum((TextBox)sender, new[] { addAddToOrderButton });
 
         private void amountADD_Leave(object sender, EventArgs e) => addAddToOrderButton.Enabled = true;
 
@@ -24,9 +24,6 @@ namespace orderTest
         {
             //новий рядок
             string[] addADD = { nameADD.Text, meterADD.Text, amountADD.Text };
-
-            //перевірка: заповненість, чи є вже дані в списку, чи збігається марка
-            //if (isLast(AddList.Count)) { isMark(addADD); }
 
             //додаємо позицію в замовлення
             AddList.Add(new(addADD));
