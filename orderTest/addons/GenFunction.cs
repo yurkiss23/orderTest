@@ -10,6 +10,17 @@ namespace orderTest
 {
     public partial class Form1: Form
     {
+        private void selectDefaultItem(ComboBox[] cb) { foreach (ComboBox cbItem in cb) { cbItem.SelectedIndex = 0; } }
+
+        private void initArrays()
+        {
+            panels = new[] { headerPanel, epsPanel, addPanel };
+            diffControlArray = new Control[] { numberHead, commentHead, clearHead };
+            txtControlArray = new[] { markHead, vehicleHead, addressHead, driverHead };
+            ph = new[] { "#", "замовник", "марка", "машина", "адреса", "водій" };
+        }
+
+        //is...
         private void isNum(TextBox tb, Control[] ctrl, TextBox tCtrl = null)
         {
             if (tb.Text != "")
@@ -33,10 +44,11 @@ namespace orderTest
 
         private void isButtonStateChanged(Button b) { if (b.Enabled) { b.FlatStyle = FlatStyle.Popup; b.BackColor = Color.LightGreen; } else { b.FlatStyle = FlatStyle.System; } }
 
-        private void selectDefaultItem(ComboBox[] cb) { foreach (ComboBox cbItem in cb) { cbItem.SelectedIndex = 0; } }
-
         private void isFill(TextBox t, Control[] ctrs, bool state, string ph) { if (!t.Text.Any()) { txt(new List<Control> { t }, new[] { ph }); fillEnable(ctrs, state); } }
 
+        //fill..
         private void fillEnable(Control[] ctrs, bool state) { foreach (Control c in ctrs) { c.Enabled = state; } }
+
+        private void fillPanelProps(Point p, Size s, ComboBox[] cb) { foreach (Panel pn in panels) { pn.Location = p; pn.Size = s; } selectDefaultItem(cb); }
     }
 }

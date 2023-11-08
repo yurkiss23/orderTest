@@ -16,20 +16,14 @@ namespace orderTest
     public partial class Form1 : Form
     {
         static private string path = @"e:\work\dev\orderUST\order.txt";
+        static private Panel[] panels;
 
         public Form1()
         {
             InitializeComponent();
 
-            //реквізити
-            controlArray = new Control[] { markHead, vehicleHead, addressHead, driverHead };
-            headerPanel.Location = new Point(0, 0); headerPanel.Size = new Size(753, 400);
-
-            //eps
-            epsPanel.Location = new Point(0, 0); epsPanel.Size = new Size(753, 400); selectDefaultItem(new[] { markEPS, thikEPS });
-
-            //додаткові
-            addPanel.Location = new Point(0, 0); addPanel.Size = new Size(753, 300); selectDefaultItem(new[] { nameADD, meterADD });
+            initArrays();
+            fillPanelProps(new Point(0, 0), new Size(753, 400), new[] { markEPS, thikEPS, nameADD, meterADD });
         }
 
         private void downToFile_EnabledChanged(object sender, EventArgs e) => isButtonStateChanged((Button)sender);

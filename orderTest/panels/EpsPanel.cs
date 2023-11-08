@@ -11,6 +11,7 @@ namespace orderTest
     public partial class Form1 : Form
     {
         static private List<epsModel> EpsList = new List<epsModel>();
+        private string[] addEPS;
 
         private void markEPS_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(markEPS, thikEPS);
 
@@ -28,7 +29,7 @@ namespace orderTest
         private void addEpsToOrderButton_Click(object sender, EventArgs e)
         {
             //новий рядок
-            string[] addEPS = { markEPS.SelectedItem.ToString(), thikEPS.SelectedItem.ToString(), amountEPS.Text, packEPS.Text };
+            addEPS = new[] { markEPS.SelectedItem.ToString(), thikEPS.SelectedItem.ToString(), amountEPS.Text, packEPS.Text };
 
             //перевірка: чи є вже дані в списку, чи збігається марка
             if (isLast(EpsList.Count)) { isMark(addEPS); }

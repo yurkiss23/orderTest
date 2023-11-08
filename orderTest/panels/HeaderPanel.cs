@@ -11,9 +11,11 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        static private Control[] controlArray;
+        static private Control[] diffControlArray;
+        static private Control[] txtControlArray;
+        private string[] addHead;
 
-        private void dateHead_ValueChanged(object sender, EventArgs e) => fillEnable(new Control[] { numberHead, commentHead, clearHead }, true);
+        private void dateHead_ValueChanged(object sender, EventArgs e) => fillEnable(diffControlArray, true);
 
         private void numberHead_Enter(object sender, EventArgs e) => clearText(numberHead);
 
@@ -23,9 +25,9 @@ namespace orderTest
 
         private void clientHead_Enter(object sender, EventArgs e) => clearText(clientHead);
 
-        private void clientHead_TextChanged(object sender, EventArgs e) => fillEnable(controlArray, true);
+        private void clientHead_TextChanged(object sender, EventArgs e) => fillEnable(txtControlArray, true);
 
-        private void clientHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, controlArray, false, "замовник");
+        private void clientHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, txtControlArray, false, "замовник");
 
         private void markHead_Enter(object sender, EventArgs e) => clearText(markHead);
 
@@ -47,14 +49,14 @@ namespace orderTest
 
         private void clearHead_MouseLeave(object sender, EventArgs e) => clearHead.BackColor = Color.MistyRose;
 
-        private void clearHead_Click(object sender, EventArgs e) => headClear(controlArray.ToList());
+        private void clearHead_Click(object sender, EventArgs e) => headClear(txtControlArray.ToList());
 
         private void addHeadData_EnabledChanged(object sender, EventArgs e) => isButtonStateChanged((Button)sender);
 
         private void addHeadData_Click(object sender, EventArgs e)
         {
             //рядок з реквізитами
-            string[] addHead = { dateHead.Value.ToString(), numberHead.Text, clientHead.Text, markHead.Text, vehicleHead.Text,// trailerHead.CheckState.ToString(),
+            addHead = new[] { dateHead.Value.ToString(), numberHead.Text, clientHead.Text, markHead.Text, vehicleHead.Text,// trailerHead.CheckState.ToString(),
                 addressHead.Text, driverHead.Text, commentHead.Text };
 
             //додаємо реквізити до замовлення
@@ -65,7 +67,7 @@ namespace orderTest
             headerPanel.Controls.Add(headLabel);
 
             //очищаэмо поля вибору і введення
-            headClear(controlArray.ToList());
+            headClear(txtControlArray.ToList());
         }
     }
 }

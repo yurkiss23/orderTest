@@ -12,8 +12,6 @@ namespace orderTest
     {
         private void panelEnVis(Panel panel)
         {
-            Panel[] panels = { headerPanel, epsPanel, addPanel };
-
             foreach (var item in panels)
             {
                 item.Visible = false; item.Enabled = false;
