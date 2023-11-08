@@ -1,6 +1,7 @@
 ﻿using orderTest.models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +17,11 @@ namespace orderTest
 
         private void meterADD_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(meterADD, amountADD);
 
-        private void amountADD_TextChanged(object sender, EventArgs e) => isNum((TextBox)sender, new[] { addAddToOrderButton });
+        private void amountADD_TextChanged(object sender, EventArgs e) => isNum((TextBox)sender, new Control[] { addAddToOrderButton });
 
         private void amountADD_Leave(object sender, EventArgs e) => addAddToOrderButton.Enabled = true;
+
+        private void addAddToOrderButton_EnabledChanged(object sender, EventArgs e) => isButtonStateChanged((Button)sender);
 
         private void addAddToOrderButton_Click(object sender, EventArgs e)
         {
