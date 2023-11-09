@@ -30,11 +30,18 @@ namespace orderTest
 
         private void downToFile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(downToFile.Text);
+            if(downToFile.Text=="вивантажити замовлення")
+            {
+                MessageBox.Show(hd.ToString() + ", " + EpsList.ToString() + ", " + AddList.ToString());
+            }
+            else
+            {
+                resetAll();
+                downToFile.Enabled = false;
+            }
 
             //File.AppendAllText(path, addEPS + "\n");
 
-            resetAll();
         }
     }
 }
