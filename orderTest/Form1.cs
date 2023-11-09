@@ -17,6 +17,7 @@ namespace orderTest
     {
         static private string path = @"e:\work\dev\orderUST\order.txt";
         static private Panel[] panels;
+        static private Button[] addBut;
 
         public Form1()
         {
