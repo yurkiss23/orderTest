@@ -15,6 +15,7 @@ namespace orderTest
         private void initArrays()
         {
             panels = new[] { headerPanel, epsPanel, addPanel };
+            //addBut = new[] { addHeadData, addEpsToOrderButton, addAddToOrderButton };
             diffControlArray = new Control[] { numberHead, commentHead, clearHead };
             txtControlArray = new[] { markHead, vehicleHead, addressHead, driverHead };
             ph = new[] { "#", "замовник", "марка", "машина", "адреса", "водій" };
@@ -22,6 +23,10 @@ namespace orderTest
         }
 
         private void enableButton() { if (hd != null && EpsList.Any()) { fillEnable(new[] { downToFile }, true); } }
+
+        private void txtBold(Control c) { c.Font = new Font(c.Font, c.Font.Style | FontStyle.Bold | FontStyle.Underline); }
+
+        private void resetAll() { headClear(txtControlArray.ToList()); epsClear(); addClear(); EpsList.Clear(); AddList.Clear(); downToFile.Text = "вийти"; }
 
         //is...
         private void isNum(TextBox tb, Control[] ctrl, TextBox tCtrl = null)
@@ -45,15 +50,18 @@ namespace orderTest
 
         private void isNullPosition(ComboBox a, Control b) { if (a.SelectedIndex != 0) { b.Enabled = true; } else { b.Enabled = false; } }
 
-        private void isButtonStateChanged(Button b) { if (b.Enabled) { b.FlatStyle = FlatStyle.Popup; b.BackColor = Color.LightGreen; } else { b.FlatStyle = FlatStyle.System; } }
+        private void isButtonStateChanged(Button b)
+        {
+            if (b.Enabled) { b.FlatStyle = FlatStyle.Popup; b.BackColor = Color.LightGreen; downToFile.Enabled = false; } else { b.FlatStyle = FlatStyle.System; }
+        }
 
         private void isFill(TextBox t, Control[] ctrs, bool state, string ph) { if (!t.Text.Any()) { txt(new List<Control> { t }, new[] { ph }); fillEnable(ctrs, state); } }
+
+        private bool isState(Control[] ctrl) { foreach (Control c in ctrl) { if (c.Enabled) { return false; } } return true; }
 
         //fill..
         private void fillEnable(Control[] ctrs, bool state) { foreach (Control c in ctrs) { c.Enabled = state; } }
 
         private void fillPanelProps(Point p, Size s, ComboBox[] cb) { foreach (Panel pn in panels) { pn.Location = p; pn.Size = s; } selectDefaultItem(cb); }
-
-        private void resetAll() { headClear(txtControlArray.ToList()); epsClear(); addClear(); EpsList.Clear(); AddList.Clear(); downToFile.Text = "вийти"; }
     }
 }
