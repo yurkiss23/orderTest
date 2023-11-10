@@ -30,7 +30,7 @@ namespace orderTest
             addADD = new[] { nameADD.Text, meterADD.Text, amountADD.Text };
 
             //додаємо позицію в замовлення
-            AddList.Add(new(addADD)); //txtBold(radioAdd);
+            AddList.Add(new(addADD)); txtBold(radioAdd);
 
             //додаємо рядок в таблицю на формі
             addData.Rows.Add(addADD); addData.Visible = true;

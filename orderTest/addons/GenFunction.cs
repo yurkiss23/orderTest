@@ -15,7 +15,7 @@ namespace orderTest
         private void initArrays()
         {
             panels = new[] { headerPanel, epsPanel, addPanel };
-            //addBut = new[] { addHeadData, addEpsToOrderButton, addAddToOrderButton };
+            addBut = new[] { addHeadData, addEpsToOrderButton, addAddToOrderButton };
             diffControlArray = new Control[] { numberHead, commentHead, clearHead };
             txtControlArray = new[] { markHead, vehicleHead, addressHead, driverHead };
             ph = new[] { "#", "замовник", "марка", "машина", "адреса", "водій" };
