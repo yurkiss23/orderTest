@@ -11,11 +11,11 @@ namespace orderTest
     {
         static private string[] ph;
 
-        private void txt(List<Control> list, string[] ph) { foreach (TextBox t in list) { t.Text = "---" + ph[list.IndexOf(t)] + "---"; } }
+        private void txt(List<Control> list, string[] ph) { foreach (TextBox t in list) t.Text = "---" + ph[list.IndexOf(t)] + "---"; }
 
-        private bool isPH(string ph) { if (ph.Contains("---")) { return true; } return false; }
+        private bool isPH(string ph) => ph.Contains("---") ? true : false;
 
-        private void clearText(TextBox tb) { if (isPH(tb.Text)) { tb.Clear(); } }
+        private void clearText(TextBox tb) { if (isPH(tb.Text)) tb.Clear(); }
 
         private void headClear(List<Control> cl)
         {

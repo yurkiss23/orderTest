@@ -19,10 +19,7 @@ namespace orderTest
 
         private void amountEPS_TextChanged(object sender, EventArgs e) => isNum((TextBox)sender, new[] { addEpsToOrderButton }, packEPS);
 
-        private void amountEPS_Leave(object sender, EventArgs e)
-        {
-            fillEnable(new Control[] { packEPS, addEpsToOrderButton }, true); packEPS.Text = (double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString();
-        }
+        private void amountEPS_Leave(object sender, EventArgs e) { fillEnable(new Control[] { packEPS, addEpsToOrderButton }, true); calcPack(packEPS); }
 
         private void addEpsToOrderButton_EnabledChanged(object sender, EventArgs e) => isButtonStateChanged((Button)sender);
 
