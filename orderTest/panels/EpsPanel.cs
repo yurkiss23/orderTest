@@ -35,7 +35,7 @@ namespace orderTest
             if (isLast(EpsList.Count)) { isMark(addEPS); }
 
             //додаємо eps в замовлення
-            EpsList.Add(new(addEPS)); //txtBold(radioEPS);
+            EpsList.Add(new(addEPS)); txtBold(radioEPS);
 
             //додаємо рядок в таблицю на формі
             epsData.Rows.Add(addEPS); epsData.Visible = true;

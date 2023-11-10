@@ -61,7 +61,7 @@ namespace orderTest
                 addressHead.Text, driverHead.Text, commentHead.Text };
 
             //додаємо реквізити до замовлення
-            hd = new headModel(addHead); //txtBold(radioHead);
+            hd = new headModel(addHead); txtBold(radioHead);
 
             //виводимо реквізити на форму
             Label headLabel = new Label(); headLabel.Text = hd.ToString(); headLabel.Font = new Font("Calibri", 12); headLabel.Location = new Point(0, 300); headLabel.AutoSize = true;
