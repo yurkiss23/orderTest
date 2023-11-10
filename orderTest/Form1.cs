@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,15 +32,22 @@ namespace orderTest
 
         private void downToFile_Click(object sender, EventArgs e)
         {
-            if(downToFile.Text=="вивантажити замовлення")
+            if (downToFile.Text == "вивантажити замовлення")
             {
                 MessageBox.Show(hd.ToString() + ", " + EpsList.ToString() + ", " + AddList.ToString());
+                splitContainer1.Enabled = false; splitContainer1.Visible = false;
+                orderLabel.Enabled = false; orderLabel.Visible = false;
+
+                string orderJson = JsonSerializer.Serialize(hd);
+                Label jsonLabel = new Label(); jsonLabel.Text = orderJson; jsonLabel.Location = new Point(5, 150); jsonLabel.AutoSize = true;
+                Controls.Add(jsonLabel);
             }
             else
             {
-                resetAll();
-                downToFile.Enabled = false;
+                Close();
             }
+
+            resetAll();
 
             //File.AppendAllText(path, addEPS + "\n");
 
