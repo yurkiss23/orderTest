@@ -1,6 +1,7 @@
 ﻿using orderTest.models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace orderTest
             if (isLast(EpsList.Count)) { isMark(addEPS); }
 
             //додаємо eps в замовлення
-            EpsList.Add(new(addEPS)); txtBold(radioEPS);
+            EpsList.Add(new(addEPS)); txtBold(radioEPS); radioEPS.ForeColor = Color.DarkGreen;
 
             //додаємо рядок в таблицю на формі
             epsData.Rows.Add(addEPS); epsData.Visible = true;
