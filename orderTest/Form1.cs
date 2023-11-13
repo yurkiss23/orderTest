@@ -41,6 +41,8 @@ namespace orderTest
                 string orderJson = JsonSerializer.Serialize(hd);
                 Label jsonLabel = new Label(); jsonLabel.Text = orderJson; jsonLabel.Location = new Point(5, 150); jsonLabel.AutoSize = true;
                 Controls.Add(jsonLabel);
+
+
             }
             else
             {
