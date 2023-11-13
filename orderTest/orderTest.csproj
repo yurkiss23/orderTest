@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="models\addModel.cs" />
     <Compile Include="models\headModel.cs" />
+    <Compile Include="models\orderModel.cs" />
     <Compile Include="panels\EpsPanel.cs">
       <SubType>Form</SubType>
     </Compile>

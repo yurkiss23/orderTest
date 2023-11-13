@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace orderTest.models
 {
-    internal class headModel
+    public class headModel
     {
         public headModel() { }
         public headModel(string[] head)
