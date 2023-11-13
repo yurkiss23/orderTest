@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace orderTest.models
 {
-    internal class epsModel
+    public class epsModel
     {
         public epsModel() { }
         public epsModel(string[] eps) { Mark = eps[0]; Thikness = int.Parse(eps[1]); Amount = double.Parse(eps[2]); Pack = int.Parse(eps[3]); }
@@ -17,6 +17,6 @@ namespace orderTest.models
         public double Amount { get; set; }
         public int Pack { get; set; }
 
-        public override string ToString() { return Mark + ", " + Thikness.ToString() + ", " + Amount.ToString() + ", " + Pack.ToString(); }
+        public override string ToString() => Mark + ", " + Thikness.ToString() + ", " + Amount.ToString() + ", " + Pack.ToString();
     }
 }

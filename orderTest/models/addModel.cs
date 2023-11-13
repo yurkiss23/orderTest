@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace orderTest.models
 {
-    internal class addModel
+    public class addModel
     {
         public addModel() { }
         public addModel(string[] add) { Name = add[0]; Amount = int.Parse(add[2]); Meter = add[1]; }
@@ -15,6 +15,6 @@ namespace orderTest.models
         public int Amount {  get; set; }
         public string Meter {  get; set; }
 
-        public override string ToString() { return Name + ", " + Amount.ToString() + ", " + Meter; }
+        public override string ToString() => Name + ", " + Amount.ToString() + ", " + Meter;
     }
 }

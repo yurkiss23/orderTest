@@ -58,7 +58,7 @@ namespace orderTest
         {
             //рядок з реквізитами
             addHead = new[] { dateHead.Value.ToString(), numberHead.Text, clientHead.Text, markHead.Text, vehicleHead.Text,// trailerHead.CheckState.ToString(),
-                addressHead.Text, driverHead.Text, commentHead.Text };
+                driverHead.Text, addressHead.Text, commentHead.Text };
 
             //додаємо реквізити до замовлення
             hd = new headModel(addHead); txtBold(radioHead); radioHead.ForeColor = Color.DarkGreen;
