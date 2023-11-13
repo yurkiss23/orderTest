@@ -28,12 +28,13 @@ namespace orderTest
         {
             //новий рядок
             addEPS = new[] { markEPS.SelectedItem.ToString(), thikEPS.SelectedItem.ToString(), amountEPS.Text, packEPS.Text };
+            epsModel eps = new epsModel(addEPS);
 
             //перевірка: чи є вже дані в списку, чи збігається марка
-            if (isLast(EpsList.Count)) { isMark(addEPS); }
+            if (isLast(EpsList.Count)) isMark(addEPS);
 
             //додаємо eps в замовлення
-            EpsList.Add(new(addEPS)); txtBold(radioEPS); radioEPS.ForeColor = Color.DarkGreen;
+            EpsList.Add(eps); txtBold(radioEPS); radioEPS.ForeColor = Color.DarkGreen;
 
             //додаємо рядок в таблицю на формі
             epsData.Rows.Add(addEPS); epsData.Visible = true;
