@@ -51,7 +51,7 @@ namespace orderTest
 
                 //xml
                 XmlSerializer xmlOrder = new XmlSerializer(typeof(orderModel));
-                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate)) xmlOrder.Serialize(fs, order);
+                using (FileStream fs = new FileStream(path, FileMode.Create)) xmlOrder.Serialize(fs, order);
 
                 //email
                 //var msg = new MimeMessage();
