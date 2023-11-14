@@ -54,7 +54,7 @@ namespace orderTest
 
         private bool isState(Control[] ctrl) { foreach (Control c in ctrl) { if (c.Enabled) return false; } return true; }
 
-        private int isStorage() => EpsList.Any() ? (AddList.Any() ? 2 : 1) : (AddList.Any() ? 1 : 0);
+        private int storages() => EpsList.Any() ? (AddList.Any() ? 2 : 1) : 1;
 
         //fill..
         private void fillEnable(Control[] ctrs, bool state) { foreach (Control c in ctrs) c.Enabled = state; }

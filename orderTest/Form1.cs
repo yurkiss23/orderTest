@@ -36,7 +36,7 @@ namespace orderTest
             if (downToFile.Text == "вивантажити замовлення")
             {
                 //замовлення
-                orderModel order = new orderModel(hd, isStorage(), EpsList, AddList);
+                orderModel order = new orderModel(hd, storages(), EpsList, AddList);
                 //MessageBox.Show(order.ToString());
                 splitContainer1.Enabled = false; splitContainer1.Visible = false;
                 orderLabel.Enabled = false; orderLabel.Visible = false;
