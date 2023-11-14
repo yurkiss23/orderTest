@@ -37,6 +37,8 @@ namespace orderTest
 
             //очищаэмо поля вибору і введення
             addClear();
+
+            enableButton();
         }
     }
 }
