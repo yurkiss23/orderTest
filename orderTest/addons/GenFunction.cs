@@ -24,7 +24,7 @@ namespace orderTest
 
         private void panelEnVis(Panel panel) { foreach (Panel p in panels) { p.Enabled = panel.Equals(p) ? true : false; p.Visible = panel.Equals(p) ? true : false; } }
 
-        private void enableButton() { if (hd != null && EpsList.Any()) fillEnable(new[] { downToFile }, true); }
+        private void enableButton() { if (hd != null && EpsList.Any() || AddList.Any()) fillEnable(new[] { downToFile }, true); }
 
         private void txtBold(Control c) => c.Font = new Font(c.Font, c.Font.Style | FontStyle.Bold | FontStyle.Underline);
 
@@ -53,6 +53,8 @@ namespace orderTest
         private void isFill(TextBox t, Control[] ctrs, bool state, string ph) { if (!t.Text.Any()) { txt(new List<Control> { t }, new[] { ph }); fillEnable(ctrs, state); } }
 
         private bool isState(Control[] ctrl) { foreach (Control c in ctrl) { if (c.Enabled) return false; } return true; }
+
+        private int isStorage() => EpsList.Any() ? (AddList.Any() ? 0 : 1) : 2;
 
         //fill..
         private void fillEnable(Control[] ctrs, bool state) { foreach (Control c in ctrs) c.Enabled = state; }
