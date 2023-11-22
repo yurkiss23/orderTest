@@ -1,6 +1,7 @@
 ﻿using orderTest.models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +20,7 @@ namespace orderTest
 
         private void amountEPS_TextChanged(object sender, EventArgs e) => isNum((TextBox)sender, new[] { addEpsToOrderButton }, packEPS);
 
-        private void amountEPS_Leave(object sender, EventArgs e)
-        {
-            fillEnable(new Control[] { packEPS, addEpsToOrderButton }, true); packEPS.Text = (double.Parse(amountEPS.Text) / div(thikEPS.Text)).ToString();
-        }
+        private void amountEPS_Leave(object sender, EventArgs e) { fillEnable(new Control[] { packEPS, addEpsToOrderButton }, true); calcPack(packEPS); }
 
         private void addEpsToOrderButton_EnabledChanged(object sender, EventArgs e) => isButtonStateChanged((Button)sender);
 
@@ -30,12 +28,13 @@ namespace orderTest
         {
             //новий рядок
             addEPS = new[] { markEPS.SelectedItem.ToString(), thikEPS.SelectedItem.ToString(), amountEPS.Text, packEPS.Text };
+            epsModel eps = new epsModel(addEPS);
 
             //перевірка: чи є вже дані в списку, чи збігається марка
-            if (isLast(EpsList.Count)) { isMark(addEPS); }
+            if (isLast(EpsList.Count)) isMark(addEPS);
 
             //додаємо eps в замовлення
-            EpsList.Add(new(addEPS));
+            EpsList.Add(eps); txtBold(radioEPS); radioEPS.ForeColor = Color.DarkGreen;
 
             //додаємо рядок в таблицю на формі
             epsData.Rows.Add(addEPS); epsData.Visible = true;

@@ -8,15 +8,18 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace orderTest
 {
     public partial class Form1 : Form
     {
-        static private string path = @"e:\work\dev\orderUST\order.txt";
+        static private string path = @"e:\work\dev\orderUST\test.xml";
         static private Panel[] panels;
+        static private Button[] addBut;
 
         public Form1()
         {
@@ -30,15 +33,21 @@ namespace orderTest
 
         private void downToFile_Click(object sender, EventArgs e)
         {
-            if(downToFile.Text=="вивантажити замовлення")
+            if (downToFile.Text == "вивантажити замовлення")
             {
-                MessageBox.Show(hd.ToString() + ", " + EpsList.ToString() + ", " + AddList.ToString());
-            }
-            else
-            {
-                resetAll();
-                downToFile.Enabled = false;
-            }
+                //замовлення
+                orderModel order = new orderModel(hd, storages(), EpsList, AddList);
+                //MessageBox.Show(order.ToString());
+                splitContainer1.Enabled = false; splitContainer1.Visible = false;
+                orderLabel.Enabled = false; orderLabel.Visible = false;
+
+                //xml
+                XmlSerializer xmlOrder = new XmlSerializer(typeof(orderModel));
+                using (FileStream fs = new FileStream(path, FileMode.Create)) xmlOrder.Serialize(fs, order);
+
+            } else Close();
+
+            resetAll();
 
             //File.AppendAllText(path, addEPS + "\n");
 

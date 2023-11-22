@@ -30,13 +30,15 @@ namespace orderTest
             addADD = new[] { nameADD.Text, meterADD.Text, amountADD.Text };
 
             //додаємо позицію в замовлення
-            AddList.Add(new(addADD));
+            AddList.Add(new(addADD)); txtBold(radioAdd); radioAdd.ForeColor = Color.DarkGreen;
 
             //додаємо рядок в таблицю на формі
             addData.Rows.Add(addADD); addData.Visible = true;
 
             //очищаэмо поля вибору і введення
             addClear();
+
+            enableButton();
         }
     }
 }
