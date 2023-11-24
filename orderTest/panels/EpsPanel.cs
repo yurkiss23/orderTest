@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace orderTest
@@ -50,16 +51,35 @@ namespace orderTest
 
         private void epsDelete_EnabledChanged(object sender, EventArgs e)
         {
-
+            foreach (var eps in EpsList)
+            {
+                System.Windows.Forms.MessageBox.Show(eps.ToString());
+            }
         }
 
         private void epsDelete_Click(object sender, EventArgs e)
         {
+            MessageBoxResult result = System.Windows.MessageBox.Show("справді?", "видалити рядок", MessageBoxButton.OKCancel);
+            //System.Windows.Forms.MessageBox.Show(epsData.SelectedRows[0].Cells[0].ToString());
+            DataGridViewRow removeRow = epsData.SelectedRows[0];
+            //string[] removeEPS = new[] { removeRow.Cells[0].Value.ToString(), removeRow.Cells[1].Value.ToString(), removeRow.Cells[2].Value.ToString(), removeRow.Cells[3].Value.ToString() };
+            System.Windows.Forms.MessageBox.Show(EpsList.Count.ToString());
             //видаляємо eps із замовлення
+            epsModel remove = new epsModel()
+            {
+                Mark = removeRow.Cells[0].Value.ToString(),
+                Thikness = int.Parse(removeRow.Cells[1].Value.ToString()),
+                Amount = double.Parse(removeRow.Cells[2].Value.ToString()),
+                Pack = int.Parse(removeRow.Cells[3].Value.ToString())
+            };
+
+            EpsList.Remove(remove);
 
             //видаляємо рядок з таблиці на формі
+            epsData.Rows.Remove(epsData.SelectedRows[0]);
 
-
+            //
+            epsDelete.Enabled = false;
         }
     }
 }

@@ -525,7 +525,6 @@
             this.epsDelete.BackColor = System.Drawing.Color.MistyRose;
             this.epsDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.epsDelete.Enabled = false;
-            this.epsDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.epsDelete.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.epsDelete.ForeColor = System.Drawing.Color.Red;
             this.epsDelete.Location = new System.Drawing.Point(40, 185);
@@ -711,6 +710,7 @@
             this.epsData.RowTemplate.ReadOnly = true;
             this.epsData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.epsData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.epsData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.epsData.Size = new System.Drawing.Size(242, 300);
             this.epsData.TabIndex = 4;
             this.epsData.Visible = false;
