@@ -43,6 +43,23 @@ namespace orderTest
             epsClear();
 
             enableButton();
+
+            epsDelete.Visible = true;
+            epsDelete.Enabled = true;
+        }
+
+        private void epsDelete_EnabledChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void epsDelete_Click(object sender, EventArgs e)
+        {
+            //видаляємо eps із замовлення
+
+            //видаляємо рядок з таблиці на формі
+
+
         }
     }
 }

@@ -57,6 +57,7 @@
             this.mtrADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epsPanel = new System.Windows.Forms.Panel();
+            this.epsDelete = new System.Windows.Forms.Button();
             this.epsTable = new System.Windows.Forms.TableLayoutPanel();
             this.markEPS = new System.Windows.Forms.ComboBox();
             this.thikEPS = new System.Windows.Forms.ComboBox();
@@ -248,7 +249,7 @@
             this.addPanel.Controls.Add(this.addAddToOrderButton);
             this.addPanel.Controls.Add(this.addData);
             this.addPanel.Enabled = false;
-            this.addPanel.Location = new System.Drawing.Point(0, 320);
+            this.addPanel.Location = new System.Drawing.Point(0, 420);
             this.addPanel.Name = "addPanel";
             this.addPanel.Size = new System.Drawing.Size(753, 374);
             this.addPanel.TabIndex = 6;
@@ -508,15 +509,35 @@
             // 
             // epsPanel
             // 
+            this.epsPanel.Controls.Add(this.epsDelete);
             this.epsPanel.Controls.Add(this.epsTable);
             this.epsPanel.Controls.Add(this.addEpsToOrderButton);
             this.epsPanel.Controls.Add(this.epsData);
             this.epsPanel.Enabled = false;
             this.epsPanel.Location = new System.Drawing.Point(0, 160);
             this.epsPanel.Name = "epsPanel";
-            this.epsPanel.Size = new System.Drawing.Size(753, 150);
+            this.epsPanel.Size = new System.Drawing.Size(753, 250);
             this.epsPanel.TabIndex = 5;
             this.epsPanel.Visible = false;
+            // 
+            // epsDelete
+            // 
+            this.epsDelete.BackColor = System.Drawing.Color.MistyRose;
+            this.epsDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.epsDelete.Enabled = false;
+            this.epsDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.epsDelete.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.epsDelete.ForeColor = System.Drawing.Color.Red;
+            this.epsDelete.Location = new System.Drawing.Point(40, 185);
+            this.epsDelete.Name = "epsDelete";
+            this.epsDelete.Size = new System.Drawing.Size(200, 35);
+            this.epsDelete.TabIndex = 5;
+            this.epsDelete.Text = "видалити";
+            this.epsDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.epsDelete.UseVisualStyleBackColor = false;
+            this.epsDelete.Visible = false;
+            this.epsDelete.EnabledChanged += new System.EventHandler(this.epsDelete_EnabledChanged);
+            this.epsDelete.Click += new System.EventHandler(this.epsDelete_Click);
             // 
             // epsTable
             // 
@@ -1046,6 +1067,7 @@
         private System.Windows.Forms.TextBox commentHead;
         private System.Windows.Forms.TextBox numberHead;
         private System.Windows.Forms.Button clearHead;
+        private System.Windows.Forms.Button epsDelete;
     }
 }
 
