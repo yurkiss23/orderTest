@@ -535,7 +535,6 @@
             this.epsDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.epsDelete.UseVisualStyleBackColor = false;
             this.epsDelete.Visible = false;
-            this.epsDelete.EnabledChanged += new System.EventHandler(this.epsDelete_EnabledChanged);
             this.epsDelete.Click += new System.EventHandler(this.epsDelete_Click);
             // 
             // epsTable

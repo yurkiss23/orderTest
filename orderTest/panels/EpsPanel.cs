@@ -12,7 +12,7 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        static private List<epsModel> EpsList = new List<epsModel>();
+        private List<epsModel> EpsList = new List<epsModel>();
         private string[] addEPS;
 
         private void markEPS_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(markEPS, thikEPS);
@@ -32,7 +32,7 @@ namespace orderTest
             epsModel eps = new epsModel(addEPS);
 
             //перевірка: чи є вже дані в списку, чи збігається марка
-            if (isLast(EpsList.Count)) isMark(addEPS);
+            //if (isLast(EpsList.Count)) isMark(addEPS);
 
             //додаємо eps в замовлення
             EpsList.Add(eps); txtBold(radioEPS); radioEPS.ForeColor = Color.DarkGreen;
@@ -49,37 +49,25 @@ namespace orderTest
             epsDelete.Enabled = true;
         }
 
-        private void epsDelete_EnabledChanged(object sender, EventArgs e)
-        {
-            foreach (var eps in EpsList)
-            {
-                System.Windows.Forms.MessageBox.Show(eps.ToString());
-            }
-        }
-
         private void epsDelete_Click(object sender, EventArgs e)
         {
             MessageBoxResult result = System.Windows.MessageBox.Show("справді?", "видалити рядок", MessageBoxButton.OKCancel);
-            //System.Windows.Forms.MessageBox.Show(epsData.SelectedRows[0].Cells[0].ToString());
-            DataGridViewRow removeRow = epsData.SelectedRows[0];
-            //string[] removeEPS = new[] { removeRow.Cells[0].Value.ToString(), removeRow.Cells[1].Value.ToString(), removeRow.Cells[2].Value.ToString(), removeRow.Cells[3].Value.ToString() };
-            System.Windows.Forms.MessageBox.Show(EpsList.Count.ToString());
-            //видаляємо eps із замовлення
-            epsModel remove = new epsModel()
-            {
-                Mark = removeRow.Cells[0].Value.ToString(),
-                Thikness = int.Parse(removeRow.Cells[1].Value.ToString()),
-                Amount = double.Parse(removeRow.Cells[2].Value.ToString()),
-                Pack = int.Parse(removeRow.Cells[3].Value.ToString())
-            };
 
-            EpsList.Remove(remove);
+            //рядок з таблиці, який видаляємо
+            List<string> removeEPS = new List<string>(); foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells) removeEPS.Add(item.Value.ToString());
+
+            //видаляємо eps із замовлення
+            epsModel remove = new epsModel(removeEPS.ToArray()) { };
+            for (int i = EpsList.Count-1; i >=0; i--)
+            {
+                epsModel eps = EpsList[i]; if (eps.Mark == remove.Mark && eps.Thikness == remove.Thikness && eps.Amount == remove.Amount) EpsList.RemoveAt(EpsList.IndexOf(eps));
+            }
 
             //видаляємо рядок з таблиці на формі
             epsData.Rows.Remove(epsData.SelectedRows[0]);
 
             //
-            epsDelete.Enabled = false;
+            if (!(EpsList.Count > 0)) { epsDelete.Visible = false; epsDelete.Enabled = false; }
         }
     }
 }
