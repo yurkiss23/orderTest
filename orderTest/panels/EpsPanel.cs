@@ -69,5 +69,10 @@ namespace orderTest
             //
             if (!(EpsList.Count > 0)) { epsDelete.Visible = false; epsDelete.Enabled = false; }
         }
+
+        private void epsEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
