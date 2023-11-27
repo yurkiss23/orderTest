@@ -5,13 +5,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace orderTest
 {
     public partial class Form1 : Form
     {
-        static private List<epsModel> EpsList = new List<epsModel>();
+        private List<epsModel> EpsList = new List<epsModel>();
         private string[] addEPS;
 
         private void markEPS_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(markEPS, thikEPS);
@@ -31,7 +32,7 @@ namespace orderTest
             epsModel eps = new epsModel(addEPS);
 
             //перевірка: чи є вже дані в списку, чи збігається марка
-            if (isLast(EpsList.Count)) isMark(addEPS);
+            //if (isLast(EpsList.Count)) isMark(addEPS);
 
             //додаємо eps в замовлення
             EpsList.Add(eps); txtBold(radioEPS); radioEPS.ForeColor = Color.DarkGreen;
@@ -48,18 +49,25 @@ namespace orderTest
             epsDelete.Enabled = true;
         }
 
-        private void epsDelete_EnabledChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void epsDelete_Click(object sender, EventArgs e)
         {
+            MessageBoxResult result = System.Windows.MessageBox.Show("справді?", "видалити рядок", MessageBoxButton.OKCancel);
+
+            //рядок з таблиці, який видаляємо
+            List<string> removeEPS = new List<string>(); foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells) removeEPS.Add(item.Value.ToString());
+
             //видаляємо eps із замовлення
+            epsModel remove = new epsModel(removeEPS.ToArray()) { };
+            for (int i = EpsList.Count-1; i >=0; i--)
+            {
+                epsModel eps = EpsList[i]; if (eps.Mark == remove.Mark && eps.Thikness == remove.Thikness && eps.Amount == remove.Amount) EpsList.RemoveAt(EpsList.IndexOf(eps));
+            }
 
             //видаляємо рядок з таблиці на формі
+            epsData.Rows.Remove(epsData.SelectedRows[0]);
 
-
+            //
+            if (!(EpsList.Count > 0)) { epsDelete.Visible = false; epsDelete.Enabled = false; }
         }
     }
 }
