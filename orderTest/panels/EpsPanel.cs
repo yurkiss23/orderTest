@@ -13,6 +13,7 @@ namespace orderTest
     public partial class Form1 : Form
     {
         private List<epsModel> EpsList = new List<epsModel>();
+        private List<string> editEPS = new List<string>();
         private string[] addEPS;
 
         private void markEPS_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(markEPS, thikEPS);
@@ -45,8 +46,9 @@ namespace orderTest
 
             enableButton();
 
-            epsDelete.Visible = true;
-            epsDelete.Enabled = true;
+            fillEnable(new Button[] { epsDelete, epsEdit }, true); fillVisible(new Button[] { epsDelete, epsEdit }, true);
+            //epsDelete.Visible = true;
+            //epsDelete.Enabled = true;
         }
 
         private void epsDelete_Click(object sender, EventArgs e)
@@ -68,6 +70,28 @@ namespace orderTest
 
             //
             if (!(EpsList.Count > 0)) { epsDelete.Visible = false; epsDelete.Enabled = false; }
+        }
+
+        private void epsEdit_Click(object sender, EventArgs e)
+        {
+            //рядок з таблиці, який редагуємо
+            foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells) editEPS.Add(item.Value.ToString());
+
+            //форма для редагування
+            Form editEpsForm = new Form();
+
+            //редагуємо eps в замовленні
+            //epsModel remove = new epsModel(removeEPS.ToArray()) { };
+            //for (int i = EpsList.Count - 1; i >= 0; i--)
+            //{
+            //    epsModel eps = EpsList[i]; if (eps.Mark == remove.Mark && eps.Thikness == remove.Thikness && eps.Amount == remove.Amount) EpsList.RemoveAt(EpsList.IndexOf(eps));
+            //}
+
+            //редагуємо рядок в таблиці на формі
+            //epsData.Rows.Remove(epsData.SelectedRows[0]);
+
+            //
+            if (!(EpsList.Count > 0)) { epsEdit.Visible = false; epsEdit.Enabled = false; }
         }
     }
 }

@@ -57,6 +57,7 @@
             this.mtrADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epsPanel = new System.Windows.Forms.Panel();
+            this.epsEdit = new System.Windows.Forms.Button();
             this.epsDelete = new System.Windows.Forms.Button();
             this.epsTable = new System.Windows.Forms.TableLayoutPanel();
             this.markEPS = new System.Windows.Forms.ComboBox();
@@ -509,6 +510,7 @@
             // 
             // epsPanel
             // 
+            this.epsPanel.Controls.Add(this.epsEdit);
             this.epsPanel.Controls.Add(this.epsDelete);
             this.epsPanel.Controls.Add(this.epsTable);
             this.epsPanel.Controls.Add(this.addEpsToOrderButton);
@@ -519,6 +521,23 @@
             this.epsPanel.Size = new System.Drawing.Size(753, 250);
             this.epsPanel.TabIndex = 5;
             this.epsPanel.Visible = false;
+            // 
+            // epsEdit
+            // 
+            this.epsEdit.BackColor = System.Drawing.Color.LightCyan;
+            this.epsEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.epsEdit.Enabled = false;
+            this.epsEdit.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.epsEdit.ForeColor = System.Drawing.Color.DarkCyan;
+            this.epsEdit.Location = new System.Drawing.Point(245, 185);
+            this.epsEdit.Name = "epsEdit";
+            this.epsEdit.Size = new System.Drawing.Size(200, 35);
+            this.epsEdit.TabIndex = 6;
+            this.epsEdit.Text = "змінити";
+            this.epsEdit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.epsEdit.UseVisualStyleBackColor = false;
+            this.epsEdit.Visible = false;
+            this.epsEdit.Click += new System.EventHandler(this.epsEdit_Click);
             // 
             // epsDelete
             // 
@@ -1067,6 +1086,7 @@
         private System.Windows.Forms.TextBox numberHead;
         private System.Windows.Forms.Button clearHead;
         private System.Windows.Forms.Button epsDelete;
+        private System.Windows.Forms.Button epsEdit;
     }
 }
 

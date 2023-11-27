@@ -37,9 +37,9 @@ namespace orderTest
             {
                 //замовлення
                 orderModel order = new orderModel(hd, storages(), EpsList, AddList);
-                //MessageBox.Show(order.ToString());
-                splitContainer1.Enabled = false; splitContainer1.Visible = false;
-                orderLabel.Enabled = false; orderLabel.Visible = false;
+                fillEnable(new Control[] { splitContainer1, orderLabel }, false); fillVisible(new Control[] { splitContainer1, orderLabel }, false);
+                //splitContainer1.Enabled = false; splitContainer1.Visible = false;
+                //orderLabel.Enabled = false; orderLabel.Visible = false;
 
                 //xml
                 XmlSerializer xmlOrder = new XmlSerializer(typeof(orderModel));
@@ -50,7 +50,6 @@ namespace orderTest
             resetAll();
 
             //File.AppendAllText(path, addEPS + "\n");
-
         }
     }
 }

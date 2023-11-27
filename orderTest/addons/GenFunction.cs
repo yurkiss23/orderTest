@@ -59,6 +59,8 @@ namespace orderTest
         //fill..
         private void fillEnable(Control[] ctrs, bool state) { foreach (Control c in ctrs) c.Enabled = state; }
 
+        private void fillVisible(Control[] ctrs, bool state) { foreach (Control c in ctrs) c.Visible = state; }
+
         private void fillPanelProps(Point p, Size s, ComboBox[] cb) { foreach (Panel pn in panels) { pn.Location = p; pn.Size = s; } selectDefaultItem(cb); }
     }
 }
