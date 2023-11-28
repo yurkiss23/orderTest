@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace orderTest
 {
-    public partial class Form1: Form
+    public partial class Form1 : Form
     {
         private void selectDefaultItem(ComboBox[] cb) { foreach (ComboBox cbItem in cb) cbItem.SelectedIndex = 0; }
 
@@ -30,6 +30,8 @@ namespace orderTest
 
         private void resetAll() { headClear(txtControlArray.ToList()); epsClear(); addClear(); EpsList.Clear(); AddList.Clear(); downToFile.Text = "вийти"; }
 
+        private void addControls(Control[] ctrls, Form f) { foreach (Control c in ctrls) f.Controls.Add(c); }
+
         //is...
         private void isNum(TextBox tb, Control[] ctrl, TextBox tCtrl = null)
         {
@@ -40,6 +42,19 @@ namespace orderTest
                 {
                     try { double.Parse(tb.Text); if (tCtrl != null) calcPack(tCtrl); fillEnable(ctrl, true); }
                     catch (Exception ex) { if (tCtrl != null) tCtrl.Clear(); fillEnable(ctrl, false); MessageBox.Show("потрібно ввести число!", ex.Message.ToString()); tb.SelectAll(); }
+                }
+            }
+        }
+
+        private void isNum(TextBox tb, Control th, Control tCtrl = null)
+        {
+            if (tb.Text != "")
+            {
+                try { int.Parse(tb.Text); if (tCtrl != null) calcPack(new Control[] { th, tb, tCtrl }); }
+                catch (Exception)
+                {
+                    try { double.Parse(tb.Text); if (tCtrl != null) calcPack(new Control[] { th, tb, tCtrl }); }
+                    catch (Exception ex) { if (tCtrl != null) MessageBox.Show("потрібно ввести число!", ex.Message.ToString()); tb.SelectAll(); }
                 }
             }
         }
@@ -62,5 +77,13 @@ namespace orderTest
         private void fillVisible(Control[] ctrs, bool state) { foreach (Control c in ctrs) c.Visible = state; }
 
         private void fillPanelProps(Point p, Size s, ComboBox[] cb) { foreach (Panel pn in panels) { pn.Location = p; pn.Size = s; } selectDefaultItem(cb); }
+
+        private void fillCtrlPrs(Control c, string s, int[] prs) { c.Font = fillFont("Calibri", 14); c.Text = s; c.Location = fillPoint(prs[0], prs[1]); c.Size = fillSize(prs[2], prs[3]); }
+
+        private Font fillFont(string s, int x) => new Font(s, x);
+
+        private Point fillPoint(int x, int y) => new Point(x, y);
+
+        private Size fillSize(int a, int b) => new Size(a, b);
     }
 }
