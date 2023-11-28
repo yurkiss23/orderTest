@@ -75,10 +75,14 @@ namespace orderTest
         private void epsEdit_Click(object sender, EventArgs e)
         {
             //рядок з таблиці, який редагуємо
-            foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells) editEPS.Add(item.Value.ToString());
+            DataGridViewRow sRow = epsData.SelectedRows[0]; //sRow.Selected = false; sRow.DefaultCellStyle.BackColor = Color.LightPink;
+            
+            foreach (DataGridViewCell item in sRow.Cells) editEPS.Add(item.Value.ToString());
 
             //форма для редагування
-            Form editEpsForm = new Form();
+            fillEditEpsForm();
+
+            //sRow.DefaultCellStyle.BackColor = Color.LightGreen;
 
             //редагуємо eps в замовленні
             //epsModel remove = new epsModel(removeEPS.ToArray()) { };
@@ -88,6 +92,12 @@ namespace orderTest
             //}
 
             //редагуємо рядок в таблиці на формі
+            foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells)
+            {
+                //System.Windows.Forms.MessageBox.Show(item.Value.ToString());
+                //System.Windows.Forms.MessageBox.Show(editEPS[epsData.SelectedRows[0].Cells.IndexOf(item)]);
+                item.Value = editEPS[epsData.SelectedRows[0].Cells.IndexOf(item)];
+            }
             //epsData.Rows.Remove(epsData.SelectedRows[0]);
 
             //
