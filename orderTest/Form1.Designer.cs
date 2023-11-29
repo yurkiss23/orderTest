@@ -68,10 +68,6 @@
             this.packEPS = new System.Windows.Forms.TextBox();
             this.addEpsToOrderButton = new System.Windows.Forms.Button();
             this.epsData = new System.Windows.Forms.DataGridView();
-            this.mark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thikness = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pack = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.headerPanel = new System.Windows.Forms.Panel();
             this.commentHead = new System.Windows.Forms.TextBox();
             this.headTable2 = new System.Windows.Forms.TableLayoutPanel();
@@ -86,6 +82,10 @@
             this.clientHead = new System.Windows.Forms.TextBox();
             this.clearHead = new System.Windows.Forms.Button();
             this.addHeadData = new System.Windows.Forms.Button();
+            this.mark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thikness = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pack = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSelectionBox.SuspendLayout();
             this.radioTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -733,58 +733,6 @@
             this.epsData.TabIndex = 4;
             this.epsData.Visible = false;
             // 
-            // mark
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.mark.DefaultCellStyle = dataGridViewCellStyle6;
-            this.mark.DividerWidth = 1;
-            this.mark.FillWeight = 50F;
-            this.mark.HeaderText = "марка";
-            this.mark.MinimumWidth = 50;
-            this.mark.Name = "mark";
-            this.mark.ReadOnly = true;
-            this.mark.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.mark.Width = 60;
-            // 
-            // thikness
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.thikness.DefaultCellStyle = dataGridViewCellStyle7;
-            this.thikness.DividerWidth = 1;
-            this.thikness.FillWeight = 50F;
-            this.thikness.HeaderText = "товщина";
-            this.thikness.MinimumWidth = 50;
-            this.thikness.Name = "thikness";
-            this.thikness.ReadOnly = true;
-            this.thikness.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.thikness.Width = 60;
-            // 
-            // amount
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.amount.DefaultCellStyle = dataGridViewCellStyle8;
-            this.amount.DividerWidth = 1;
-            this.amount.FillWeight = 50F;
-            this.amount.HeaderText = "кількість";
-            this.amount.MinimumWidth = 50;
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            this.amount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.amount.Width = 60;
-            // 
-            // pack
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.pack.DefaultCellStyle = dataGridViewCellStyle9;
-            this.pack.DividerWidth = 1;
-            this.pack.FillWeight = 50F;
-            this.pack.HeaderText = "упаковок";
-            this.pack.MinimumWidth = 50;
-            this.pack.Name = "pack";
-            this.pack.ReadOnly = true;
-            this.pack.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.pack.Width = 60;
-            // 
             // headerPanel
             // 
             this.headerPanel.Controls.Add(this.commentHead);
@@ -998,6 +946,59 @@
             this.addHeadData.EnabledChanged += new System.EventHandler(this.addHeadData_EnabledChanged);
             this.addHeadData.Click += new System.EventHandler(this.addHeadData_Click);
             // 
+            // mark
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.mark.DefaultCellStyle = dataGridViewCellStyle6;
+            this.mark.DividerWidth = 1;
+            this.mark.FillWeight = 150F;
+            this.mark.HeaderText = "марка";
+            this.mark.MinimumWidth = 150;
+            this.mark.Name = "mark";
+            this.mark.ReadOnly = true;
+            this.mark.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.mark.Width = 150;
+            // 
+            // thikness
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.thikness.DefaultCellStyle = dataGridViewCellStyle7;
+            this.thikness.DividerWidth = 1;
+            this.thikness.FillWeight = 30F;
+            this.thikness.HeaderText = "товщ";
+            this.thikness.MinimumWidth = 20;
+            this.thikness.Name = "thikness";
+            this.thikness.ReadOnly = true;
+            this.thikness.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.thikness.Width = 30;
+            // 
+            // amount
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.amount.DefaultCellStyle = dataGridViewCellStyle8;
+            this.amount.DividerWidth = 1;
+            this.amount.FillWeight = 30F;
+            this.amount.HeaderText = "к-ть";
+            this.amount.MinimumWidth = 20;
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            this.amount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.amount.Width = 30;
+            // 
+            // pack
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.pack.DefaultCellStyle = dataGridViewCellStyle9;
+            this.pack.DividerWidth = 1;
+            this.pack.FillWeight = 30F;
+            this.pack.HeaderText = "уп";
+            this.pack.MinimumWidth = 20;
+            this.pack.Name = "pack";
+            this.pack.ReadOnly = true;
+            this.pack.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.pack.Width = 30;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1056,10 +1057,6 @@
         private System.Windows.Forms.Button addEpsToOrderButton;
         private System.Windows.Forms.Button downToFile;
         private System.Windows.Forms.DataGridView epsData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mark;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thikness;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pack;
         private System.Windows.Forms.Panel epsPanel;
         private System.Windows.Forms.Panel headerPanel;
         private System.Windows.Forms.TableLayoutPanel headTable1;
@@ -1087,6 +1084,10 @@
         private System.Windows.Forms.Button clearHead;
         private System.Windows.Forms.Button epsDelete;
         private System.Windows.Forms.Button epsEdit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thikness;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pack;
     }
 }
 
