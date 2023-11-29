@@ -15,7 +15,7 @@ namespace orderTest
 
         private void calcPack(Control t) => t.Text = (double.Parse(amountEPS.Text) / (thikEPS.Text.Equals("8") ? 0.32 : 0.3)).ToString();
 
-        private void calcPack(Control.ControlCollection ctrls) => ctrls[2].Text = (double.Parse(ctrls[1].Text) / (ctrls[0].Text.Equals("8") ? 0.32 : 0.3)).ToString();
+        private void calcPack(Form f) => f.Controls[3].Text = (double.Parse(f.Controls[2].Text) / (f.Controls[1].Text.Equals("8") ? 0.32 : 0.3)).ToString();
 
         private void isMark(string[] row) => row[0] = EpsList.Last().Mark.Equals(markEPS.Text) ? "" : row[0];
 
@@ -36,16 +36,10 @@ namespace orderTest
             editEpsForm.ShowDialog();
         }
 
-        private void eAmount_TextChanged(object sender, EventArgs e) => isNum((TextBox)sender, editEpsForm.Controls[1], editEpsForm.Controls[3]);
+        private void eAmount_TextChanged(object sender, EventArgs e) => isNum((TextBox)sender, editEpsForm.Controls[3]);
 
-        private void eAmount_Leave(object sender, EventArgs e) => calcPack(editEpsForm.Controls);
+        private void eAmount_Leave(object sender, EventArgs e) => calcPack(editEpsForm);
 
-        private void eSubmit_Click(object sender, EventArgs e)
-        {
-            for (int i = 1; i < 4; i++) { MessageBox.Show(editEPS[i]); editEPS[i] = editEpsForm.Controls[i].Text; }
-
-            //
-            editEpsForm.Close();
-        }
+        private void eSubmit_Click(object sender, EventArgs e) { for (int i = 1; i < 4; i++) editEPS[i] = editEpsForm.Controls[i].Text; editEpsForm.Close(); }
     }
 }

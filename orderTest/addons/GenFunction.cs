@@ -46,14 +46,14 @@ namespace orderTest
             }
         }
 
-        private void isNum(TextBox tb, Control th, Control tCtrl = null)
+        private void isNum(TextBox tb, Control tCtrl = null)
         {
             if (tb.Text != "")
             {
-                try { int.Parse(tb.Text); if (tCtrl != null) calcPack(new Control[] { th, tb, tCtrl }); }
+                try { int.Parse(tb.Text); if (tCtrl != null) calcPack(editEpsForm); }
                 catch (Exception)
                 {
-                    try { double.Parse(tb.Text); if (tCtrl != null) calcPack(new Control[] { th, tb, tCtrl }); }
+                    try { double.Parse(tb.Text); if (tCtrl != null) calcPack(editEpsForm); }
                     catch (Exception ex) { if (tCtrl != null) MessageBox.Show("потрібно ввести число!", ex.Message.ToString()); tb.SelectAll(); }
                 }
             }
