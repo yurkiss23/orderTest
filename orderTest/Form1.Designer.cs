@@ -719,7 +719,7 @@
             this.thikness,
             this.amount,
             this.pack});
-            this.epsData.Location = new System.Drawing.Point(510, 0);
+            this.epsData.Location = new System.Drawing.Point(490, 0);
             this.epsData.MultiSelect = false;
             this.epsData.Name = "epsData";
             this.epsData.ReadOnly = true;
@@ -729,7 +729,7 @@
             this.epsData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.epsData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.epsData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.epsData.Size = new System.Drawing.Size(242, 300);
+            this.epsData.Size = new System.Drawing.Size(260, 300);
             this.epsData.TabIndex = 4;
             this.epsData.Visible = false;
             // 
@@ -951,27 +951,26 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.mark.DefaultCellStyle = dataGridViewCellStyle6;
             this.mark.DividerWidth = 1;
-            this.mark.FillWeight = 150F;
+            this.mark.FillWeight = 160F;
             this.mark.HeaderText = "марка";
             this.mark.MinimumWidth = 150;
             this.mark.Name = "mark";
             this.mark.ReadOnly = true;
             this.mark.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.mark.Width = 150;
+            this.mark.Width = 160;
             // 
             // thikness
             // 
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.thikness.DefaultCellStyle = dataGridViewCellStyle7;
             this.thikness.DividerWidth = 1;
             this.thikness.FillWeight = 30F;
             this.thikness.HeaderText = "товщ";
-            this.thikness.MinimumWidth = 20;
+            this.thikness.MinimumWidth = 30;
             this.thikness.Name = "thikness";
             this.thikness.ReadOnly = true;
             this.thikness.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.thikness.Width = 30;
+            this.thikness.Width = 40;
             // 
             // amount
             // 
