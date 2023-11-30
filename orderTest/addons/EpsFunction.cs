@@ -30,7 +30,7 @@ namespace orderTest
             eAmount.TextChanged += eAmount_TextChanged; eAmount.Leave += eAmount_Leave;
             Label ePark = new Label(); fillCtrlPrs(ePark, editEPS[3].ToString(), new[] { 5, 125, 150, 40 });
             Button eSumbit = new Button(); fillCtrlPrs(eSumbit, "записати", new[] { 150, 125, 150, 40 });
-            eSumbit.TextAlign = ContentAlignment.TopCenter; eSumbit.Click += eSubmit_Click;
+            eSumbit.TextAlign = ContentAlignment.TopCenter; eSumbit.Click += eSubmitEps_Click;
 
             editEpsForm = new Form();
             editEpsForm.Text = "редагування EPS"; editEpsForm.Size = fillSize(320, 200); addControls(new Control[] { eMark, eThik, eAmount, ePark, eSumbit }, editEpsForm);
@@ -49,6 +49,6 @@ namespace orderTest
 
         private void eAmount_Leave(object sender, EventArgs e) => calcPack(editEpsForm);
 
-        private void eSubmit_Click(object sender, EventArgs e) { for (int i = 1; i < 4; i++) editEPS[i] = editEpsForm.Controls[i].Text; editEpsForm.Close(); }
+        private void eSubmitEps_Click(object sender, EventArgs e) { for (int i = 1; i < 4; i++) editEPS[i] = editEpsForm.Controls[i].Text; editEpsForm.Close(); }
     }
 }

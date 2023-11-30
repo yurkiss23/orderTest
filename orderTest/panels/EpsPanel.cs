@@ -43,10 +43,9 @@ namespace orderTest
             epsData.Rows.Add(addEPS); epsData.Visible = true;
 
             //очищаэмо поля вибору і введення
-            epsClear();
+            epsClear(); enableButton();
 
-            enableButton();
-
+            //
             fillEnable(new Button[] { epsDelete, epsEdit }, true); fillVisible(new Button[] { epsDelete, epsEdit }, true);
         }
 
