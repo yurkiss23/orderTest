@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace orderTest
@@ -12,6 +13,8 @@ namespace orderTest
     public partial class Form1 : Form
     {
         static private List<addModel> AddList = new List<addModel>();
+        private List<string> removeADD = new List<string>();
+        private List<string> editADD = new List<string>();
         private string[] addADD;
 
         private void nameADD_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(nameADD, meterADD);
@@ -36,9 +39,46 @@ namespace orderTest
             addData.Rows.Add(addADD); addData.Visible = true;
 
             //очищаэмо поля вибору і введення
-            addClear();
+            addClear(); enableButton();
 
-            enableButton();
+            //
+            fillEnable(new Button[] { addDelete, addEdit }, true); fillVisible(new Button[] { addDelete, addEdit }, true);
+        }
+
+        private void addDelete_Click(object sender, EventArgs e)
+        {
+            MessageBoxResult result = System.Windows.MessageBox.Show("справді видалити?", "видалити рядок", MessageBoxButton.OKCancel);
+
+            //рядок з таблиці, який видаляємо
+            foreach (DataGridViewCell item in addData.SelectedRows[0].Cells) removeADD.Add(item.Value.ToString());
+
+            //видаляємо eps із замовлення
+            addModel remove = new addModel(removeADD.ToArray()) { }; AddList.RemoveAll(a => a.Name == remove.Name && a.AmAdd == remove.AmAdd);
+
+            //видаляємо рядок з таблиці на формі
+            addData.Rows.Remove(addData.SelectedRows[0]);
+
+            //
+            if (!(AddList.Count > 0)) { addDelete.Visible = false; addDelete.Enabled = false; }
+        }
+
+        private void addEdit_Click(object sender, EventArgs e)
+        {
+            //рядок з таблиці, який редагуємо
+            foreach (DataGridViewCell item in addData.SelectedRows[0].Cells) editADD.Add(item.Value.ToString());
+
+            //форма для редагування
+            fillEditAddForm();
+
+            //редагуємо рядок в таблиці на формі
+            foreach (DataGridViewCell item in addData.SelectedRows[0].Cells) item.Value = editADD[addData.SelectedRows[0].Cells.IndexOf(item)];
+            addData.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen; addData.SelectedRows[0].Selected = false; editADD.Clear();
+
+            //створюємо новий EpsList
+            AddList.Clear(); editAddList();
+
+            //
+            if (!(AddList.Count > 0)) { addEdit.Visible = false; addEdit.Enabled = false; }
         }
     }
 }

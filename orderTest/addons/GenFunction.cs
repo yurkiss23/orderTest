@@ -1,4 +1,5 @@
-﻿using System;
+﻿using orderTest.models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -24,13 +25,27 @@ namespace orderTest
 
         private void panelEnVis(Panel panel) { foreach (Panel p in panels) { p.Enabled = panel.Equals(p) ? true : false; p.Visible = panel.Equals(p) ? true : false; } }
 
-        private void enableButton() { if (hd != null && EpsList.Any() || AddList.Any()) fillEnable(new[] { downToFile }, true); }
+        private void enableButton() { if (hd != null && (EpsList.Any() || AddList.Any())) fillEnable(new[] { downToFile }, true); }
 
         private void txtBold(Control c) => c.Font = new Font(c.Font, c.Font.Style | FontStyle.Bold | FontStyle.Underline);
 
         private void resetAll() { headClear(txtControlArray.ToList()); epsClear(); addClear(); EpsList.Clear(); AddList.Clear(); downToFile.Text = "вийти"; }
 
         private void addControls(Control[] ctrls, Form f) { foreach (Control c in ctrls) f.Controls.Add(c); }
+
+        private void editFoodsList(DataGridView data, List<string> edit, List<epsModel> eList = null, List<addModel> aList = null)
+        {
+            //foreach (DataGridViewRow r in data.Rows)
+            //{
+            //    foreach (DataGridViewCell c in r.Cells) edit.Add(c.Value.ToString());
+            //    //eList.Add(new epsModel(edit.ToArray()));
+            //    if (eList==null)
+            //    {
+
+            //    }
+            //    edit.Clear();
+            //}
+        }
 
         //is...
         private void isNum(TextBox tb, Control[] ctrl, TextBox tCtrl = null)

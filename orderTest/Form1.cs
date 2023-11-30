@@ -49,7 +49,6 @@ namespace orderTest
 
             resetAll();
 
-            //File.AppendAllText(path, addEPS + "\n");
         }
     }
 }
