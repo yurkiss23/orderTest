@@ -1,4 +1,5 @@
-﻿using System;
+﻿using orderTest.models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -34,6 +35,14 @@ namespace orderTest
             editEpsForm = new Form();
             editEpsForm.Text = "редагування EPS"; editEpsForm.Size = fillSize(320, 200); addControls(new Control[] { eMark, eThik, eAmount, ePark, eSumbit }, editEpsForm);
             editEpsForm.ShowDialog();
+        }
+
+        private void editEpsList()
+        {
+            foreach (DataGridViewRow r in epsData.Rows)
+            {
+                foreach (DataGridViewCell c in r.Cells) editEPS.Add(c.Value.ToString()); EpsList.Add(new epsModel(editEPS.ToArray())); editEPS.Clear();
+            }
         }
 
         private void eAmount_TextChanged(object sender, EventArgs e) => isNum((TextBox)sender, editEpsForm.Controls[3]);

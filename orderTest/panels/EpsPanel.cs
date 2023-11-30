@@ -13,6 +13,7 @@ namespace orderTest
     public partial class Form1 : Form
     {
         private List<epsModel> EpsList = new List<epsModel>();
+        private List<string> removeEPS = new List<string>();
         private List<string> editEPS = new List<string>();
         private string[] addEPS;
 
@@ -47,23 +48,17 @@ namespace orderTest
             enableButton();
 
             fillEnable(new Button[] { epsDelete, epsEdit }, true); fillVisible(new Button[] { epsDelete, epsEdit }, true);
-            //epsDelete.Visible = true;
-            //epsDelete.Enabled = true;
         }
 
         private void epsDelete_Click(object sender, EventArgs e)
         {
-            MessageBoxResult result = System.Windows.MessageBox.Show("справді?", "видалити рядок", MessageBoxButton.OKCancel);
+            MessageBoxResult result = System.Windows.MessageBox.Show("справді видалити?", "видалити рядок", MessageBoxButton.OKCancel);
 
             //рядок з таблиці, який видаляємо
-            List<string> removeEPS = new List<string>(); foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells) removeEPS.Add(item.Value.ToString());
+            foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells) removeEPS.Add(item.Value.ToString());
 
             //видаляємо eps із замовлення
-            epsModel remove = new epsModel(removeEPS.ToArray()) { };
-            for (int i = EpsList.Count-1; i >=0; i--)
-            {
-                epsModel eps = EpsList[i]; if (eps.Mark == remove.Mark && eps.Thikness == remove.Thikness && eps.Amount == remove.Amount) EpsList.RemoveAt(EpsList.IndexOf(eps));
-            }
+            epsModel remove = new epsModel(removeEPS.ToArray()) { }; EpsList.RemoveAll(e => e.Mark == remove.Mark && e.Thikness == remove.Thikness && e.Amount == remove.Amount);
 
             //видаляємо рядок з таблиці на формі
             epsData.Rows.Remove(epsData.SelectedRows[0]);
@@ -75,30 +70,17 @@ namespace orderTest
         private void epsEdit_Click(object sender, EventArgs e)
         {
             //рядок з таблиці, який редагуємо
-            DataGridViewRow sRow = epsData.SelectedRows[0]; //sRow.Selected = false; sRow.DefaultCellStyle.BackColor = Color.LightPink;
-            
-            foreach (DataGridViewCell item in sRow.Cells) editEPS.Add(item.Value.ToString());
+            foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells) editEPS.Add(item.Value.ToString());
 
             //форма для редагування
             fillEditEpsForm();
 
-            //sRow.DefaultCellStyle.BackColor = Color.LightGreen;
-
-            //редагуємо eps в замовленні
-            //epsModel remove = new epsModel(removeEPS.ToArray()) { };
-            //for (int i = EpsList.Count - 1; i >= 0; i--)
-            //{
-            //    epsModel eps = EpsList[i]; if (eps.Mark == remove.Mark && eps.Thikness == remove.Thikness && eps.Amount == remove.Amount) EpsList.RemoveAt(EpsList.IndexOf(eps));
-            //}
-
             //редагуємо рядок в таблиці на формі
-            foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells)
-            {
-                //System.Windows.Forms.MessageBox.Show(item.Value.ToString());
-                //System.Windows.Forms.MessageBox.Show(editEPS[epsData.SelectedRows[0].Cells.IndexOf(item)]);
-                item.Value = editEPS[epsData.SelectedRows[0].Cells.IndexOf(item)];
-            }
-            //epsData.Rows.Remove(epsData.SelectedRows[0]);
+            foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells) item.Value = editEPS[epsData.SelectedRows[0].Cells.IndexOf(item)];
+            epsData.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen; epsData.SelectedRows[0].Selected = false; editEPS.Clear();
+
+            //створюємо новий EpsList
+            EpsList.Clear(); editEpsList();
 
             //
             if (!(EpsList.Count > 0)) { epsEdit.Visible = false; epsEdit.Enabled = false; }
