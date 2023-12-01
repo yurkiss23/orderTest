@@ -43,6 +43,7 @@ namespace orderTest
 
             //
             fillEnable(new Button[] { addDelete, addEdit }, true); fillVisible(new Button[] { addDelete, addEdit }, true);
+            //addData.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Window;
         }
 
         private void addDelete_Click(object sender, EventArgs e)
@@ -65,17 +66,16 @@ namespace orderTest
         private void addEdit_Click(object sender, EventArgs e)
         {
             //рядок з таблиці, який редагуємо
-            foreach (DataGridViewCell item in addData.SelectedRows[0].Cells) editADD.Add(item.Value.ToString());
+            editADD.Clear(); foreach (DataGridViewCell item in addData.SelectedRows[0].Cells) editADD.Add(item.Value.ToString());
 
             //форма для редагування
             fillEditAddForm();
 
             //редагуємо рядок в таблиці на формі
             foreach (DataGridViewCell item in addData.SelectedRows[0].Cells) item.Value = editADD[addData.SelectedRows[0].Cells.IndexOf(item)];
-            addData.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen; addData.SelectedRows[0].Selected = false; editADD.Clear();
 
-            //створюємо новий EpsList
-            AddList.Clear(); editAddList();
+            //перезаповнюємо AddList
+            AddList.Clear(); editFoodsList(addData);
 
             //
             if (!(AddList.Count > 0)) { addEdit.Visible = false; addEdit.Enabled = false; }

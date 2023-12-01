@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.orderLabel = new System.Windows.Forms.Label();
             this.dataSelectionBox = new System.Windows.Forms.GroupBox();
             this.radioTable = new System.Windows.Forms.TableLayoutPanel();
@@ -55,6 +55,9 @@
             this.amountADD = new System.Windows.Forms.TextBox();
             this.addAddToOrderButton = new System.Windows.Forms.Button();
             this.addData = new System.Windows.Forms.DataGridView();
+            this.nmADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtrADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epsPanel = new System.Windows.Forms.Panel();
             this.epsEdit = new System.Windows.Forms.Button();
             this.epsDelete = new System.Windows.Forms.Button();
@@ -85,9 +88,6 @@
             this.clientHead = new System.Windows.Forms.TextBox();
             this.clearHead = new System.Windows.Forms.Button();
             this.addHeadData = new System.Windows.Forms.Button();
-            this.nmADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mtrADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSelectionBox.SuspendLayout();
             this.radioTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -323,7 +323,7 @@
             "Суха буд. суміш \"Століт-С\", 25 кг",
             "Суха буд. суміш \"Століт-С+\", 25 кг",
             "Суха буд.суміш \"Століт Універсальна\", 25кг",
-            "\\\\\\",
+            "-|||-",
             "Клей для газобетону Століт, 25 кг",
             "Клей для газобетону Століт МР-2 (морозостійкий) ,25 кг",
             " -",
@@ -331,7 +331,7 @@
             "Клей для плитки П ,25 кг",
             " -",
             "Клей для керамограніту/теплої підлоги П+",
-            "\\\\\\",
+            "-|||-",
             "Штукатурка мінеральна Короїд 1,0-1,5 Століт, 25кг",
             "Штукатурка мінеральна Короїд 2,0-2,5 Століт, 25кг",
             " -",
@@ -355,7 +355,7 @@
             "Штукатурка акрилова DECOR TINC Століт 2,5 7,5кг",
             " -",
             "Штукатурка силіконова Століт 1,5, 25кг",
-            "\\\\\\",
+            "-|||-",
             "Століт грунтовка Універсальна 10 л",
             "Століт грунтовка Універсальна 5 л",
             "Століт грунтовка Універсальна 2 л",
@@ -373,7 +373,7 @@
             "Грунтовка MAXIGRUNT 7,5кг Століт",
             " -",
             "Грунтовка силіконова Століт, 15кг",
-            "\\\\\\",
+            "-|||-",
             "Фарба структурна Століт, 15кг",
             "Фарба структурна Століт, 7,5кг",
             "Фарба структурна Століт, 3,5кг",
@@ -399,19 +399,19 @@
             "Фарба внутрішня на стелю Століт, 15 кг",
             "Фарба внутрішня на стелю Століт, 7,5 кг",
             "Фарба внутрішня на стелю Століт, 3,5 кг",
-            "\\\\\\",
+            "-|||-",
             "Концентрат Грунт ГК-200, 1 л",
-            "\\\\\\",
+            "-|||-",
             "Кутник пластиковий з сіткою Економ 3,0 м (6*6)",
             "Кутник 3м.пластиковий з сіткою Стандарт-Еко (7*7) 3м",
-            "\\\\\\",
+            "-|||-",
             "Сітка Століт 5*5 90г/м",
             "Сітка Століт 5*5 110г/м",
             "Сітка Століт 5*5 135г/м",
             "Сітка Століт 5*5 145 г/м L-St",
             "Сітка Століт 5*5 160г/м L-St",
             "Сітка Століт 4*5 165г/м Premium біла",
-            "\\\\\\"});
+            "-|||-"});
             this.nameADD.Location = new System.Drawing.Point(3, 3);
             this.nameADD.Name = "nameADD";
             this.nameADD.Size = new System.Drawing.Size(444, 31);
@@ -481,14 +481,14 @@
             this.addData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.addData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.addData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.addData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.addData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nmADD,
@@ -507,6 +507,45 @@
             this.addData.Size = new System.Drawing.Size(300, 320);
             this.addData.TabIndex = 4;
             this.addData.Visible = false;
+            // 
+            // nmADD
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.nmADD.DefaultCellStyle = dataGridViewCellStyle11;
+            this.nmADD.DividerWidth = 1;
+            this.nmADD.FillWeight = 220F;
+            this.nmADD.HeaderText = "назва";
+            this.nmADD.MinimumWidth = 210;
+            this.nmADD.Name = "nmADD";
+            this.nmADD.ReadOnly = true;
+            this.nmADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nmADD.Width = 220;
+            // 
+            // mtrADD
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mtrADD.DefaultCellStyle = dataGridViewCellStyle12;
+            this.mtrADD.DividerWidth = 1;
+            this.mtrADD.FillWeight = 40F;
+            this.mtrADD.HeaderText = "од.вим.";
+            this.mtrADD.MinimumWidth = 30;
+            this.mtrADD.Name = "mtrADD";
+            this.mtrADD.ReadOnly = true;
+            this.mtrADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.mtrADD.Width = 40;
+            // 
+            // amADD
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.amADD.DefaultCellStyle = dataGridViewCellStyle13;
+            this.amADD.DividerWidth = 1;
+            this.amADD.FillWeight = 40F;
+            this.amADD.HeaderText = "кіл-ть";
+            this.amADD.MinimumWidth = 30;
+            this.amADD.Name = "amADD";
+            this.amADD.ReadOnly = true;
+            this.amADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.amADD.Width = 40;
             // 
             // epsPanel
             // 
@@ -705,14 +744,14 @@
             this.epsData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.epsData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.epsData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.epsData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.epsData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.epsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.epsData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mark,
@@ -735,8 +774,8 @@
             // 
             // mark
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.mark.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.mark.DefaultCellStyle = dataGridViewCellStyle15;
             this.mark.DividerWidth = 1;
             this.mark.FillWeight = 160F;
             this.mark.HeaderText = "марка";
@@ -748,8 +787,8 @@
             // 
             // thikness
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.thikness.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.thikness.DefaultCellStyle = dataGridViewCellStyle16;
             this.thikness.DividerWidth = 1;
             this.thikness.FillWeight = 30F;
             this.thikness.HeaderText = "товщ";
@@ -761,8 +800,8 @@
             // 
             // amount
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.amount.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.amount.DefaultCellStyle = dataGridViewCellStyle17;
             this.amount.DividerWidth = 1;
             this.amount.FillWeight = 30F;
             this.amount.HeaderText = "к-ть";
@@ -774,8 +813,8 @@
             // 
             // pack
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.pack.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.pack.DefaultCellStyle = dataGridViewCellStyle18;
             this.pack.DividerWidth = 1;
             this.pack.FillWeight = 30F;
             this.pack.HeaderText = "уп";
@@ -997,45 +1036,6 @@
             this.addHeadData.UseVisualStyleBackColor = false;
             this.addHeadData.EnabledChanged += new System.EventHandler(this.addHeadData_EnabledChanged);
             this.addHeadData.Click += new System.EventHandler(this.addHeadData_Click);
-            // 
-            // nmADD
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.nmADD.DefaultCellStyle = dataGridViewCellStyle2;
-            this.nmADD.DividerWidth = 1;
-            this.nmADD.FillWeight = 220F;
-            this.nmADD.HeaderText = "назва";
-            this.nmADD.MinimumWidth = 210;
-            this.nmADD.Name = "nmADD";
-            this.nmADD.ReadOnly = true;
-            this.nmADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nmADD.Width = 220;
-            // 
-            // mtrADD
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mtrADD.DefaultCellStyle = dataGridViewCellStyle3;
-            this.mtrADD.DividerWidth = 1;
-            this.mtrADD.FillWeight = 40F;
-            this.mtrADD.HeaderText = "од.вим.";
-            this.mtrADD.MinimumWidth = 30;
-            this.mtrADD.Name = "mtrADD";
-            this.mtrADD.ReadOnly = true;
-            this.mtrADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.mtrADD.Width = 40;
-            // 
-            // amADD
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.amADD.DefaultCellStyle = dataGridViewCellStyle4;
-            this.amADD.DividerWidth = 1;
-            this.amADD.FillWeight = 40F;
-            this.amADD.HeaderText = "кіл-ть";
-            this.amADD.MinimumWidth = 30;
-            this.amADD.Name = "amADD";
-            this.amADD.ReadOnly = true;
-            this.amADD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.amADD.Width = 40;
             // 
             // Form1
             // 

@@ -11,6 +11,8 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
+        List<string> editRow = new List<string>();
+
         private void selectDefaultItem(ComboBox[] cb) { foreach (ComboBox cbItem in cb) cbItem.SelectedIndex = 0; }
 
         private void initArrays()
@@ -29,22 +31,18 @@ namespace orderTest
 
         private void txtBold(Control c) => c.Font = new Font(c.Font, c.Font.Style | FontStyle.Bold | FontStyle.Underline);
 
-        private void resetAll() { headClear(txtControlArray.ToList()); epsClear(); addClear(); EpsList.Clear(); AddList.Clear(); downToFile.Text = "вийти"; }
+        private void resetAll() { headClear(txtControlArray.ToList()); epsClear(); addClear(); EpsList.Clear(); AddList.Clear(); downToFile.Text = "saved! \nвийти"; }
 
         private void addControls(Control[] ctrls, Form f) { foreach (Control c in ctrls) f.Controls.Add(c); }
 
-        private void editFoodsList(DataGridView data, List<string> edit, List<epsModel> eList = null, List<addModel> aList = null)
+        private void editFoodsList(DataGridView data)
         {
-            //foreach (DataGridViewRow r in data.Rows)
-            //{
-            //    foreach (DataGridViewCell c in r.Cells) edit.Add(c.Value.ToString());
-            //    //eList.Add(new epsModel(edit.ToArray()));
-            //    if (eList==null)
-            //    {
-
-            //    }
-            //    edit.Clear();
-            //}
+            foreach (DataGridViewRow r in data.Rows)
+            {
+                foreach (DataGridViewCell c in r.Cells) editRow.Add(c.Value.ToString());
+                if (r.Cells.Count > 3) EpsList.Add(new epsModel(editRow.ToArray())); else AddList.Add(new addModel(editRow.ToArray()));
+                editRow.Clear();
+            }
         }
 
         //is...
@@ -76,7 +74,7 @@ namespace orderTest
 
         private bool isLast(int count) { if (count > 0) return true; return false; }
 
-        private void isNullPosition(ComboBox a, Control b) => b.Enabled = a.SelectedIndex != 0 ? true : false;
+        private void isNullPosition(ComboBox a, Control b) => b.Enabled = a.SelectedIndex == 0 || a.Text == " -" || a.Text == "-|||-" ? false : true;
 
         private void isButtonStateChanged(Button b) => b.FlatStyle = b.Enabled ? FlatStyle.Popup : FlatStyle.System;
 

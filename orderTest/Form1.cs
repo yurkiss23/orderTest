@@ -17,7 +17,7 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        static private string path = @"e:\work\dev\orderUST\test.xml";
+        static private string path;
         static private Panel[] panels;
         static private Button[] addBut;
 
@@ -25,8 +25,7 @@ namespace orderTest
         {
             InitializeComponent();
 
-            initArrays();
-            fillPanelProps(new Point(0, 0), new Size(753, 400), new[] { markEPS, thikEPS, nameADD, meterADD });
+            initArrays(); fillPanelProps(new Point(0, 0), new Size(753, 400), new[] { markEPS, thikEPS, nameADD, meterADD });
         }
 
         private void downToFile_EnabledChanged(object sender, EventArgs e) => isButtonStateChanged((Button)sender);
@@ -38,12 +37,12 @@ namespace orderTest
                 //замовлення
                 orderModel order = new orderModel(hd, storages(), EpsList, AddList);
                 fillEnable(new Control[] { splitContainer1, orderLabel }, false); fillVisible(new Control[] { splitContainer1, orderLabel }, false);
-                //splitContainer1.Enabled = false; splitContainer1.Visible = false;
-                //orderLabel.Enabled = false; orderLabel.Visible = false;
+
+                //вибір path
+                SaveFileDialog sDialog = new SaveFileDialog(); sDialog.Filter = "xml files(*.xml)|*.xml"; if (sDialog.ShowDialog() == DialogResult.OK) path = sDialog.FileName; else return;
 
                 //xml
-                XmlSerializer xmlOrder = new XmlSerializer(typeof(orderModel));
-                using (FileStream fs = new FileStream(path, FileMode.Create)) xmlOrder.Serialize(fs, order);
+                XmlSerializer xmlOrder = new XmlSerializer(typeof(orderModel)); using (FileStream fs = new FileStream(path, FileMode.Create)) xmlOrder.Serialize(fs, order);
 
             } else Close();
 
