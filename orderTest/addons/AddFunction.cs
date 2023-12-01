@@ -25,16 +25,8 @@ namespace orderTest
             eSumbit.TextAlign = ContentAlignment.TopCenter; eSumbit.Click += eSubmitAdd_Click;
 
             editAddForm = new Form();
-            editAddForm.Text = "редагування додаткових"; editAddForm.Size = fillSize(320, 200); addControls(new Control[] { eName, eAmAdd, eMeter, eSumbit }, editAddForm);
+            editAddForm.Text = "редагування додаткових"; editAddForm.Size = fillSize(320, 210); addControls(new Control[] { eName, eAmAdd, eMeter, eSumbit }, editAddForm);
             editAddForm.ShowDialog();
-        }
-
-        private void editAddList()
-        {
-            foreach (DataGridViewRow r in addData.Rows)
-            {
-                foreach (DataGridViewCell c in r.Cells) editADD.Add(c.Value.ToString()); AddList.Add(new addModel(editADD.ToArray())); editADD.Clear();
-            }
         }
 
         private void eSubmitAdd_Click(object sender, EventArgs e) { editADD[2] = editAddForm.Controls[1].Text; editAddForm.Close(); }

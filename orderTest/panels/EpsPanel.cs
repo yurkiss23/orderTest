@@ -76,10 +76,9 @@ namespace orderTest
 
             //редагуємо рядок в таблиці на формі
             foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells) item.Value = editEPS[epsData.SelectedRows[0].Cells.IndexOf(item)];
-            epsData.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightGreen; epsData.SelectedRows[0].Selected = false; editEPS.Clear();
 
-            //створюємо новий EpsList
-            EpsList.Clear(); editEpsList();
+            //перезаповнюємо EpsList
+            EpsList.Clear(); editFoodsList(epsData);
 
             //
             if (!(EpsList.Count > 0)) { epsEdit.Visible = false; epsEdit.Enabled = false; }
