@@ -22,29 +22,29 @@ namespace orderTest
 
         private void numberHead_TextChanged(object sender, EventArgs e) => clientHead.Enabled = true;
 
-        private void numberHead_Leave(object sender, EventArgs e) { orderLabel.Text = "замовлення №" + numberHead.Text; isFill((TextBox)sender, new[] { clientHead }, false, "#"); }
+        private void numberHead_Leave(object sender, EventArgs e) { orderLabel.Text = "замовлення №" + numberHead.Text; isFill((TextBox)sender, new[] { clientHead }, true, "#"); }
 
         private void clientHead_Enter(object sender, EventArgs e) => clearText(clientHead);
 
         private void clientHead_TextChanged(object sender, EventArgs e) => fillEnable(txtControlArray, true);
 
-        private void clientHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, txtControlArray, false, "замовник");
+        private void clientHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, txtControlArray, true, "замовник");
 
-        private void markHead_Enter(object sender, EventArgs e) => clearText(markHead);
+        private void markHead_Enter(object sender, EventArgs e) { clearText(markHead); fillEnable(new[] { addHeadData }, true); }
 
-        private void markHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, true, "марка");
+        private void markHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, false, "марка");
 
         private void vehicleHead_Enter(object sender, EventArgs e) => clearText(vehicleHead);
 
-        private void vehicleHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, true, "машина");
+        private void vehicleHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, addHeadData.Enabled, "машина");
 
         private void addressHead_Enter(object sender, EventArgs e) => clearText(addressHead);
 
-        private void addressHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, true, "адреса");
+        private void addressHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, addHeadData.Enabled, "адреса");
 
         private void driverHead_Enter(object sender, EventArgs e) => clearText(driverHead);
 
-        private void driverHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, true, "водій");
+        private void driverHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, addHeadData.Enabled, "водій");
 
         private void clearHead_MouseHover(object sender, EventArgs e) => clearHead.BackColor = Color.LightCoral;
 
