@@ -9,9 +9,8 @@ namespace orderTest
 {
     public partial class Form1 : Form
     {
-        private void fClear()
-        {
+        private void fClear() { }
 
-        }
+        private void isHead() => addClients.Enabled = radioHead.Checked ? true : false;
     }
 }
