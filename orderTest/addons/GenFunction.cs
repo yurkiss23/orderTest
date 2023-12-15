@@ -20,7 +20,8 @@ namespace orderTest
             panels = new[] { headerPanel, epsPanel, addPanel };
             addBut = new[] { addHeadData, addEpsToOrderButton, addAddToOrderButton };
             diffControlArray = new Control[] { numberHead, commentHead, clearHead };
-            txtControlArray = new[] { markHead, vehicleHead, addressHead, driverHead };
+            txtControlArray = new[] { markHead, vehicleHead, driverHead };
+            addCltControlArray = new Control[] { dateHead, numberHead, markHead, vehicleHead, driverHead };
             ph = new[] { "#", "замовник", "марка", "машина", "адреса", "водій" };
             epsControl = new Control[] { thikEPS, amountEPS, packEPS, addEpsToOrderButton };
         }
@@ -78,7 +79,7 @@ namespace orderTest
 
         private void isButtonStateChanged(Button b) => b.FlatStyle = b.Enabled ? FlatStyle.Popup : FlatStyle.System;
 
-        private void isFill(TextBox t, Control[] ctrs, bool state, string ph) { if (!t.Text.Any()) { txt(new List<Control> { t }, new[] { ph }); fillEnable(ctrs, state); } }
+        private void isFill(TextBox t, Control[] ctrs, bool state, string ph) { if (!t.Text.Any()) { txt(new List<Control> { t }, [ph]); fillEnable(ctrs, state); } }
 
         private bool isState(Control[] ctrl) { foreach (Control c in ctrl) { if (c.Enabled) return false; } return true; }
 
@@ -86,6 +87,8 @@ namespace orderTest
 
         //fill..
         private void fillEnable(Control[] ctrs, bool state) { foreach (Control c in ctrs) c.Enabled = state; }
+
+        private void fillEnable(Control ctrl, bool state) => ctrl.Enabled = state;
 
         private void fillVisible(Control[] ctrs, bool state) { foreach (Control c in ctrs) c.Visible = state; }
 

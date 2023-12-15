@@ -12,5 +12,7 @@ namespace orderTest
         private void fClear() { }
 
         private void isHead() => addClients.Enabled = radioHead.Checked ? true : false;
+
+        private bool isAddCl() => addClients.Checked ? false : true;
     }
 }

@@ -19,7 +19,7 @@ namespace orderTest
 
         private void headClear(List<Control> cl)
         {
-            List<Control> tmpCtrTxt = new List<Control> { numberHead, clientHead }.Concat(cl).ToList();
+            List<Control> tmpCtrTxt = new List<Control> { numberHead, clientHead, addressHead }.Concat(cl).ToList();
             dateHead.ResetText(); txt(tmpCtrTxt, ph); fillEnable(tmpCtrTxt.Concat(new List<Control> { clearHead, addHeadData }).ToArray(), false);
         }
     }

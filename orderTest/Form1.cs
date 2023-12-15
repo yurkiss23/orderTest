@@ -47,8 +47,6 @@ namespace orderTest
             } else Close();
 
             resetAll();
-
         }
-
     }
 }
