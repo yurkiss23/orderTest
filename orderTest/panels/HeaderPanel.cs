@@ -14,37 +14,45 @@ namespace orderTest
         static private headModel hd;
         static private Control[] diffControlArray;
         static private Control[] txtControlArray;
+        static private Control[] addCltControlArray;
+        static private int clients = 1;
         private string[] addHead;
 
+        //замовник/адреса
+        private void clientHead_Enter(object sender, EventArgs e) => clearText(clientHead);
+
+        private void clientHead_TextChanged(object sender, EventArgs e) => fillEnable(addressHead, true); //при зміні вмикається адреса
+
+        private void clientHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, [addHeadData], addHeadData.Enabled, "замовник");
+
+        private void addressHead_Enter(object sender, EventArgs e) => clearText(addressHead);
+
+        private void addressHead_TextChanged(object sender, EventArgs e) => fillEnable(addHeadData, true);
+
+        private void addressHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, [addHeadData], true, "адреса");
+
+        //решта полів
         private void dateHead_ValueChanged(object sender, EventArgs e) => fillEnable(diffControlArray, true);
 
         private void numberHead_Enter(object sender, EventArgs e) => clearText(numberHead);
 
-        private void numberHead_TextChanged(object sender, EventArgs e) => clientHead.Enabled = true;
+        private void numberHead_TextChanged(object sender, EventArgs e) => fillEnable(txtControlArray, true);//при зміні - вмикаються інші текстові поля
 
-        private void numberHead_Leave(object sender, EventArgs e) { orderLabel.Text = "замовлення №" + numberHead.Text; isFill((TextBox)sender, new[] { clientHead }, true, "#"); }
+        private void numberHead_Leave(object sender, EventArgs e) { orderLabel.Text = "замовлення №" + numberHead.Text; isFill((TextBox)sender, [addHeadData], addHeadData.Enabled, "#"); }
 
-        private void clientHead_Enter(object sender, EventArgs e) => clearText(clientHead);
+        private void markHead_Enter(object sender, EventArgs e) => clearText(markHead);// fillEnable(new[] { addHeadData }, true); }
 
-        private void clientHead_TextChanged(object sender, EventArgs e) => fillEnable(txtControlArray, true);
+        private void markHead_TextChanged(object sender, EventArgs e) => fillEnable(clientHead, true);//при зміні вмикається замовник
 
-        private void clientHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, txtControlArray, true, "замовник");
-
-        private void markHead_Enter(object sender, EventArgs e) { clearText(markHead); fillEnable(new[] { addHeadData }, true); }
-
-        private void markHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, false, "марка");
+        private void markHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, [addHeadData], addHeadData.Enabled, "марка");
 
         private void vehicleHead_Enter(object sender, EventArgs e) => clearText(vehicleHead);
 
-        private void vehicleHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, addHeadData.Enabled, "машина");
-
-        private void addressHead_Enter(object sender, EventArgs e) => clearText(addressHead);
-
-        private void addressHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, addHeadData.Enabled, "адреса");
+        private void vehicleHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, [addHeadData], addHeadData.Enabled, "машина");
 
         private void driverHead_Enter(object sender, EventArgs e) => clearText(driverHead);
 
-        private void driverHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, new[] { addHeadData }, addHeadData.Enabled, "водій");
+        private void driverHead_Leave(object sender, EventArgs e) => isFill((TextBox)sender, [addHeadData], addHeadData.Enabled, "водій");
 
         private void clearHead_MouseHover(object sender, EventArgs e) => clearHead.BackColor = Color.LightCoral;
 
@@ -56,9 +64,14 @@ namespace orderTest
 
         private void addHeadData_Click(object sender, EventArgs e)
         {
+            //додати вигрузки?
+            DialogResult result = MessageBox.Show("додати вигрузки?", "вигрузки", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes){ fillManyCltsForm(); }
+
+            //замовники/адреси
+            string clts = clients == 1 ? clientHead.Text : toStr(cltsList, clientHead.Text); string addrs = clients == 1 ? addressHead.Text : toStr(addrsList, addressHead.Text);
             //рядок з реквізитами
-            addHead = new[] { dateHead.Value.ToString(), numberHead.Text, clientHead.Text, markHead.Text, vehicleHead.Text,// trailerHead.CheckState.ToString(),
-                driverHead.Text, addressHead.Text, commentHead.Text };
+            addHead = [dateHead.Value.ToString(), numberHead.Text, clts, markHead.Text, vehicleHead.Text, driverHead.Text, addrs, commentHead.Text];
 
             //додаємо реквізити до замовлення
             hd = new headModel(addHead); txtBold(radioHead); radioHead.ForeColor = Color.DarkGreen;
