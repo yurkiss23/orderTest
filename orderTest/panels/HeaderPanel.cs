@@ -15,6 +15,7 @@ namespace orderTest
         static private Control[] diffControlArray;
         static private Control[] txtControlArray;
         static private Control[] addCltControlArray;
+        static private int clients = 1;
         private string[] addHead;
 
         //замовник/адреса
@@ -63,8 +64,14 @@ namespace orderTest
 
         private void addHeadData_Click(object sender, EventArgs e)
         {
+            //додати вигрузки?
+            DialogResult result = MessageBox.Show("додати вигрузки?", "вигрузки", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes){ fillManyCltsForm(); }
+
+            //замовники/адреси
+            string clts = clients == 1 ? clientHead.Text : toStr(cltsList, clientHead.Text); string addrs = clients == 1 ? addressHead.Text : toStr(addrsList, addressHead.Text);
             //рядок з реквізитами
-            addHead = [dateHead.Value.ToString(), numberHead.Text, clientHead.Text, markHead.Text, vehicleHead.Text, driverHead.Text, addressHead.Text, commentHead.Text];
+            addHead = [dateHead.Value.ToString(), numberHead.Text, clts, markHead.Text, vehicleHead.Text, driverHead.Text, addrs, commentHead.Text];
 
             //додаємо реквізити до замовлення
             hd = new headModel(addHead); txtBold(radioHead); radioHead.ForeColor = Color.DarkGreen;

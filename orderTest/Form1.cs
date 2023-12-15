@@ -36,7 +36,7 @@ namespace orderTest
             {
                 //замовлення
                 orderModel order = new orderModel(hd, storages(), EpsList, AddList);
-                fillEnable(new Control[] { splitContainer1, orderLabel }, false); fillVisible(new Control[] { splitContainer1, orderLabel }, false);
+                fillEnable([splitContainer1, orderLabel], false); fillVisible([splitContainer1, orderLabel], false);
 
                 //вибір path
                 SaveFileDialog sDialog = new SaveFileDialog(); sDialog.Filter = "xml files(*.xml)|*.xml"; if (sDialog.ShowDialog() == DialogResult.OK) path = sDialog.FileName; else return;
