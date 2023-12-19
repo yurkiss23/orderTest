@@ -12,12 +12,10 @@ namespace orderTest
     {
         private void radioButton1_Enter(object sender, EventArgs e) => panelEnVis(headerPanel);
 
-        private void radioHead_CheckedChanged(object sender, EventArgs e) { }// => isHead();
-
         private void radioButton2_Enter(object sender, EventArgs e) => panelEnVis(epsPanel);
 
-        private void radioButton3_Enter(object sender, EventArgs e) => panelEnVis(addPanel);
+        private void radioEPS_Click(object sender, EventArgs e) => addItems();
 
-        private void addClients_CheckedChanged(object sender, EventArgs e) { }// => fillEnable(addCltControlArray, isAddCl());
+        private void radioButton3_Enter(object sender, EventArgs e) => panelEnVis(addPanel);
     }
 }

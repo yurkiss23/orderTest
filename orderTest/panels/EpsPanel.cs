@@ -29,6 +29,8 @@ namespace orderTest
 
         private void addEpsToOrderButton_Click(object sender, EventArgs e)
         {
+            //вигрузки - одна/кілька
+            //bool state = clients == 1 ? false : true; epsCltsList.Visible = state;epsCltsList.Enabled = state;
             //новий рядок
             addEPS = new[] { markEPS.SelectedItem.ToString(), thikEPS.SelectedItem.ToString(), amountEPS.Text, packEPS.Text };
             epsModel eps = new epsModel(addEPS);
