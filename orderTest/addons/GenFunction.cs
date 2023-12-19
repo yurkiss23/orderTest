@@ -22,7 +22,7 @@ namespace orderTest
             diffControlArray = new Control[] { numberHead, commentHead, clearHead };
             txtControlArray = new[] { markHead, vehicleHead, driverHead };
             addCltControlArray = new Control[] { dateHead, numberHead, markHead, vehicleHead, driverHead };
-            ph = new[] { "#", "замовник", "марка", "машина", "адреса", "водій" };
+            ph = new[] { "#", "замовник", "адреса", "марка", "машина", "водій" };
             epsControl = new Control[] { thikEPS, amountEPS, packEPS, addEpsToOrderButton };
         }
 
@@ -34,8 +34,14 @@ namespace orderTest
 
         private void resetAll() { headClear(txtControlArray.ToList()); epsClear(); addClear(); EpsList.Clear(); AddList.Clear(); downToFile.Text = "saved! \nвийти"; }
 
+        //add..
         private void addControls(Control[] ctrls, Form f) { foreach (Control c in ctrls) f.Controls.Add(c); }
 
+        private void addItems(List<string>[] array) { foreach (List<string> item in array) item.Add(addClientForm.Controls[array.ToList().IndexOf(item)].Text); }
+
+        private void addItems() { fillEnVis(epsCltsList, clients == 1 ? false : true); for (int i = 1; i <= clients; i++) epsCltsList.Items.Add(i); selectDefaultItem([epsCltsList]); }
+
+        //edit..
         private void editFoodsList(DataGridView data)
         {
             foreach (DataGridViewRow r in data.Rows)
@@ -88,9 +94,11 @@ namespace orderTest
         //fill..
         private void fillEnable(Control[] ctrs, bool state) { foreach (Control c in ctrs) c.Enabled = state; }
 
-        private void fillEnable(Control ctrl, bool state) => ctrl.Enabled = state;
+        private void fillEnable(Control c, bool state) => c.Enabled = state;
 
         private void fillVisible(Control[] ctrs, bool state) { foreach (Control c in ctrs) c.Visible = state; }
+
+        private void fillEnVis(Control c, bool state) { c.Enabled = state; c.Visible = state; }
 
         private void fillPanelProps(Point p, Size s, ComboBox[] cb) { foreach (Panel pn in panels) { pn.Location = p; pn.Size = s; } selectDefaultItem(cb); }
 

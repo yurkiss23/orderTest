@@ -18,6 +18,7 @@ namespace orderTest
     public partial class Form1 : Form
     {
         static private string path;
+        static private int clients = 1;
         static private Panel[] panels;
         static private Button[] addBut;
 
@@ -48,5 +49,6 @@ namespace orderTest
 
             resetAll();
         }
+
     }
 }

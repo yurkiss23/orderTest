@@ -15,7 +15,6 @@ namespace orderTest
         static private Control[] diffControlArray;
         static private Control[] txtControlArray;
         static private Control[] addCltControlArray;
-        static private int clients = 1;
         private string[] addHead;
 
         //замовник/адреса

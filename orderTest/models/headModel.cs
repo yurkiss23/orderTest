@@ -11,9 +11,7 @@ namespace orderTest.models
         public headModel() { }
         public headModel(string[] head)
         {
-            Date = DateTime.Parse(head[0]); Number = int.Parse(head[1]); Client = head[2]; MarkV = head[3]; Vehicle = head[4];// Trailer = bool.Parse(head[5]);
-            Driver = head[5]; Address = head[6]; Comment = head[7];
-            //Driver = head[6]; Address = head[7]; Comment = head[8];
+            Date = DateTime.Parse(head[0]); Number = int.Parse(head[1]); Client = head[2]; MarkV = head[3]; Vehicle = head[4]; Driver = head[5]; Address = head[6]; Comment = head[7];
         }
 
         public DateTime Date { get; set; }
@@ -21,16 +19,13 @@ namespace orderTest.models
         public string Client { get; set; }
         public string MarkV { get; set; }
         public string Vehicle { get; set; }
-        //public bool Trailer { get; set; }
         public string Driver { get; set; }
         public string Address { get; set; }
         public string Comment { get; set; }
 
         public override string ToString()
         {
-            return Date.ToString() + ", " + Number.ToString() 
-                + ", " + Client + ", " + MarkV + ", " + Vehicle// + ", " + Trailer.ToString() 
-                + ", " + Driver + ", " + Address + ", " + Comment;
+            return Date.ToString() + ", " + Number.ToString() + ", " + Client + ", " + MarkV + ", " + Vehicle + ", " + Driver + ", " + Address + ", " + Comment;
         }
     }
 }

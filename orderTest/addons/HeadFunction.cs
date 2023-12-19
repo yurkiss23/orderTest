@@ -50,7 +50,7 @@ namespace orderTest
             addClientForm.ShowDialog();
         }
 
-        private void addItem(List<string>[]array) { foreach (List<string> item in array) item.Add(addClientForm.Controls[array.ToList().IndexOf(item)].Text); }
+        //private void addItem(List<string>[]array) { foreach (List<string> item in array) item.Add(addClientForm.Controls[array.ToList().IndexOf(item)].Text); }
 
         private void AddClt_Enter(object sender, EventArgs e) => clearText((TextBox)addClientForm.Controls[0]);
 
@@ -66,11 +66,11 @@ namespace orderTest
 
         private void addClient_Click(object sender, EventArgs e)
         {
-            addItem([cltsList, addrsList]); clients++; txt(new List<Control> { addClientForm.Controls[0], addClientForm.Controls[1] }, ["замовник", "адреса"]);
+            addItems([cltsList, addrsList]); clients++; txt(new List<Control> { addClientForm.Controls[0], addClientForm.Controls[1] }, ["замовник", "адреса"]);
             fillEnable([addClientForm.Controls[1], addClientForm.Controls[2], addClientForm.Controls[3]], false); addClientForm.Controls[0].Focus();
         }
 
-        private void AddCltSub_Click(object sender, EventArgs e) { addItem([cltsList, addrsList]); clients++; addClientForm.Close(); }
+        private void AddCltSub_Click(object sender, EventArgs e) { addItems([cltsList, addrsList]); clients++; addClientForm.Close(); }
 
         private void cncl_Click(object sender, EventArgs e) => addClientForm.Close();
     }
