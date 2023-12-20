@@ -14,8 +14,6 @@ namespace orderTest
 
         private void radioButton2_Enter(object sender, EventArgs e) => panelEnVis(epsPanel);
 
-        private void radioEPS_Click(object sender, EventArgs e) => addItems();
-
         private void radioButton3_Enter(object sender, EventArgs e) => panelEnVis(addPanel);
     }
 }

@@ -39,7 +39,7 @@ namespace orderTest
 
         private void addItems(List<string>[] array) { foreach (List<string> item in array) item.Add(addClientForm.Controls[array.ToList().IndexOf(item)].Text); }
 
-        private void addItems() { fillEnVis(epsCltsList, clients == 1 ? false : true); for (int i = 1; i <= clients; i++) epsCltsList.Items.Add(i); selectDefaultItem([epsCltsList]); }
+        private void addItems() { fillEnVis(cList, clients == 1 ? false : true); for (int i = 1; i <= clients; i++) cList.Items.Add(i); selectDefaultItem([cList]); }
 
         //edit..
         private void editFoodsList(DataGridView data)
@@ -53,6 +53,8 @@ namespace orderTest
         }
 
         //is...
+        private void isOne() { }
+
         private void isNum(TextBox tb, Control[] ctrl, TextBox tCtrl = null)
         {
             if (tb.Text != "")
@@ -97,6 +99,8 @@ namespace orderTest
         private void fillEnable(Control c, bool state) => c.Enabled = state;
 
         private void fillVisible(Control[] ctrs, bool state) { foreach (Control c in ctrs) c.Visible = state; }
+
+        private void fillEnVis(Control[] ctrs, bool state) { foreach (Control c in ctrs) { c.Enabled = state; c.Visible = state; } }
 
         private void fillEnVis(Control c, bool state) { c.Enabled = state; c.Visible = state; }
 
