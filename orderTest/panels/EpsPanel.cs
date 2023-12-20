@@ -15,6 +15,7 @@ namespace orderTest
         private List<epsModel> EpsList = new List<epsModel>();
         private List<string> removeEPS = new List<string>();
         private List<string> editEPS = new List<string>();
+        private List<int> epsCltInd = new List<int>();
         private string[] addEPS;
 
         private void markEPS_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(markEPS, thikEPS);
@@ -29,17 +30,12 @@ namespace orderTest
 
         private void addEpsToOrderButton_Click(object sender, EventArgs e)
         {
-            //вигрузки - одна/кілька
-            //bool state = clients == 1 ? false : true; epsCltsList.Visible = state;epsCltsList.Enabled = state;
             //новий рядок
-            addEPS = new[] { markEPS.SelectedItem.ToString(), thikEPS.SelectedItem.ToString(), amountEPS.Text, packEPS.Text };
+            addEPS = [markEPS.SelectedItem.ToString(), thikEPS.SelectedItem.ToString(), amountEPS.Text, packEPS.Text];
             epsModel eps = new epsModel(addEPS);
 
-            //перевірка: чи є вже дані в списку, чи збігається марка
-            //if (isLast(EpsList.Count)) isMark(addEPS);
-
             //додаємо eps в замовлення
-            EpsList.Add(eps); txtBold(radioEPS); radioEPS.ForeColor = Color.DarkGreen;
+            EpsList.Add(eps); txtBold(radioEPS); radioEPS.ForeColor = Color.DarkGreen; if (clients > 1) epsCltInd.Add(cList.SelectedIndex);
 
             //додаємо рядок в таблицю на формі
             epsData.Rows.Add(addEPS); epsData.Visible = true;
@@ -48,7 +44,7 @@ namespace orderTest
             epsClear(); enableButton();
 
             //
-            fillEnable(new Button[] { epsDelete, epsEdit }, true); fillVisible(new Button[] { epsDelete, epsEdit }, true);
+            fillEnVis([epsDelete, epsEdit], true);
         }
 
         private void epsDelete_Click(object sender, EventArgs e)
@@ -59,13 +55,16 @@ namespace orderTest
             foreach (DataGridViewCell item in epsData.SelectedRows[0].Cells) removeEPS.Add(item.Value.ToString());
 
             //видаляємо eps із замовлення
-            epsModel remove = new epsModel(removeEPS.ToArray()) { }; EpsList.RemoveAll(e => e.Mark == remove.Mark && e.Thikness == remove.Thikness && e.Amount == remove.Amount);
+            epsModel remove = new epsModel(removeEPS.ToArray()) { }; int i = EpsList.FindIndex(e => e.Mark == remove.Mark && e.Thikness == remove.Thikness && e.Amount == remove.Amount);
+            EpsList.RemoveAt(i);
+            if (clients > 1) epsCltInd.RemoveAt(i);
+            //EpsList.RemoveAll(e => e.Mark == remove.Mark && e.Thikness == remove.Thikness && e.Amount == remove.Amount);
 
             //видаляємо рядок з таблиці на формі
             epsData.Rows.Remove(epsData.SelectedRows[0]);
 
             //
-            if (!(EpsList.Count > 0)) { epsDelete.Visible = false; epsDelete.Enabled = false; }
+            if (!(EpsList.Count > 0)) fillEnVis(epsDelete, false);
         }
 
         private void epsEdit_Click(object sender, EventArgs e)
@@ -83,7 +82,7 @@ namespace orderTest
             EpsList.Clear(); editFoodsList(epsData);
 
             //
-            if (!(EpsList.Count > 0)) { epsEdit.Visible = false; epsEdit.Enabled = false; }
+            if (!(EpsList.Count > 0)) fillEnVis(epsEdit, false);
         }
     }
 }

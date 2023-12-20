@@ -79,6 +79,9 @@ namespace orderTest
             Label headLabel = new Label(); headLabel.Text = hd.ToString(); headLabel.Font = new Font("Calibri", 12); headLabel.Location = new Point(0, 300); headLabel.AutoSize = true;
             headerPanel.Controls.Add(headLabel);
 
+            //вкл номер клієнта, eps і додаткові
+            addItems(); fillEnable([radioEPS, radioAdd], true);
+
             //очищаэмо поля вибору і введення
             headClear(txtControlArray.ToList());
 

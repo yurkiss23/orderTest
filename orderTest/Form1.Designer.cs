@@ -43,6 +43,7 @@
             this.radioHead = new System.Windows.Forms.RadioButton();
             this.radioAdd = new System.Windows.Forms.RadioButton();
             this.radioEPS = new System.Windows.Forms.RadioButton();
+            this.cList = new System.Windows.Forms.ComboBox();
             this.downToFile = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -59,7 +60,6 @@
             this.mtrADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amADD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epsPanel = new System.Windows.Forms.Panel();
-            this.epsCltsList = new System.Windows.Forms.ComboBox();
             this.epsEdit = new System.Windows.Forms.Button();
             this.epsDelete = new System.Windows.Forms.Button();
             this.epsTable = new System.Windows.Forms.TableLayoutPanel();
@@ -125,6 +125,7 @@
             // dataSelectionBox
             // 
             this.dataSelectionBox.Controls.Add(this.radioTable);
+            this.dataSelectionBox.Controls.Add(this.cList);
             this.dataSelectionBox.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dataSelectionBox.Location = new System.Drawing.Point(0, 0);
             this.dataSelectionBox.Name = "dataSelectionBox";
@@ -135,11 +136,10 @@
             // 
             // radioTable
             // 
-            this.radioTable.ColumnCount = 4;
+            this.radioTable.ColumnCount = 3;
             this.radioTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27F));
             this.radioTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27F));
             this.radioTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27F));
-            this.radioTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19F));
             this.radioTable.Controls.Add(this.radioHead, 0, 0);
             this.radioTable.Controls.Add(this.radioAdd, 2, 0);
             this.radioTable.Controls.Add(this.radioEPS, 1, 0);
@@ -148,7 +148,7 @@
             this.radioTable.RowCount = 1;
             this.radioTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.radioTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.radioTable.Size = new System.Drawing.Size(540, 63);
+            this.radioTable.Size = new System.Drawing.Size(439, 63);
             this.radioTable.TabIndex = 40;
             // 
             // radioHead
@@ -159,7 +159,7 @@
             this.radioHead.Location = new System.Drawing.Point(3, 3);
             this.radioHead.Name = "radioHead";
             this.radioHead.Padding = new System.Windows.Forms.Padding(15, 0, 5, 0);
-            this.radioHead.Size = new System.Drawing.Size(139, 57);
+            this.radioHead.Size = new System.Drawing.Size(140, 57);
             this.radioHead.TabIndex = 35;
             this.radioHead.Text = "реквізити";
             this.radioHead.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -170,12 +170,13 @@
             // 
             this.radioAdd.AutoSize = true;
             this.radioAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioAdd.Enabled = false;
             this.radioAdd.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioAdd.Location = new System.Drawing.Point(293, 3);
+            this.radioAdd.Location = new System.Drawing.Point(295, 3);
             this.radioAdd.Name = "radioAdd";
             this.radioAdd.Padding = new System.Windows.Forms.Padding(15, 0, 5, 0);
-            this.radioAdd.Size = new System.Drawing.Size(139, 57);
+            this.radioAdd.Size = new System.Drawing.Size(141, 57);
             this.radioAdd.TabIndex = 37;
             this.radioAdd.Text = "додаткові";
             this.radioAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,17 +187,37 @@
             // 
             this.radioEPS.AutoSize = true;
             this.radioEPS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioEPS.Enabled = false;
             this.radioEPS.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioEPS.Location = new System.Drawing.Point(148, 3);
+            this.radioEPS.Location = new System.Drawing.Point(149, 3);
             this.radioEPS.Name = "radioEPS";
             this.radioEPS.Padding = new System.Windows.Forms.Padding(15, 0, 5, 0);
-            this.radioEPS.Size = new System.Drawing.Size(139, 57);
+            this.radioEPS.Size = new System.Drawing.Size(140, 57);
             this.radioEPS.TabIndex = 36;
             this.radioEPS.Text = "пінопласт";
             this.radioEPS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioEPS.UseVisualStyleBackColor = true;
-            this.radioEPS.Click += new System.EventHandler(this.radioEPS_Click);
             this.radioEPS.Enter += new System.EventHandler(this.radioButton2_Enter);
+            // 
+            // cList
+            // 
+            this.cList.BackColor = System.Drawing.SystemColors.Control;
+            this.cList.DropDownHeight = 130;
+            this.cList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cList.DropDownWidth = 60;
+            this.cList.Enabled = false;
+            this.cList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cList.Font = new System.Drawing.Font("Calibri", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cList.ForeColor = System.Drawing.Color.Firebrick;
+            this.cList.FormattingEnabled = true;
+            this.cList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cList.IntegralHeight = false;
+            this.cList.Location = new System.Drawing.Point(480, 15);
+            this.cList.Name = "cList";
+            this.cList.Size = new System.Drawing.Size(60, 76);
+            this.cList.TabIndex = 7;
+            this.cList.TabStop = false;
+            this.cList.Visible = false;
             // 
             // downToFile
             // 
@@ -555,7 +576,6 @@
             // 
             // epsPanel
             // 
-            this.epsPanel.Controls.Add(this.epsCltsList);
             this.epsPanel.Controls.Add(this.epsEdit);
             this.epsPanel.Controls.Add(this.epsDelete);
             this.epsPanel.Controls.Add(this.epsTable);
@@ -567,23 +587,6 @@
             this.epsPanel.Size = new System.Drawing.Size(753, 250);
             this.epsPanel.TabIndex = 5;
             this.epsPanel.Visible = false;
-            // 
-            // epsCltsList
-            // 
-            this.epsCltsList.BackColor = System.Drawing.Color.LightGray;
-            this.epsCltsList.DropDownHeight = 130;
-            this.epsCltsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.epsCltsList.DropDownWidth = 120;
-            this.epsCltsList.Enabled = false;
-            this.epsCltsList.Font = new System.Drawing.Font("Calibri", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.epsCltsList.ForeColor = System.Drawing.Color.Firebrick;
-            this.epsCltsList.FormattingEnabled = true;
-            this.epsCltsList.IntegralHeight = false;
-            this.epsCltsList.Location = new System.Drawing.Point(180, 230);
-            this.epsCltsList.Name = "epsCltsList";
-            this.epsCltsList.Size = new System.Drawing.Size(120, 76);
-            this.epsCltsList.TabIndex = 7;
-            this.epsCltsList.Visible = false;
             // 
             // epsEdit
             // 
@@ -1138,7 +1141,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nmADD;
         private System.Windows.Forms.DataGridViewTextBoxColumn mtrADD;
         private System.Windows.Forms.DataGridViewTextBoxColumn amADD;
-        private System.Windows.Forms.ComboBox epsCltsList;
+        private System.Windows.Forms.ComboBox cList;
     }
 }
 

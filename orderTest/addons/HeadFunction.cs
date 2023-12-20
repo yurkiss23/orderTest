@@ -50,8 +50,6 @@ namespace orderTest
             addClientForm.ShowDialog();
         }
 
-        //private void addItem(List<string>[]array) { foreach (List<string> item in array) item.Add(addClientForm.Controls[array.ToList().IndexOf(item)].Text); }
-
         private void AddClt_Enter(object sender, EventArgs e) => clearText((TextBox)addClientForm.Controls[0]);
 
         private void AddClt_TextChanged(object sender, EventArgs e) => fillEnable(addClientForm.Controls[1], true); //при зміні вмикається адреса
