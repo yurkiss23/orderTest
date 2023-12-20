@@ -5,7 +5,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
+using FontStyle = System.Drawing.FontStyle;
+using MessageBox = System.Windows.MessageBox;
+using Point = System.Drawing.Point;
+using Size = System.Drawing.Size;
 
 namespace orderTest
 {
@@ -34,14 +39,16 @@ namespace orderTest
 
         private void resetAll() { headClear(txtControlArray.ToList()); epsClear(); addClear(); EpsList.Clear(); AddList.Clear(); downToFile.Text = "saved! \nвийти"; }
 
-        //add..
+        private void showResult() { MessageBoxResult result = MessageBox.Show("справді видалити?", "видалити рядок", MessageBoxButton.OKCancel); }
+
+        //add.../del...
         private void addControls(Control[] ctrls, Form f) { foreach (Control c in ctrls) f.Controls.Add(c); }
 
         private void addItems(List<string>[] array) { foreach (List<string> item in array) item.Add(addClientForm.Controls[array.ToList().IndexOf(item)].Text); }
 
         private void addItems() { fillEnVis(cList, clients == 1 ? false : true); for (int i = 1; i <= clients; i++) cList.Items.Add(i); selectDefaultItem([cList]); }
 
-        //edit..
+        //edit...
         private void editFoodsList(DataGridView data)
         {
             foreach (DataGridViewRow r in data.Rows)

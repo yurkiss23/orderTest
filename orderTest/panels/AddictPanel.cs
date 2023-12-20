@@ -15,13 +15,14 @@ namespace orderTest
         static private List<addModel> AddList = new List<addModel>();
         private List<string> removeADD = new List<string>();
         private List<string> editADD = new List<string>();
+        private List<int> addInd = new List<int>();
         private string[] addADD;
 
         private void nameADD_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(nameADD, meterADD);
 
         private void meterADD_SelectedIndexChanged(object sender, EventArgs e) => isNullPosition(meterADD, amountADD);
 
-        private void amountADD_TextChanged(object sender, EventArgs e) => isNum((TextBox)sender, new Control[] { addAddToOrderButton });
+        private void amountADD_TextChanged(object sender, EventArgs e) => isNum((TextBox)sender, [addAddToOrderButton]);
 
         private void amountADD_Leave(object sender, EventArgs e) => addAddToOrderButton.Enabled = true;
 
@@ -30,10 +31,11 @@ namespace orderTest
         private void addAddToOrderButton_Click(object sender, EventArgs e)
         {
             //новий рядок
-            addADD = new[] { nameADD.Text, meterADD.Text, amountADD.Text };
+            addADD = [nameADD.Text, meterADD.Text, amountADD.Text];
 
             //додаємо позицію в замовлення
             AddList.Add(new(addADD)); txtBold(radioAdd); radioAdd.ForeColor = Color.DarkGreen;
+            if (clients > 1) addInd.Add(cList.SelectedIndex);
 
             //додаємо рядок в таблицю на формі
             addData.Rows.Add(addADD); addData.Visible = true;
@@ -42,25 +44,27 @@ namespace orderTest
             addClear(); enableButton();
 
             //
-            fillEnable(new Button[] { addDelete, addEdit }, true); fillVisible(new Button[] { addDelete, addEdit }, true);
-            //addData.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Window;
+            fillEnVis([addDelete, addEdit], true);
         }
 
         private void addDelete_Click(object sender, EventArgs e)
         {
-            MessageBoxResult result = System.Windows.MessageBox.Show("справді видалити?", "видалити рядок", MessageBoxButton.OKCancel);
+            showResult();
+            //MessageBoxResult result = System.Windows.MessageBox.Show("справді видалити?", "видалити рядок", MessageBoxButton.OKCancel);
 
             //рядок з таблиці, який видаляємо
             foreach (DataGridViewCell item in addData.SelectedRows[0].Cells) removeADD.Add(item.Value.ToString());
 
             //видаляємо eps із замовлення
-            addModel remove = new addModel(removeADD.ToArray()) { }; AddList.RemoveAll(a => a.Name == remove.Name && a.AmAdd == remove.AmAdd);
+            addModel remove = new addModel(removeADD.ToArray()) { }; int i = AddList.FindIndex(a => a.Name == remove.Name && a.AmAdd == remove.AmAdd); AddList.RemoveAt(i);
+            if (clients > 1) addInd.RemoveAt(i);
+            //AddList.RemoveAll(a => a.Name == remove.Name && a.AmAdd == remove.AmAdd);
 
             //видаляємо рядок з таблиці на формі
             addData.Rows.Remove(addData.SelectedRows[0]);
 
             //
-            if (!(AddList.Count > 0)) { addDelete.Visible = false; addDelete.Enabled = false; }
+            if (!(AddList.Count > 0)) fillEnVis(addDelete, false);
         }
 
         private void addEdit_Click(object sender, EventArgs e)
