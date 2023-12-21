@@ -15,7 +15,7 @@ namespace orderTest
         private void downOrder()
         {
             //замовлення
-            orderModel order = new orderModel(hd, storages(), EpsList, AddList);
+            orderModel order = new orderModel(clients, hd, storages(), EpsList, AddList);
             fillEnable([splitContainer1, orderLabel], false); fillVisible([splitContainer1, orderLabel], false);
 
             //вибір path
