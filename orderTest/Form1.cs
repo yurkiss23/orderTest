@@ -31,23 +31,6 @@ namespace orderTest
 
         private void downToFile_EnabledChanged(object sender, EventArgs e) => isButtonStateChanged((Button)sender);
 
-        private void downToFile_Click(object sender, EventArgs e)
-        {
-            if (downToFile.Text == "вивантажити замовлення")
-            {
-                //замовлення
-                orderModel order = new orderModel(hd, storages(), EpsList, AddList);
-                fillEnable([splitContainer1, orderLabel], false); fillVisible([splitContainer1, orderLabel], false);
-
-                //вибір path
-                SaveFileDialog sDialog = new SaveFileDialog(); sDialog.Filter = "xml files(*.xml)|*.xml"; if (sDialog.ShowDialog() == DialogResult.OK) path = sDialog.FileName; else return;
-
-                //xml
-                XmlSerializer xmlOrder = new XmlSerializer(typeof(orderModel)); using (FileStream fs = new FileStream(path, FileMode.Create)) xmlOrder.Serialize(fs, order);
-
-            } else Close();
-
-            resetAll();
-        }
+        private void downToFile_Click(object sender, EventArgs e) { { if (downToFile.Text == "вивантажити замовлення") downOrder(); else Close(); } resetAll(); }
     }
 }
